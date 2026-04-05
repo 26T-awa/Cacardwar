@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:craft_any",
+  "criteria": {
+    "craft_pickaxe_steal": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "合成一把镐，并成功偷取对方的一个物品",
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "bundle"
+    },
+    "show_toast": true,
+    "title": "小偷！"
+  }
+}

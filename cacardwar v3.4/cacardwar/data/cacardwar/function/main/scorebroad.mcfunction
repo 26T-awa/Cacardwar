@@ -1,0 +1,84 @@
+gamerule commandBlockOutput false
+
+scoreboard objectives add cacard.health dummy
+scoreboard players add #cacard.redHealth cacard.health 0
+scoreboard players add #cacard.blueHealth cacard.health 0
+scoreboard players set #cacard.i cacard.health 2
+scoreboard players set #cacard.i cacard.time 24000
+scoreboard players set #cacard.j cacard.health 0
+scoreboard players set #cacard.k cacard.health 20
+scoreboard objectives add cacard.time dummy
+scoreboard players add #cacard.time cacard.time 0
+scoreboard objectives add cacard.random dummy
+scoreboard objectives add cacard.wincount dummy {text:"\u00a76胜场数"}
+scoreboard objectives add cacard.winstrike dummy {text:"\u00a76连胜场数"}
+scoreboard objectives add cacard.summonleft dummy
+scoreboard players add @e[tag=cacard.tosummon,type=zombie] cacard.summonleft 2
+scoreboard players add @e[tag=cacard.tosummon,type=wandering_trader] cacard.summonleft 4
+tag @e[tag=cacard.tosummon] remove cacard.tosummon
+kill @e[scores={cacard.summonleft=..0},tag=cacard.summoner]
+
+bossbar add cacardwar:bluehealth ""
+bossbar add cacardwar:redhealth ""
+execute if entity @a[tag=cacard.blueTeam,tag=cacard.ingame] run bossbar set cacardwar:bluehealth name [{text:"\u00a7b蓝方生命值:"},{score:{name:"#cacard.blueHealth",objective:cacard.health},color:light_purple}]
+execute if entity @a[tag=cacard.redTeam,tag=cacard.ingame] run bossbar set cacardwar:redhealth name [{text:"\u00a76红方生命值:"},{score:{name:"#cacard.redHealth",objective:cacard.health},color:light_purple}]
+execute unless entity @a[tag=cacard.blueTeam] run bossbar set cacardwar:bluehealth name [{text:"\u00a7e等待玩家…"}]
+execute unless entity @a[tag=cacard.redTeam] run bossbar set cacardwar:redhealth name [{text:"\u00a7e等待玩家…"}]
+bossbar set cacardwar:bluehealth max 20
+bossbar set cacardwar:redhealth max 20
+bossbar set cacardwar:bluehealth color blue
+bossbar set cacardwar:redhealth color red
+bossbar set cacardwar:bluehealth style notched_20
+bossbar set cacardwar:redhealth style notched_20
+execute at @e[tag=cacard.blue6] run tag @a[distance=..16,tag=!cacard.ingame] add cacard.ingame
+execute at @e[tag=cacard.red6] run tag @a[distance=..16,tag=!cacard.ingame] add cacard.ingame
+execute at @e[tag=cacard.blue6] run tag @a[distance=24..,tag=cacard.ingame] remove cacard.ingame
+execute at @e[tag=cacard.red6] run tag @a[distance=24..,tag=cacard.ingame] remove cacard.ingame
+advancement grant @a[tag=cacard.ingame,advancements={cacardwar:root=false}] only cacardwar:root
+bossbar set cacardwar:bluehealth players @a[tag=cacard.ingame]
+bossbar set cacardwar:redhealth players @a[tag=cacard.ingame]
+execute if score #cacard.blueHealth cacard.health > #cacard.k cacard.health run scoreboard players set #cacard.blueHealth cacard.health 20
+execute if score #cacard.blueHealth cacard.health matches 20 run bossbar set cacardwar:bluehealth value 20
+execute if score #cacard.blueHealth cacard.health matches 19 run bossbar set cacardwar:bluehealth value 19
+execute if score #cacard.blueHealth cacard.health matches 18 run bossbar set cacardwar:bluehealth value 18
+execute if score #cacard.blueHealth cacard.health matches 17 run bossbar set cacardwar:bluehealth value 17
+execute if score #cacard.blueHealth cacard.health matches 16 run bossbar set cacardwar:bluehealth value 16
+execute if score #cacard.blueHealth cacard.health matches 15 run bossbar set cacardwar:bluehealth value 15
+execute if score #cacard.blueHealth cacard.health matches 14 run bossbar set cacardwar:bluehealth value 14
+execute if score #cacard.blueHealth cacard.health matches 13 run bossbar set cacardwar:bluehealth value 13
+execute if score #cacard.blueHealth cacard.health matches 12 run bossbar set cacardwar:bluehealth value 12
+execute if score #cacard.blueHealth cacard.health matches 11 run bossbar set cacardwar:bluehealth value 11
+execute if score #cacard.blueHealth cacard.health matches 10 run bossbar set cacardwar:bluehealth value 10
+execute if score #cacard.blueHealth cacard.health matches 9 run bossbar set cacardwar:bluehealth value 9
+execute if score #cacard.blueHealth cacard.health matches 8 run bossbar set cacardwar:bluehealth value 8
+execute if score #cacard.blueHealth cacard.health matches 7 run bossbar set cacardwar:bluehealth value 7
+execute if score #cacard.blueHealth cacard.health matches 6 run bossbar set cacardwar:bluehealth value 6
+execute if score #cacard.blueHealth cacard.health matches 5 run bossbar set cacardwar:bluehealth value 5
+execute if score #cacard.blueHealth cacard.health matches 4 run bossbar set cacardwar:bluehealth value 4
+execute if score #cacard.blueHealth cacard.health matches 3 run bossbar set cacardwar:bluehealth value 3
+execute if score #cacard.blueHealth cacard.health matches 2 run bossbar set cacardwar:bluehealth value 2
+execute if score #cacard.blueHealth cacard.health matches 1 run bossbar set cacardwar:bluehealth value 1
+execute if score #cacard.blueHealth cacard.health <= #cacard.j cacard.health run bossbar set cacardwar:bluehealth value 0
+
+execute if score #cacard.redHealth cacard.health > #cacard.k cacard.health run scoreboard players set #cacard.redHealth cacard.health 20
+execute if score #cacard.redHealth cacard.health matches 20 run bossbar set cacardwar:redhealth value 20
+execute if score #cacard.redHealth cacard.health matches 19 run bossbar set cacardwar:redhealth value 19
+execute if score #cacard.redHealth cacard.health matches 18 run bossbar set cacardwar:redhealth value 18
+execute if score #cacard.redHealth cacard.health matches 17 run bossbar set cacardwar:redhealth value 17
+execute if score #cacard.redHealth cacard.health matches 16 run bossbar set cacardwar:redhealth value 16
+execute if score #cacard.redHealth cacard.health matches 15 run bossbar set cacardwar:redhealth value 15
+execute if score #cacard.redHealth cacard.health matches 14 run bossbar set cacardwar:redhealth value 14
+execute if score #cacard.redHealth cacard.health matches 13 run bossbar set cacardwar:redhealth value 13
+execute if score #cacard.redHealth cacard.health matches 12 run bossbar set cacardwar:redhealth value 12
+execute if score #cacard.redHealth cacard.health matches 11 run bossbar set cacardwar:redhealth value 11
+execute if score #cacard.redHealth cacard.health matches 10 run bossbar set cacardwar:redhealth value 10
+execute if score #cacard.redHealth cacard.health matches 9 run bossbar set cacardwar:redhealth value 9
+execute if score #cacard.redHealth cacard.health matches 8 run bossbar set cacardwar:redhealth value 8
+execute if score #cacard.redHealth cacard.health matches 7 run bossbar set cacardwar:redhealth value 7
+execute if score #cacard.redHealth cacard.health matches 6 run bossbar set cacardwar:redhealth value 6
+execute if score #cacard.redHealth cacard.health matches 5 run bossbar set cacardwar:redhealth value 5
+execute if score #cacard.redHealth cacard.health matches 4 run bossbar set cacardwar:redhealth value 4
+execute if score #cacard.redHealth cacard.health matches 3 run bossbar set cacardwar:redhealth value 3
+execute if score #cacard.redHealth cacard.health matches 2 run bossbar set cacardwar:redhealth value 2
+execute if score #cacard.redHealth cacard.health matches 1 run bossbar set cacardwar:redhealth value 1
+execute if score #cacard.redHealth cacard.health <= #cacard.j cacard.health run bossbar set cacardwar:bluehealth value 0
