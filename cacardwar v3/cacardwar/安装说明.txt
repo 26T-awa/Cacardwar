@@ -1,0 +1,5 @@
+法①：新建存档，找到世界文件夹，将cacardwar放进存档的datapacks里即可(.../saves/<存档名称>/datapacks/)
+
+法②：新建存档界面，在“更多”里找到“数据包”，点击“打开包文件夹”将cacardwar放进即可
+
+法③：在已有的存档里找到世界文件夹，同法①，后在游戏中输入/datapack enable "file/cacardwar"，最后输入/reload或重进游戏即可

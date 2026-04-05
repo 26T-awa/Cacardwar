@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:root",
+  "criteria": {
+    "craft_any": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "合成任意一件道具",
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "crafting_table"
+    },
+    "show_toast": true,
+    "title": "这是，工作台？"
+  }
+}

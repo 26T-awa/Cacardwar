@@ -1,0 +1,1 @@
+获得结构方块(/give @s structure_block)，在“加载模式”下输入"cacardwar:start"后，将右侧“严格放置”和“包括实体”设为“开”，最后两次点击“加载”即可。

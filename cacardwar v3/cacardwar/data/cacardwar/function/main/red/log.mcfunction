@@ -1,0 +1,4 @@
+give @a[tag=cacard.redTeam,limit=1] oak_planks[enchantment_glint_override=true,custom_name=[{text:"\u00a7a卡牌 \u00a77-- "},{text:"\u00a7l木板",color:"#c2a203",italic:false}],custom_data={cacardwar:planks}] 4
+data modify entity @e[tag=cacard.red2,limit=1] Item set value {}
+tellraw @a[tag=cacard.ingame] [{text:"\n \u00a77[\u00a7b\u00a7l牌\u00a76\u00a7l牌\u00a7r\u00a7a大作战\u00a77]   \u00a76红方"},{selector:"@a[tag=cacard.redTeam,limit=1]",color:gold,underlined:true},{text:"\u00a7e用"},{text:"原木",color:"#8e7701"},{text:"\u00a7e合成了"},{text:"木板",color:"#c2a203"},{text:"   \u00a77[",extra:[{score:{name:"#cacard.time",objective:"cacard.time"},hover_event:{action:"show_text",value:"时间戳"}},{text:"\u00a77]"}]}]
+execute as @a[tag=cacard.redTeam,advancements={cacardwar:craft_any=false}] run advancement grant @s only cacardwar:craft_any
