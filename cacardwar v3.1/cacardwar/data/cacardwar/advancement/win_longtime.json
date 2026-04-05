@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:win_1",
+  "criteria": {
+    "win_longtime": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "赢得一场对局，但是对局时间超过1游戏日（20分钟/24000刻）",
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "clock"
+    },
+    "show_toast": true,
+    "title": "旷日之战"
+  }
+}
