@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:root",
+  "criteria": {
+    "regenerate_any": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "CCW:使用任意道具或合成道具给予自己回复",
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "apple"
+    },
+    "show_toast": true,
+    "title": "我正在治疗！"
+  }
+}

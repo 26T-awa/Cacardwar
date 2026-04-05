@@ -1,0 +1,4 @@
+$execute if entity @a[scores={cacard.cardsetype=1},tag=cacard.$(team)Team] run data modify storage cacardwar:cardsetinfo $(team) set value "\u00a7c进攻型"
+$execute if entity @a[scores={cacard.cardsetype=2},tag=cacard.$(team)Team] run data modify storage cacardwar:cardsetinfo $(team) set value "\u00a7a均衡型"
+$execute if entity @a[scores={cacard.cardsetype=3},tag=cacard.$(team)Team] run data modify storage cacardwar:cardsetinfo $(team) set value "\u00a7d持久型"
+$execute if entity @a[scores={cacard.cardsetype=4},tag=cacard.$(team)Team] run data modify storage cacardwar:cardsetinfo $(team) set value "\u00a73召唤型"

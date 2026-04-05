@@ -1,0 +1,2 @@
+$execute as @e[tag=cacard.center] at @s run data modify block ^2 ^ ^-8 Book.components.minecraft:written_book_content.pages set value [$(page1),$(page2),$(page3),$(page4),$(page5),$(page6),$(page7),$(page8),$(page9),$(page10),$(page11),$(page12)]
+$execute as @e[tag=cacard.center] at @s run data modify block ^-2 ^ ^-8 Book.components.minecraft:written_book_content.pages set value [$(page1),$(page2),$(page3),$(page4),$(page5),$(page6),$(page7),$(page8),$(page9),$(page10),$(page11),$(page12)]
