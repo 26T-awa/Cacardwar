@@ -23,12 +23,13 @@
 v3.4- 仅保证Java 1.21.7
 v4.1 适用Java 1.21.7和1.21.8
 v4.2 适用Java 1.21.7、1.21.8、1.21.9和1.21.10
+v4.3 适用Java 1.21.7、1.21.8、1.21.9和1.21.10
 请安装在合适的mc版本上！
 
 鸣谢
 感谢参与测试的小伙伴（游戏ID）：
 
-Akarui111  Apocalyse25  TianShaHAD  YumWarrika
+Akarui111  Apocalyse25  TianShaHAD  YumWarrika  muyuangu 
 灵感来源
 B 站 UP 易羽田 的 如何在我的世界里成为牌佬？以及我开放创作一款游戏后会发生什么？
 
