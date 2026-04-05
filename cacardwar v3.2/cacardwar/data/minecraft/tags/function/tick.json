@@ -1,0 +1,24 @@
+{
+	"replace": false,
+	"values": [
+		"cacardwar:main/scorebroad",
+		"cacardwar:item_detect/bread",
+		"cacardwar:item_detect/diamond_sword",
+		"cacardwar:item_detect/golden_sword",
+		"cacardwar:item_detect/golden_apple",
+		"cacardwar:item_detect/iron_sword",
+		"cacardwar:item_detect/iron_pickaxe",
+		"cacardwar:item_detect/apple",
+		"cacardwar:item_detect/planks",
+		"cacardwar:item_detect/log",
+		"cacardwar:item_detect/fire_sword",
+		"cacardwar:item_detect/fireball",
+		"cacardwar:item_detect/bomb",
+		"cacardwar:item_detect/huge_bomb",
+		"cacardwar:item_detect/shield",
+		"cacardwar:item_detect/diamond_pickaxe",
+		"cacardwar:item_detect/another_two",
+		"cacardwar:item_detect/deal_with_gambler",
+		"cacardwar:game/1"
+	]
+}

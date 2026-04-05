@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:win_1",
+  "criteria": {
+    "win_longtime": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "在最终是满血的情况下赢得一场对局",
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "beacon"
+    },
+    "show_toast": true,
+    "title": "完美无瑕"
+  }
+}

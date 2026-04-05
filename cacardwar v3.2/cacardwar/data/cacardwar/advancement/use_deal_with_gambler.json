@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:root",
+  "criteria": {
+    "use_deal_with_gambler": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "使用赌徒的交易",
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "nether_star"
+    },
+    "show_toast": true,
+    "title": "搏一搏，单车变……？"
+  }
+}
