@@ -1,0 +1,3 @@
+execute if entity @e[tag=cacard.blue2,nbt={Item:{components:{"minecraft:custom_data":{"cacardwar":"planks"}}}}] if entity @e[tag=cacard.blue5,nbt={Item:{components:{"minecraft:custom_data":{"cacardwar":"planks"}}}}] run function cacardwar:main/operation/planks {team:blue,oppteam:red,teamcolor:aqua,teamtext:"b蓝"}
+
+execute if entity @e[tag=cacard.red2,nbt={Item:{components:{"minecraft:custom_data":{"cacardwar":"planks"}}}}] if entity @e[tag=cacard.red5,nbt={Item:{components:{"minecraft:custom_data":{"cacardwar":"planks"}}}}] run function cacardwar:main/operation/planks {team:red,oppteam:blue,teamcolor:gold,teamtext:"6红"}

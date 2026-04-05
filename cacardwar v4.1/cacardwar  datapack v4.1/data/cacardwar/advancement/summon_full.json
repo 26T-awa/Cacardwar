@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:summon_any",
+  "criteria": {
+    "summon_full": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "填满3个召唤物空位",
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "jack_o_lantern"
+    },
+    "show_toast": true,
+    "title": "双拳难敌……螃蟹？"
+  }
+}

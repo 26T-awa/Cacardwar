@@ -1,0 +1,1 @@
+$execute as @a[tag=cacard.$(team)Team,advancements={cacardwar:$(advancementype)=false}] run advancement grant @s only cacardwar:$(advancementype)

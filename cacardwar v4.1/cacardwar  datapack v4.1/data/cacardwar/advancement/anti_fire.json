@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:craft_shield",
+  "criteria": {
+    "craft_shield": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "合成金盾牌并抵御一次火药类攻击",
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "chainmail_chestplate"
+    },
+    "show_toast": true,
+    "title": "真金不怕火炼"
+  }
+}

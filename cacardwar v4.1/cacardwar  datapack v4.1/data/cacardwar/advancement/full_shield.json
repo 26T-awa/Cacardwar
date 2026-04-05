@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:craft_shield",
+  "criteria": {
+    "craft_shield": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "同时持有两种盾牌",
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "netherite_chestplate"
+    },
+    "show_toast": true,
+    "title": "坚如磐石"
+  }
+}

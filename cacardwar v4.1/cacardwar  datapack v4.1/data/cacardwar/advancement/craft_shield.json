@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:craft_any",
+  "criteria": {
+    "craft_shield": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "合成任意一种盾牌",
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "shield"
+    },
+    "show_toast": true,
+    "title": "丘丘人的盾牌"
+  }
+}

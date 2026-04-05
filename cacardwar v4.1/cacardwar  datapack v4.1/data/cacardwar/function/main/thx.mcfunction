@@ -1,0 +1,1 @@
+tellraw @s {text:"\u00a7a感谢参与测试的小伙伴（游戏ID）：\nTianShaHAD\u00a7a\nApocalyse25\nAkarui111\nYumWarrika"}
