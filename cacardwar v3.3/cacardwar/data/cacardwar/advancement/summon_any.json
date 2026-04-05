@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:root",
+  "criteria": {
+    "summon_any": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "召唤一个召唤物为您效力",
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "zombie_spawn_egg"
+    },
+    "show_toast": true,
+    "title": "双拳难敌四手"
+  }
+}

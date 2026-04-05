@@ -1,0 +1,2 @@
+tellraw @s [{text:"\u00a7519.赌徒的交易：令对手的生命值减半，但你将失去所有卡牌\n\u00a77  ○●○\n  ○○○\n  ○○○\n无合成配方，可直接使用，需放在荧光物品展示框"}]
+tellraw @s [{text:"\u00a77…  "},{text:"\u00a7e\u00a7n[第一页]",click_event:{action:"run_command",command:"/function cacardwar:main/recipes/1"}},{text:"  "},{text:"\u00a7e\u00a7n[第二页]",click_event:{action:"run_command",command:"/function cacardwar:main/recipes/2"}},{text:"  "},{text:"\u00a7e\u00a7n[第三页]",click_event:{action:"run_command",command:"/function cacardwar:main/recipes/3"}}]

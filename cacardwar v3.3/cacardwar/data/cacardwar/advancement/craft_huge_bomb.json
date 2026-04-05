@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:craft_any",
+  "criteria": {
+    "craft_huge_bomb": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "合成威力超强的巨型炸药桶",
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "tnt"
+    },
+    "show_toast": true,
+    "title": "艺术就是爆炸！"
+  }
+}
