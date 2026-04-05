@@ -1,0 +1,24 @@
+{
+  "model": {
+    "type": "minecraft:condition",
+    "property": "minecraft:has_component",
+    "component": "minecraft:custom_model_data",
+    "on_false": {
+      "type": "minecraft:model",
+      "model": "minecraft:item/oak_log"
+    },
+    "on_true": {
+      "type": "minecraft:condition",
+      "property": "minecraft:custom_model_data",
+      "index": 0,
+      "on_false": {
+        "type": "minecraft:model",
+        "model": "minecraft:item/oak_log"
+      },
+      "on_true": {
+        "type": "minecraft:model",
+        "model": "cacardwar:item/oak_log"
+      }
+    }
+  }
+}
