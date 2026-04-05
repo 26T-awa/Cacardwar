@@ -1,0 +1,9 @@
+﻿{
+    "pack": {
+        "description": "§l§b牌§6牌§a大作战§r §7- §av4.2 §l§c数据包§r",
+        "pack_format": 88,
+        "supported_formats": [81, 88],
+        "min_format": 81,
+        "max_format": [88, 0]
+    }
+}

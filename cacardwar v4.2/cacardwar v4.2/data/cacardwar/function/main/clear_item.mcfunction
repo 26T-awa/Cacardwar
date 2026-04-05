@@ -1,0 +1,1 @@
+execute store result score @s cacard.leftcardcount run clear @s *[custom_data~{cacardwar:["card"]}]

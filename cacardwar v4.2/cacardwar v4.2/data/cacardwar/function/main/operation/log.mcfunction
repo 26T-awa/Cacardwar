@@ -1,0 +1,4 @@
+$give @a[tag=cacard.$(team)Team,limit=1] oak_planks[enchantment_glint_override=true,custom_name=[{text:"\u00a7a卡牌 \u00a77-- "},{text:"\u00a7l木板",color:"#c2a203",italic:false}],custom_data={cacardwar:["planks","card"]}] 4
+$data remove entity @e[tag=cacard.$(team)2,limit=1] Item
+$tellraw @a[tag=cacard.ingame] [{text:"\n \u00a77[\u00a7b\u00a7l牌\u00a76\u00a7l牌\u00a7r\u00a7a大作战\u00a77]   \u00a7$(teamtext)方"},{selector:"@a[tag=cacard.$(team)Team,limit=1]",color:$(teamcolor),underlined:true},{text:"\u00a7e用"},{text:"原木",color:"#8e7701"},{text:"\u00a7e合成了"},{text:"木板",color:"#c2a203"},{text:"   \u00a77[",extra:[{score:{name:"#cacard.time",objective:"cacard.time"},hover_event:{action:"show_text",value:"时间戳"}},{text:"\u00a77]"}]}]
+$function cacardwar:main/others/advancements {team:$(team),advancementype:craft_any}

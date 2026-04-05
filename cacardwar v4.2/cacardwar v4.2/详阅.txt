@@ -1,0 +1,50 @@
+安装说明
+新建存档，找到世界文件夹，将cacardwar放进存档的datapacks(.../saves/<存档名称>/datapacks/)里即可。
+
+新建存档界面，在“更多”里找到“数据包”，点击“打开包文件夹”将cacardwar放进即可。
+
+在已有的存档里找到世界文件夹，同1，后在游戏中输入/datapack enable "file/cacardwar"，最后输入/reload或重进游戏即可。
+
+构建场地
+获得结构方块(/give @s structure_block)，在“加载模式”下输入"cacardwar:start"（v3.3+：或"start"或"c:start"）后，将右侧“严格放置”和“包括实体”设为“开”，最后两次点击“加载”即可。
+
+因物品展示框被破坏而影响正常游戏体验的解决方法
+在cacardwar v4.1+直接点击“仅重置物品展示框”悬挂式告示牌
+
+（推荐）：将场地内所有的实体（包括门外的鹦鹉、盔甲架和存放更新日志的物品展示框）清除，建议用指令/kill @e[type=!player,distance=..5]，然后回到已有的结构方块点击一次加载即可。
+
+（不推荐）：按荧光物品展示框左侧的物品展示框为“头”，备用物品展示框为“尾”,依次为1 2 3 ... 9 0的顺序，使用指令/tag <UUID> add cacard.<team>X ，然后再对台上的9个物品展示框使用指令/tag <UUID> add cacard.<team>即可。
+
+[注：<UUID>指对着物品展示框补全命令时的一串字符；<team>指队伍，蓝方为blue，红方为red；X指数字1 2 3 ... 9 0]
+
+适用版本
+数据包版本：
+
+v3.4- 仅保证Java 1.21.7
+v4.1 适用Java 1.21.7和1.21.8
+v4.2 适用Java 1.21.7、1.21.8、1.21.9和1.21.10
+请安装在合适的mc版本上！
+
+鸣谢
+感谢参与测试的小伙伴（游戏ID）：
+
+Akarui111  Apocalyse25  TianShaHAD  YumWarrika
+灵感来源
+B 站 UP 易羽田 的 如何在我的世界里成为牌佬？以及我开放创作一款游戏后会发生什么？
+
+以下内容供技术开发和参考
+NUMBER LIST
+10001~11000 ITEM
+
+ITEM LISTs
+10001 cacardwar:apple
+10002 cacardwar:bundle
+10003 cacardwar:diamond
+10004 cacardwar:gold_ingot
+10005 cacardwar:gunpowder
+10006 cacardwar:iron_ingot
+10007 cacardwar:nether_star
+10008 cacardwar:oak_log
+10009 cacardwar:rotten_flesh
+10010 cacardwar:stick
+10011 cacardwar:wheat

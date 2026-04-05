@@ -1,0 +1,75 @@
+#计时
+execute if entity @a[tag=cacard.blueTeam,tag=cacard.ready] if entity @a[tag=cacard.redTeam,tag=cacard.ready] if score #cacard.time cacard.isongoing matches 1 run scoreboard players add #cacard.time cacard.time 1
+execute if entity @a[tag=cacard.blueTeam,tag=cacard.ready] if entity @a[tag=cacard.redTeam,tag=cacard.ready] if score #cacard.time cacard.isongoing matches 0 run scoreboard players set #cacard.time cacard.isongoing 1
+execute if score #cacard.time cacard.isongoing matches 0 if score #cacard.time cacard.players matches 0..1 run scoreboard players set #cacard.time cacard.time 0
+
+#确定牌组
+scoreboard players add @a cacard.cardsetype 0
+execute if score #cacard.time cacard.time matches 1 run tag @a[scores={cacard.cardsetype=1}] add cacard.attack
+execute if score #cacard.time cacard.time matches 1 run tag @a[scores={cacard.cardsetype=2}] add cacard.average
+execute if score #cacard.time cacard.time matches 1 run tag @a[scores={cacard.cardsetype=3}] add cacard.resist
+execute if score #cacard.time cacard.time matches 1 run tag @a[scores={cacard.cardsetype=4}] add cacard.summon
+function cacardwar:game/getcardset {team:red}
+function cacardwar:game/getcardset {team:blue}
+
+#抽取先后手
+#1 == 红先 ; 0 == 蓝先
+execute if score #cacard.time cacard.time matches 1 store result score #cacard.i cacard.random run random value 0..1
+execute if score #cacard.time cacard.time matches 1 run title @a[tag=cacard.ingame] title {text:"\u00a77- - -\u00a7e\u00a7l游戏开始\u00a7r\u00a77- - -"}
+execute if score #cacard.time cacard.time matches 2 run scoreboard players set #cacard.blueHealth cacard.health 20
+execute if score #cacard.time cacard.time matches 2 run scoreboard players set #cacard.redHealth cacard.health 20
+execute if score #cacard.time cacard.time matches 1 as @a[tag=cacard.ready] run function cacardwar:main/clear_all_item
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 1 run title @a[tag=cacard.ready,tag=cacard.blueTeam] subtitle {text:"你是后手"}
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 1 run title @a[tag=cacard.ready,tag=cacard.redTeam] subtitle {text:"你是先手"}
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 0 run title @a[tag=cacard.ready,tag=cacard.blueTeam] subtitle {text:"你是先手"}
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 0 run title @a[tag=cacard.ready,tag=cacard.redTeam] subtitle {text:"你是后手"}
+
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 1 run scoreboard players add @a[tag=cacard.redTeam] cacard.cardcount 4
+
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 0 run scoreboard players add @a[tag=cacard.blueTeam] cacard.cardcount 4
+
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 1 run item replace entity @a[tag=cacard.redTeam] hotbar.8 with lime_concrete[custom_data={cacardwar:["skip","non-card"]},enchantment_glint_override=true,custom_name={text:"\u00a7a按F（或切换至副手位）跳过你的回合"}] 1
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 1 run item replace entity @a[tag=cacard.blueTeam] hotbar.4 with barrier[custom_data={cacardwar:["none","non-card"]},enchantment_glint_override=true,custom_name={text:"\u00a7c现在不是你的回合"}] 1
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 0 run item replace entity @a[tag=cacard.blueTeam] hotbar.8 with lime_concrete[custom_data={cacardwar:["skip","non-card"]},enchantment_glint_override=true,custom_name={text:"\u00a7a按F（或切换至副手位）跳过你的回合"}] 1
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 0 run item replace entity @a[tag=cacard.redTeam] hotbar.4 with barrier[custom_data={cacardwar:["none","non-card"]},enchantment_glint_override=true,custom_name={text:"\u00a7c现在不是你的回合"}] 1
+
+execute as @a[nbt={equipment:{offhand:{id:"minecraft:lime_concrete",components:{"minecraft:custom_data":{cacardwar:["skip"]}}}}},tag=cacard.blueTeam] run function cacardwar:game/skip {team:blue,oppteam:red}
+execute as @a[nbt={equipment:{offhand:{id:"minecraft:lime_concrete",components:{"minecraft:custom_data":{cacardwar:["skip"]}}}}},tag=cacard.redTeam] run function cacardwar:game/skip {team:red,oppteam:blue}
+
+
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 1 run execute as @e[tag=cacard.blue] run data modify entity @s Fixed set value true
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 1 run execute as @e[tag=cacard.blue0] run data modify entity @s Fixed set value true
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 0 run execute as @e[tag=cacard.red] run data modify entity @s Fixed set value true
+execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 0 run execute as @e[tag=cacard.red0] run data modify entity @s Fixed set value true
+
+#对局中断处理
+execute if score #cacard.time cacard.isongoing matches 1 unless score #cacard.time cacard.players matches 2 run title @a[tag=cacard.ingame,tag=!cacard.ready] actionbar [{text:"\u00a76※\u00a7c\u00a7l对局中断！"},{text:"\u00a76※"}]
+execute if score #cacard.time cacard.isongoing matches 1 unless score #cacard.time cacard.players matches 2 run title @a[tag=cacard.ready] actionbar [{text:"\u00a76※\u00a7c\u00a7l对局中断！\u00a7r\u00a76这通常源于您的对手现处于离线状态。"},{text:"\u00a76您可以选择\u00a7c重置游戏\u00a76或\u00a7a等待对手上线\u00a76。※"}]
+execute if score #cacard.time cacard.isongoing matches 1 unless score #cacard.time cacard.players matches 2 run clear @a lime_concrete[custom_data={cacardwar:["skip"]}]
+execute if score #cacard.time cacard.isongoing matches 1 if score #cacard.time cacard.players matches 2 run item replace entity @a[nbt={Inventory:[{Slot:8b,components:{"minecraft:custom_data":{cacardwar:["stop","non-card"]}}}]}] hotbar.8 with lime_concrete[custom_data={cacardwar:["skip","non-card"]},enchantment_glint_override=true,custom_name={text:"\u00a7a按F（或切换至副手位）跳过你的回合"}] 1
+execute if score #cacard.time cacard.isongoing matches 1 unless score #cacard.time cacard.players matches 2 run item replace entity @a[tag=cacard.ready] hotbar.8 with red_concrete[custom_data={cacardwar:["stop","non-card"]},enchantment_glint_override=true,custom_name={text:"\u00a7c对局中断！"},lore=[{text:"\u00a76这通常源于您的对手现处于离线状态。"},{text:"\u00a76您可以选择\u00a7c重置游戏\u00a76或\u00a7a等待对手上线\u00a76。"},{text:"\u00a7c\u00a7l请不要移动此物品的位置！"}]] 1
+
+#胜负判断
+execute if score #cacard.redHealth cacard.health <= #cacard.j cacard.health run function cacardwar:game/win {team:blue,oppteam:red,fcolors:[5294056,2217976,2669309],text1:"b",text2:"蓝",color:aqua}
+execute if score #cacard.blueHealth cacard.health <= #cacard.j cacard.health run function cacardwar:game/win {team:red,oppteam:blue,fcolors:[15244368,16289825,16101403],text1:"6",text2:"红",color:gold}
+
+#移除物品惩罚
+execute as @e[tag=cacard.blue] at @s run function cacardwar:main/kill_item
+execute as @e[tag=cacard.red] at @s run function cacardwar:main/kill_item
+
+#效果
+execute if entity @a[tag=cacard.blueTeam,tag=cacard.shield_sword] at @e[tag=cacard.blue5] run particle block{block_state:iron_block} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]
+execute if entity @a[tag=cacard.redTeam,tag=cacard.shield_sword] at @e[tag=cacard.red5] run particle block{block_state:iron_block} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]
+execute if entity @a[tag=cacard.blueTeam,tag=cacard.shield_fire] at @e[tag=cacard.blue5] run particle block{block_state:gold_block} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]
+execute if entity @a[tag=cacard.redTeam,tag=cacard.shield_fire] at @e[tag=cacard.red5] run particle block{block_state:gold_block} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]
+
+execute if entity @a[tag=cacard.blueTeam,tag=cacard.hungry] at @e[tag=cacard.blue5] run particle dust{color:[0.35,0.2,0],scale:1} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]
+execute if entity @a[tag=cacard.redTeam,tag=cacard.hungry] at @e[tag=cacard.red5] run particle dust{color:[0.35,0.2,0],scale:1} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]
+
+#发牌
+loot give @a[tag=cacard.attack,scores={cacard.cardcount=1..}] loot cacardwar:attack
+loot give @a[tag=cacard.average,scores={cacard.cardcount=1..}] loot cacardwar:average
+loot give @a[tag=cacard.resist,scores={cacard.cardcount=1..}] loot cacardwar:resist
+loot give @a[tag=cacard.summon,scores={cacard.cardcount=1..}] loot cacardwar:summon
+execute as @a[scores={cacard.cardcount=1..}] at @s run playsound item.armor.equip_elytra master @s ^ ^ ^ 1.3 1
+scoreboard players remove @a[scores={cacard.cardcount=1..}] cacard.cardcount 1

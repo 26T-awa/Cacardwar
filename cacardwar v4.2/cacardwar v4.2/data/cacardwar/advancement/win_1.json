@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:root",
+  "criteria": {
+    "win_1": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "CCW:赢得一场对局",
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "iron_sword"
+    },
+    "show_toast": true,
+    "title": "牛刀小试"
+  }
+}

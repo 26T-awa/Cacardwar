@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:regenerate_any",
+  "criteria": {
+    "regenerate_golden_apple": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "CCW:食用一块腐肉……尽管这并不好吃",
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "rotten_flesh"
+    },
+    "show_toast": true,
+    "title": "饥不择食"
+  }
+}
