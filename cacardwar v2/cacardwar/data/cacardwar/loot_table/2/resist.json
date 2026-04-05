@@ -1,0 +1,325 @@
+{
+    "type": "chest",
+    "pools": [
+        {
+            "rolls": 2,
+            "bonus_rolls": 0,
+            "entries": [
+                {
+                    "type": "item",
+                    "name": "iron_ingot",
+                    "weight": 7,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1,
+                                "type": "uniform"
+                            }
+                        },
+                        {
+                            "function": "set_custom_data",
+                            "tag": {
+                                "cacardwar": "iron_ingot"
+                            }
+                        },
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "enchantment_glint_override": true,
+                                "custom_name": {
+                                    "text": "\u00a7a卡牌 \u00a77-- \u00a7f\u00a7l铁锭"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "gold_ingot",
+                    "weight": 9,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1,
+                                "type": "uniform"
+                            }
+                        },
+                        {
+                            "function": "set_custom_data",
+                            "tag": {
+                                "cacardwar": "gold_ingot"
+                            }
+                        },
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "enchantment_glint_override": true,
+                                "custom_name": {
+                                    "text": "\u00a7a卡牌 \u00a77-- \u00a76\u00a7l金锭"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "diamond",
+                    "weight": 7,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1,
+                                "type": "uniform"
+                            }
+                        },
+                        {
+                            "function": "set_custom_data",
+                            "tag": {
+                                "cacardwar": "diamond"
+                            }
+                        },
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "enchantment_glint_override": true,
+                                "custom_name": {
+                                    "text": "\u00a7a卡牌 \u00a77-- \u00a7b\u00a7l钻石"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "gunpowder",
+                    "weight": 7,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1,
+                                "type": "uniform"
+                            }
+                        },
+                        {
+                            "function": "set_custom_data",
+                            "tag": {
+                                "cacardwar": "gunpowder"
+                            }
+                        },
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "enchantment_glint_override": true,
+                                "custom_name": {
+                                    "text": "\u00a7a卡牌 \u00a77-- \u00a7e\u00a7l火药"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "stick",
+                    "weight": 12,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1,
+                                "type": "uniform"
+                            }
+                        },
+                        {
+                            "function": "set_custom_data",
+                            "tag": {
+                                "cacardwar": "stick"
+                            }
+                        },
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "enchantment_glint_override": true,
+                                "custom_name": [
+                                    {
+                                        "text": "\u00a7a卡牌 \u00a77-- "
+                                    },
+                                    {
+                                        "text": "\u00a7l木棍",
+                                        "color": "#774205",
+                                        "italic": false
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "oak_log",
+                    "weight": 14,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1,
+                                "type": "uniform"
+                            }
+                        },
+                        {
+                            "function": "set_custom_data",
+                            "tag": {
+                                "cacardwar": "log"
+                            }
+                        },
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "enchantment_glint_override": true,
+                                "custom_name": [
+                                    {
+                                        "text": "\u00a7a卡牌 \u00a77-- "
+                                    },
+                                    {
+                                        "text": "\u00a7l原木",
+                                        "color": "#8e7701",
+                                        "italic": false
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "apple",
+                    "weight": 17,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1,
+                                "type": "uniform"
+                            }
+                        },
+                        {
+                            "function": "set_custom_data",
+                            "tag": {
+                                "cacardwar": "apple"
+                            }
+                        },
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "enchantment_glint_override": true,
+                                "custom_name": {
+                                    "text": "\u00a7a卡牌 \u00a77-- \u00a7c\u00a7l苹果"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "wheat",
+                    "weight": 18,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1,
+                                "type": "uniform"
+                            }
+                        },
+                        {
+                            "function": "set_custom_data",
+                            "tag": {
+                                "cacardwar": "wheat"
+                            }
+                        },
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "enchantment_glint_override": true,
+                                "custom_name": {
+                                    "text": "\u00a7a卡牌 \u00a77-- \u00a7e\u00a7l小麦"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "bundle",
+                    "weight": 8,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1,
+                                "type": "uniform"
+                            }
+                        },
+                        {
+                            "function": "set_custom_data",
+                            "tag": {
+                                "cacardwar": "another_two"
+                            }
+                        },
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "enchantment_glint_override": true,
+                                "custom_name": {
+                                    "text": "\u00a7a卡牌 \u00a77-- \u00a7a\u00a7l五谷丰登"
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "type": "item",
+                    "name": "nether_star",
+                    "weight": 1,
+                    "functions": [
+                        {
+                            "function": "set_count",
+                            "count": {
+                                "max": 1,
+                                "min": 1,
+                                "type": "uniform"
+                            }
+                        },
+                        {
+                            "function": "set_custom_data",
+                            "tag": {
+                                "cacardwar": "deal_with_gambler"
+                            }
+                        },
+                        {
+                            "function": "set_components",
+                            "components": {
+                                "enchantment_glint_override": true,
+                                "custom_name": {
+                                    "text": "\u00a7a卡牌 \u00a77-- \u00a75\u00a7l赌徒的交易"
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
