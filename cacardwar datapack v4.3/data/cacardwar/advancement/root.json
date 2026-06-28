@@ -1,0 +1,22 @@
+{
+  "criteria": {
+    "cacardwar": {
+      "trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "background": "block/iron_block",
+    "description": "朋友，来一场豪赌吧！",
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "paper",
+      "components": {
+        "enchantment_glint_override":true
+      }
+    },
+    "show_toast": true,
+    "title": "\u00a7b\u00a7l牌\u00a76\u00a7l牌\u00a7r\u00a7a大作战"
+  }
+}

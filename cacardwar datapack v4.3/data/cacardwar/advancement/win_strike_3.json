@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:win_1",
+  "criteria": {
+    "win_strike_3": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "CCW:连续赢得三场对局",
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "diamond_sword"
+    },
+    "show_toast": true,
+    "title": "赌神：运气与实力的结合"
+  }
+}

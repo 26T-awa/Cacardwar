@@ -1,0 +1,4 @@
+execute if entity @s[tag=cacard.blue] at @s if entity @e[type=item,distance=...1,nbt={Item:{components:{"minecraft:custom_data":{cacardwar:[card]}}}}] run scoreboard players add @a[tag=cacard.redTeam] cacard.point 1
+execute if entity @s[tag=cacard.red] at @s if entity @e[type=item,distance=...1,nbt={Item:{components:{"minecraft:custom_data":{cacardwar:[card]}}}}] run scoreboard players add @a[tag=cacard.blueTeam] cacard.point 1
+kill @e[type=item,distance=...1,nbt={Item:{components:{"minecraft:custom_data":{cacardwar:[card]}}}}]
+kill @e[type=item,nbt={Item:{id:"minecraft:red_concrete",components:{"minecraft:custom_data":{cacardwar:[stop]}}}}]

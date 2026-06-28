@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:craft_any",
+  "criteria": {
+    "craft_shield": {
+		"trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "CCW:绕过任意盾牌的防御并造成伤害",
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "id": "blaze_powder"
+    },
+    "show_toast": true,
+    "title": "形同虚设"
+  }
+}
