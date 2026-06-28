@@ -160,3 +160,8 @@ $execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=7}] at @e[tag
 ##6.2饥饿
 execute if entity @a[tag=cacard.blueTeam,tag=cacard.hungry] at @e[tag=cacard.blue5] run particle dust{color:[0.35,0.2,0],scale:1} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]
 execute if entity @a[tag=cacard.redTeam,tag=cacard.hungry] at @e[tag=cacard.red5] run particle dust{color:[0.35,0.2,0],scale:1} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]
+
+#7.局外玩家模型
+##7.1注视
+execute as @e[type=mannequin,tag=cacardwar,limit=1] at @s facing entity @a[distance=..6] feet run tp @s ~ ~ ~ ~ ~
+execute as @e[type=parrot,tag=cacardwar,limit=1] at @s facing entity @a[distance=..4] feet run tp @s ~ ~ ~ ~ ~

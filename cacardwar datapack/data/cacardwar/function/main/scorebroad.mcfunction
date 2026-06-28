@@ -1,5 +1,6 @@
 #1.世界规则
-gamerule commandBlockOutput false
+gamerule command_block_output false
+gamerule reduced_debug_info true
 
 #2.计分板
 ##2.1评分
