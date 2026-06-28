@@ -1,1 +1,0 @@
-function cacardwar:main/reset with storage cacardwar:preparation_book_text
