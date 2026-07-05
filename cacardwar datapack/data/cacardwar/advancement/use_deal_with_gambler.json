@@ -1,7 +1,7 @@
 {
   "parent": "cacardwar:root",
   "criteria": {
-    "use_deal_with_gambler": {
+    "use_deal": {
 		"trigger": "impossible"
     }
   },

@@ -5,6 +5,7 @@ execute as @a[tag=cacard.ingame] run function cacardwar:main/clear_all_item
 
 function cacardwar:main/reset_only_frame
 
+tag @e[tag=cacard.unabled] remove cacard.unabled
 execute as @e[tag=cacard.blue] run data remove entity @s Item 
 execute as @e[tag=cacard.blue0] run data remove entity @s Item 
 execute as @e[tag=cacard.blue] run data modify entity @s Fixed set value false

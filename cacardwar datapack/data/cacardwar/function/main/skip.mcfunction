@@ -26,6 +26,6 @@ $clear @a[tag=cacard.$(oppteam)Team] barrier[custom_data={cacardwar:["none","non
 $scoreboard players add @a[tag=cacard.$(oppteam)Team] cacard.cardcount 5
 $execute as @e[tag=cacard.$(team)] run data modify entity @s Fixed set value true
 $execute as @e[tag=cacard.$(team)0] run data modify entity @s Fixed set value true
-$execute as @e[tag=cacard.$(oppteam)] run data modify entity @s Fixed set value false
-$execute as @e[tag=cacard.$(oppteam)0] run data modify entity @s Fixed set value false
+$execute as @e[tag=cacard.$(oppteam),tag=!cacard.unabled] run data modify entity @s Fixed set value false
+$execute as @e[tag=cacard.$(oppteam)0,tag=!cacard.unabled] run data modify entity @s Fixed set value false
 $title @a[tag=cacard.$(oppteam)Team] actionbar {text:"\u00a7e现在是你的回合！"}
