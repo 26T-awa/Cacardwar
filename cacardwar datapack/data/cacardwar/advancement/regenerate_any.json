@@ -2,7 +2,7 @@
   "parent": "cacardwar:root",
   "criteria": {
     "regenerate_any": {
-		"trigger": "impossible"
+      "trigger": "impossible"
     }
   },
   "display": {

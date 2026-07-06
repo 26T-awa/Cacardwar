@@ -2,7 +2,7 @@
   "parent": "cacardwar:craft_shield",
   "criteria": {
     "craft_shield": {
-		"trigger": "impossible"
+      "trigger": "impossible"
     }
   },
   "display": {

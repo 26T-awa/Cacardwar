@@ -2,7 +2,7 @@
   "parent": "cacardwar:summon_any",
   "criteria": {
     "summon_full": {
-		"trigger": "impossible"
+      "trigger": "impossible"
     }
   },
   "display": {

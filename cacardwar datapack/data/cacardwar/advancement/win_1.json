@@ -2,7 +2,7 @@
   "parent": "cacardwar:root",
   "criteria": {
     "win_1": {
-		"trigger": "impossible"
+      "trigger": "impossible"
     }
   },
   "display": {

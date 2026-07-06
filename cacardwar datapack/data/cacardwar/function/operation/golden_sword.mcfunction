@@ -5,7 +5,7 @@ $execute if entity @a[tag=cacard.$(oppteam)Team,scores={cacard.shieldtype=3..7}]
 $execute at @e[tag=cacard.$(oppteam)5] run particle sweep_attack ~ ~2 ~ 0.2 0.2 0.2 0.1 1 normal
 
 $execute as @e[tag=cacard.$(team)] run data remove entity @s Item 
-$tellraw @a[tag=cacard.ingame] [{text:"\n \u00a77[\u00a7b\u00a7l牌\u00a76\u00a7l牌\u00a7r\u00a7a大作战\u00a77]   \u00a7$(teamtext)方"},{selector:"@a[tag=cacard.$(team)Team,limit=1]",color:$(teamcolor),underlined:true},{text:"\u00a7e合成了\u00a76金剑"},{text:"   \u00a77[",extra:[{score:{name:"#cacard.time",objective:"cacard.time"},hover_event:{action:"show_text",value:"时间戳"}},{text:"\u00a77]"}]}]
+$tellraw @a[tag=cacard.ingame] [{text:"\n §7[§b§l牌§6§l牌§r§a大作战§7]   §$(teamtext)方"},{selector:"@a[tag=cacard.$(team)Team,limit=1]",color:$(teamcolor),underlined:true},{text:"§e合成了§6金剑"},{text:"   §7[",extra:[{score:{name:"#cacard.time",objective:"cacard.time"},hover_event:{action:"show_text",value:"时间戳"}},{text:"§7]"}]}]
 
 $execute if entity @a[tag=cacard.$(oppteam)Team,scores={cacard.shieldtype=2}] run function cacardwar:main/others/advancements {team:$(team),advancementype:bypass_shield}
 $function cacardwar:main/others/advancements {team:$(team),advancementype:craft_any}
