@@ -2,7 +2,7 @@
   "parent": "cacardwar:win_1",
   "criteria": {
     "win_longtime": {
-		"trigger": "impossible"
+      "trigger": "impossible"
     }
   },
   "display": {

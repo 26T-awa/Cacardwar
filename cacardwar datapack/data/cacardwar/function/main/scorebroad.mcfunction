@@ -29,10 +29,10 @@ scoreboard players add #cacard.time cacard.time 0
 scoreboard objectives add cacard.cardsetype dummy
 scoreboard players add @a cacard.cardsetype 0
 scoreboard objectives add cacard.random dummy
-scoreboard objectives add cacard.wincount dummy {text:"\u00a76胜场数"}
-scoreboard objectives add cacard.winstrike dummy {text:"\u00a76连胜场数"}
+scoreboard objectives add cacard.wincount dummy {text:"§6胜场数"}
+scoreboard objectives add cacard.winstrike dummy {text:"§6连胜场数"}
 ##2.3场地信息
-scoreboard objectives add cacard.Info dummy {text:"\u00a7b\u00a7l牌\u00a76\u00a7l牌\u00a7r\u00a7a大作战  \u00a76信息栏\u00a7r"}
+scoreboard objectives add cacard.Info dummy {text:"§b§l牌§6§l牌§r§a大作战  §6信息栏§r"}
 scoreboard objectives add cacard.up custom:jump
 scoreboard objectives add cacard.down custom:sneak_time
 
@@ -62,10 +62,10 @@ scoreboard objectives setdisplay sidebar.team.white cacard.Info
 ##4.2顶栏
 bossbar add cacardwar:bluehealth ""
 bossbar add cacardwar:redhealth ""
-execute if entity @a[tag=cacard.blueTeam,tag=cacard.ingame] run bossbar set cacardwar:bluehealth name [{text:"\u00a7b蓝方生命值:"},{score:{name:"#cacard.blueHealth",objective:cacard.health},color:light_purple}]
-execute if entity @a[tag=cacard.redTeam,tag=cacard.ingame] run bossbar set cacardwar:redhealth name [{text:"\u00a76红方生命值:"},{score:{name:"#cacard.redHealth",objective:cacard.health},color:light_purple}]
-execute unless entity @a[tag=cacard.blueTeam] run bossbar set cacardwar:bluehealth name [{text:"\u00a7e等待玩家…"}]
-execute unless entity @a[tag=cacard.redTeam] run bossbar set cacardwar:redhealth name [{text:"\u00a7e等待玩家…"}]
+execute if entity @a[tag=cacard.blueTeam,tag=cacard.ingame] run bossbar set cacardwar:bluehealth name [{text:"§b蓝方生命值:"},{score:{name:"#cacard.blueHealth",objective:cacard.health},color:light_purple}]
+execute if entity @a[tag=cacard.redTeam,tag=cacard.ingame] run bossbar set cacardwar:redhealth name [{text:"§6红方生命值:"},{score:{name:"#cacard.redHealth",objective:cacard.health},color:light_purple}]
+execute unless entity @a[tag=cacard.blueTeam] run bossbar set cacardwar:bluehealth name [{text:"§e等待玩家…"}]
+execute unless entity @a[tag=cacard.redTeam] run bossbar set cacardwar:redhealth name [{text:"§e等待玩家…"}]
 bossbar set cacardwar:bluehealth max 20
 bossbar set cacardwar:redhealth max 20
 bossbar set cacardwar:bluehealth color blue

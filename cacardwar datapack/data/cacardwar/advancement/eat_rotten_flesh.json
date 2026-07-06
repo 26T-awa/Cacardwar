@@ -2,7 +2,7 @@
   "parent": "cacardwar:regenerate_any",
   "criteria": {
     "regenerate_golden_apple": {
-		"trigger": "impossible"
+      "trigger": "impossible"
     }
   },
   "display": {

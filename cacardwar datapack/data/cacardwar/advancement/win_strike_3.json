@@ -2,7 +2,7 @@
   "parent": "cacardwar:win_1",
   "criteria": {
     "win_strike_3": {
-		"trigger": "impossible"
+      "trigger": "impossible"
     }
   },
   "display": {

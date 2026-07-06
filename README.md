@@ -1,12 +1,23 @@
-
+<!-- markdownlint-disable MD033 -->
 # 牌牌大作战数据包
+
+<center> By _26T </center>
 
 ## 简介
 
 **牌牌大作战**是一个MC Java原版数据包。在牌牌大作战，你可以使用 MC 基于原版物品的**卡牌**，利用原版以及新颖的**合成配方**，**进攻、防守、回复甚至召唤**，与好友一起进行激情而愉快的决斗，**取得成就、完成挑战**。这是一个小游戏数据包。
 
-> **Description** in English:
+> **Description** in English:  
 > **CacardWar** is a Minecraft Datapack that using **cards** based on original Minecraft items to fight with your friends through various **original or customed recipes, achieve amazing challenges and so on**. Treat it as a mini-game running on Minecraft Java Edition.
+
+## 更新进度
+
+7/6/26 [32]  
+pre v5.1  
+
+- 完善超级僵尸机制
+- 更新物品的组件（可能遇到物品无法重叠的情况）
+- 合成金苹果会消除所有的被禁用的格子的禁用效果，前提是可以合成
 
 ## 安装说明
 
@@ -31,17 +42,17 @@
 
 2. （**不推荐**）：按荧光物品展示框左侧的物品展示框为“头”，备用物品展示框为“尾”,依次为1 2 3 ... 9 0的顺序，使用指令`/tag <UUID> add cacard.<team>X` ，然后再对台上的9个物品展示框使用指令`/tag <UUID> add cacard.<team>`即可。  
 
-    [注：\<UUID>指对着物品展示框补全命令时的一串字符；\<team>指队伍，蓝方为blue，红方为red；X指数字1 2 3 ... 9 0]
+    > 注：\<UUID>指对着物品展示框补全命令时的一串字符；\<team>指队伍，蓝方为blue，红方为red；X指数字1 2 3 ... 9 0
 
 ## 适用版本
 
 数据包版本：
 
-    v1-3.4 仅保证Java 1.21.7
-    v4.1 适用Java 1.21.7和1.21.8
-    v4.2 适用Java 1.21.7、1.21.8、1.21.9和1.21.10
-    v4.3 适用Java 1.21.7、1.21.8、1.21.9和1.21.10
-    v5.1 适用??
+> v1-3.4 仅保证Java 1.21.7
+> v4.1 适用Java 1.21.7和1.21.8
+> v4.2 适用Java 1.21.7、1.21.8、1.21.9和1.21.10
+> v4.3 适用Java 1.21.7、1.21.8、1.21.9和1.21.10
+> v5.1 适用Java 1.21.11
 
 **请安装在合适的mc版本上！**
 
@@ -49,28 +60,35 @@
 
 **感谢参与测试的小伙伴**（游戏ID，A~z）：
 
-    Akarui111  Apocalyse25  TianShaHAD  YumWarrika  muyuangu
+> Akarui111
+> Apocalyse25
+> TianShaHAD
+> YumWarrika
+> muyuangu
 
 ## 灵感来源
 
-B 站 UP 易羽田 的 [如何在我的世界里成为牌佬？以及我开放创作一款游戏后会发生什么？](https://www.bilibili.com/video/BV1g784zDEYD/?vd_source=bbfaead0b5dcfb88ebabd98db103daed)
+B 站 UP 易羽田 的 [如何在我的世界里成为牌佬？以及我开放创作一款游戏后会发生什么？](https://www.bilibili.com/video/BV1g784zDEYD/)
 
 ---
 
 ## 以下内容供技术开发和参考
 
-NUMBER LIST  
-10001~11000 ITEM  
+物品模型列表
 
-ITEM LISTs  
-10001 cacardwar:apple  
-10002 cacardwar:bundle  
-10003 cacardwar:diamond  
-10004 cacardwar:gold_ingot  
-10005 cacardwar:gunpowder  
-10006 cacardwar:iron_ingot  
-10007 cacardwar:nether_star  
-10008 cacardwar:oak_log  
-10009 cacardwar:rotten_flesh  
-10010 cacardwar:stick  
-10011 cacardwar:wheat  
+    /give @s apple[custom_model_data={strings:["cacardwar:apple"]}]
+
+cacardwar:apple
+cacardwar:bundle
+cacardwar:diamond
+cacardwar:gold_ingot
+cacardwar:gunpowder
+cacardwar:iron_ingot
+cacardwar:deal
+cacardwar:log
+cacardwar:plank
+cacardwar:rotten
+cacardwar:stick
+cacardwar:wheat
+cacardwar:head
+cacardwar:head_zombie
