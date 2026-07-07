@@ -14,7 +14,7 @@
     ],
     "fallback": {
       "type": "minecraft:model",
-      "model": "minecraft:item/oak_log"
+      "model": "minecraft:block/oak_log"
     }
   }
 }
