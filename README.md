@@ -78,17 +78,17 @@ B 站 UP 易羽田 的 [如何在我的世界里成为牌佬？以及我开放�
 
     /give @s apple[custom_model_data={strings:["cacardwar:apple"]}]
 
-cacardwar:apple
-cacardwar:bundle
-cacardwar:diamond
-cacardwar:gold_ingot
-cacardwar:gunpowder
-cacardwar:iron_ingot
-cacardwar:deal
-cacardwar:log
-cacardwar:plank
-cacardwar:rotten
-cacardwar:stick
-cacardwar:wheat
-cacardwar:head
-cacardwar:head_zombie
+cacardwar:apple  
+cacardwar:bundle  
+cacardwar:diamond  
+cacardwar:gold_ingot  
+cacardwar:gunpowder  
+cacardwar:iron_ingot  
+cacardwar:deal  
+cacardwar:log  
+cacardwar:plank  
+cacardwar:rotten  
+cacardwar:stick  
+cacardwar:wheat  
+cacardwar:head  
+cacardwar:head_zombie  
