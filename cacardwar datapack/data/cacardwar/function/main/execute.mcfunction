@@ -111,6 +111,7 @@ execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cac
 execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.blueTeam
 execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.redTeam
 execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.winner
+execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run function cacardwar:main/recover_all_slot
 execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run scoreboard players set @s cacard.gameSeed -1
 execute as @a[tag=cacard.ready,scores={cacard.gameSeed=-1}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.ready
 scoreboard players set @a[scores={cacard.gameSeed=..-1}] cacard.gameSeed 0
