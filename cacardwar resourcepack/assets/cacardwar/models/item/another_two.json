@@ -1,6 +1,6 @@
 {
     "parent": "minecraft:item/handheld",
     "textures": {
-        "layer0":"cacardwar:item/bundle"
+        "layer0":"cacardwar:item/another_two"
     }
 }
