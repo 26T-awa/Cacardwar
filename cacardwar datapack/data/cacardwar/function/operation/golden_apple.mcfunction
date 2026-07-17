@@ -12,3 +12,4 @@ $execute if entity @a[tag=cacard.$(team)Team,tag=!cacard.hungry] run scoreboard 
 $execute if entity @a[tag=cacard.$(team)Team,tag=cacard.hungry] run scoreboard players add #cacard.$(team)Health cacard.health 15
 $tag @a[tag=cacard.$(team)Team,tag=cacard.hungry] remove cacard.hungry
 $tag @e[tag=cacard.$(team),tag=cacard.disabled] remove cacard.disabled
+$execute as @a[tag=cacard.$(team)Team] run function cacardwar:main/recover_all_slot

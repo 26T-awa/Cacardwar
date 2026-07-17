@@ -30,9 +30,9 @@ data modify storage cacardwar:cardsetinfo winner set value NULL
 data modify storage cacardwar:cardsetinfo sec set value 0
 data modify storage cacardwar:cardsetinfo min set value 0
 
-data modify storage cacardwar:verson-particle number set value "§6v4.3"
-data modify storage cacardwar:verson-particle seed set value 0
-data modify storage cacardwar:verson-particle particle1 set value "dust{color:[1.0,1.0,1.0],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]"
-data modify storage cacardwar:verson-particle particle2 set value "dust{color:[0.9,0.5,0.0],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]"
-data modify storage cacardwar:verson-particle particle3 set value "dust{color:[0.0,0.8,0.9],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]"
-execute store result storage cacardwar:verson-particle seed long 1 run seed
+data modify storage cacardwar:version-particle number set value "§cv5.1"
+data modify storage cacardwar:version-particle seed set value 0
+data modify storage cacardwar:version-particle particle1 set value "dust{color:[1.0,1.0,1.0],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]"
+data modify storage cacardwar:version-particle particle2 set value "dust{color:[0.9,0.5,0.0],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]"
+data modify storage cacardwar:version-particle particle3 set value "dust{color:[0.0,0.8,0.9],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]"
+execute store result storage cacardwar:version-particle seed long 1 run seed
