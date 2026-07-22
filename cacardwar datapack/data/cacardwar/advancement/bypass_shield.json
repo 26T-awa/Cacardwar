@@ -1,7 +1,7 @@
 {
   "parent": "cacardwar:craft_any",
   "criteria": {
-    "craft_shield": {
+    "bypass_shield": {
       "trigger": "impossible"
     }
   },

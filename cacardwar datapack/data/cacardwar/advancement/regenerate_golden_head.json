@@ -1,0 +1,19 @@
+{
+  "parent": "cacardwar:regenerate_any",
+  "criteria": {
+    "regenerate_golden_head": {
+      "trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "CCW:合成金头颅并完整回复30点生命值",
+    "frame": "challenge",
+    "hidden": false,
+    "icon": {
+      "id": "enchanted_golden_apple"
+    },
+    "show_toast": true,
+    "title": "上头~"
+  }
+}

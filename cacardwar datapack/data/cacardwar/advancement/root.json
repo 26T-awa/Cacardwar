@@ -18,5 +18,8 @@
     },
     "show_toast": true,
     "title": "§b§l牌§6§l牌§r§a大作战"
+  },
+  "rewards": {
+    "function": "cacardwar:main/others/newplayer1"
   }
 }

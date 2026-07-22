@@ -1,7 +1,7 @@
 {
   "parent": "cacardwar:win_1",
   "criteria": {
-    "win_longtime": {
+    "win_perfect": {
       "trigger": "impossible"
     }
   },

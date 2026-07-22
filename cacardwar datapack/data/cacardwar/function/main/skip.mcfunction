@@ -1,8 +1,11 @@
 function cacardwar:main/clear_item
-$function cacardwar:operation/summoner {team:$(oppteam),oppteam:$(team)}
+$function cacardwar:operation/turn/summoner {team:$(oppteam),oppteam:$(team)}
+$function cacardwar:operation/turn/regenerating {team:$(oppteam),oppteam:$(team)}
 
 $scoreboard players remove @e[tag=cacard.$(oppteam)Zombie] cacard.summonleft 1
 $scoreboard players remove @e[tag=cacard.$(oppteam)Trader] cacard.summonleft 1
+$scoreboard players remove @e[tag=cacard.$(oppteam)SuperZombie] cacard.summonleft 1
+$scoreboard players remove @e[tag=cacard.$(oppteam)Scarecrow] cacard.summonleft 1
 
 $execute if score #cacard.$(team)Health cacard.health > #cacard.$(oppteam)Health cacard.health run scoreboard players add @a[tag=cacard.$(team)Team] cacard.point 7
 $execute if score #cacard.$(team)Health cacard.health < #cacard.$(oppteam)Health cacard.health run scoreboard players add @a[tag=cacard.$(oppteam)Team] cacard.point 7

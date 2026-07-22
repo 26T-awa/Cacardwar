@@ -26,6 +26,9 @@
 		"cacardwar:item_detect/superzombie",
 		"cacardwar:item_detect/trader",
 		"cacardwar:item_detect/zombie",
-		"cacardwar:item_detect/zombie_headcraft"
+		"cacardwar:item_detect/zombie_headcraft",
+		"cacardwar:item_detect/scarecrow",
+		"cacardwar:item_detect/golden_head",
+		"cacardwar:item_detect/newly_bread"
 	]
 }

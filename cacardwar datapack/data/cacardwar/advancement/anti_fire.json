@@ -1,7 +1,7 @@
 {
   "parent": "cacardwar:craft_shield",
   "criteria": {
-    "craft_shield": {
+    "anti_fire": {
       "trigger": "impossible"
     }
   },

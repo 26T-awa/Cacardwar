@@ -1,6 +1,6 @@
 {
-  "parent": "cacardwar:root",
-  "criteria": {
+    "parent": "cacardwar:root",
+    "criteria": {
     "regenerate_any": {
       "trigger": "impossible"
     }
@@ -15,5 +15,5 @@
     },
     "show_toast": true,
     "title": "我正在治疗！"
-  }
+    }
 }

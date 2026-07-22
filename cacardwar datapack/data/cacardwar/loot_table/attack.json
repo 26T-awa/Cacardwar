@@ -8,7 +8,7 @@
                 {
                     "type": "item",
                     "name": "iron_ingot",
-                    "weight": 17,
+                    "weight": 173,
                     "functions": [
                         {
                             "function": "set_count",
@@ -23,6 +23,7 @@
                             "tag": {
                                 "cacardwar": [
                                     "iron_ingot",
+                                    "mineral",
                                     "card"
                                 ]
                             }
@@ -50,7 +51,7 @@
                 {
                     "type": "item",
                     "name": "gold_ingot",
-                    "weight": 14,
+                    "weight": 145,
                     "functions": [
                         {
                             "function": "set_count",
@@ -65,6 +66,7 @@
                             "tag": {
                                 "cacardwar": [
                                     "gold_ingot",
+                                    "mineral",
                                     "card"
                                 ]
                             }
@@ -92,7 +94,7 @@
                 {
                     "type": "item",
                     "name": "diamond",
-                    "weight": 19,
+                    "weight": 191,
                     "functions": [
                         {
                             "function": "set_count",
@@ -107,6 +109,7 @@
                             "tag": {
                                 "cacardwar": [
                                     "diamond",
+                                    "mineral",
                                     "card"
                                 ]
                             }
@@ -134,7 +137,7 @@
                 {
                     "type": "item",
                     "name": "gunpowder",
-                    "weight": 20,
+                    "weight": 201,
                     "functions": [
                         {
                             "function": "set_count",
@@ -167,7 +170,7 @@
                 {
                     "type": "item",
                     "name": "stick",
-                    "weight": 10,
+                    "weight": 97,
                     "functions": [
                         {
                             "function": "set_count",
@@ -216,7 +219,7 @@
                 {
                     "type": "item",
                     "name": "oak_log",
-                    "weight": 7,
+                    "weight": 73,
                     "functions": [
                         {
                             "function": "set_count",
@@ -265,7 +268,7 @@
                 {
                     "type": "item",
                     "name": "apple",
-                    "weight": 4,
+                    "weight": 42,
                     "functions": [
                         {
                             "function": "set_count",
@@ -307,7 +310,7 @@
                 {
                     "type": "item",
                     "name": "bundle",
-                    "weight": 8,
+                    "weight": 63,
                     "functions": [
                         {
                             "function": "set_count",
@@ -349,7 +352,7 @@
                 {
                     "type": "item",
                     "name": "nether_star",
-                    "weight": 1,
+                    "weight": 13,
                     "functions": [
                         {
                             "function": "set_count",
@@ -391,7 +394,7 @@
                 {
                     "type": "item",
                     "name": "player_head",
-                    "weight": 1,
+                    "weight": 2,
                     "functions": [
                         {
                             "function": "set_count",

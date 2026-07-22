@@ -37,8 +37,6 @@ execute if score #cacard.time cacard.time matches 1 run tag @a[scores={cacard.ca
 execute if score #cacard.time cacard.time matches 1 run tag @a[scores={cacard.cardsetype=2}] add cacard.average
 execute if score #cacard.time cacard.time matches 1 run tag @a[scores={cacard.cardsetype=3}] add cacard.resist
 execute if score #cacard.time cacard.time matches 1 run tag @a[scores={cacard.cardsetype=4}] add cacard.summon
-function cacardwar:preparation/getcardset {team:red}
-function cacardwar:preparation/getcardset {team:blue}
 ##4.2抽取先后手,1 == 红先 , 0 == 蓝先
 $execute if score #cacard.time cacard.time matches 1 store result score #cacard.time cacard.gameSeed run random value 1..2147483647 $(seed)
 execute if score #cacard.time cacard.time matches 1 run scoreboard players operation @a[tag=cacard.ready] cacard.gameSeed = #cacard.time cacard.gameSeed
@@ -89,7 +87,7 @@ execute if score #cacard.time cacard.isongoing matches 1 unless score #cacard.ti
 ##4.10评分
 execute as @a[tag=cacard.ready] run scoreboard players operation @s cacard.point -= @s cacard.leftcardcount
 scoreboard players set @a[tag=cacard.ready] cacard.leftcardcount 0
-execute if score #cacard.time cacard.isongoing matches 1 run title @a[tag=cacard.ingame,tag=!cacard.ready,scores={cacard.showRate=1..}] actionbar [{score:{name:"@a[tag=cacard.blueTeam]",objective:"cacard.point"},color:"aqua"},{text:"§r : "},{score:{name:"@a[tag=cacard.redTeam]",objective:"cacard.point"},color:"gold"}]
+execute if score #cacard.time cacard.isongoing matches 1 run title @a[tag=cacard.ingame,scores={cacard.showRate=1..}] actionbar [{score:{name:"@a[tag=cacard.blueTeam]",objective:"cacard.point"},color:"aqua"},{text:"§r : "},{score:{name:"@a[tag=cacard.redTeam]",objective:"cacard.point"},color:"gold"}]
 ##4.11胜负判断
 execute if score #cacard.time cacard.isongoing matches 2 run function cacardwar:main/info with storage cacardwar:cardsetinfo
 execute if score #cacard.redHealth cacard.health <= #cacard.j cacard.health run function cacardwar:main/win {team:blue,oppteam:red,fcolors:[5294056,2217976,2669309],text1:"b",text2:"蓝",color:aqua}
@@ -101,69 +99,37 @@ execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cac
 execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run scoreboard players set @s cacard.cardcount 0
 execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run scoreboard players set @s cacard.shieldtype 0
 execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run scoreboard players set @s cacard.point 0
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.shield_fire
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.shield_sword
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.hungry
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.attack
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.average
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.resist
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.summon
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.blueTeam
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.redTeam
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.winner
-execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run function cacardwar:main/recover_all_slot
 execute as @a[tag=cacard.ready,scores={cacard.joinGame=1..}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run scoreboard players set @s cacard.gameSeed -1
-execute as @a[tag=cacard.ready,scores={cacard.gameSeed=-1}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run tag @s remove cacard.ready
+execute as @a[tag=cacard.ready,scores={cacard.gameSeed=-1}] unless score @s cacard.gameSeed = #cacard.time cacard.gameSeed run function cacardwar:main/remove_all_tag
 scoreboard players set @a[scores={cacard.gameSeed=..-1}] cacard.gameSeed 0
 scoreboard players set @a[scores={cacard.joinGame=1}] cacard.joinGame 0
 
 #5.召唤物生成
 ##5.1召唤物初始生命值
-scoreboard players add @e[tag=cacard.tosummon,type=zombie] cacard.summonleft 2
-scoreboard players add @e[tag=cacard.tosummon,type=wandering_trader] cacard.summonleft 4
-scoreboard players add @e[tag=cacard.tosummon,type=husk] cacard.summonleft 2
+scoreboard players add @e[type=zombie,tag=cacard.tosummon,tag=cacard.Zombie] cacard.summonleft 2
+scoreboard players add @e[type=wandering_trader,tag=cacard.tosummon,tag=cacard.Trader] cacard.summonleft 4
+scoreboard players add @e[type=husk,tag=cacard.tosummon,tag=cacard.SuperZombie] cacard.summonleft 2
+scoreboard players add @e[type=armor_stand,tag=cacard.tosummon,tag=cacard.Scarecrow] cacard.summonleft 2
 ##5.2召唤物生成与清除
 tag @e[tag=cacard.tosummon] remove cacard.tosummon
+###5.2.1稻草人自然消失
+execute as @e[scores={cacard.summonleft=..0},tag=cacard.summoner,tag=cacard.blueScarecrow] at @s run function cacardwar:operation/bless_of_crow {team:blue,oppteam:red,teamcolor:aqua,teamtext:"b蓝"}
+execute as @e[scores={cacard.summonleft=..0},tag=cacard.summoner,tag=cacard.redScarecrow] at @s run function cacardwar:operation/bless_of_crow {team:red,oppteam:blue,teamcolor:gold,teamtext:"6红"}
+###~5.2.1
+execute as @e[scores={cacard.summonleft=..0},tag=cacard.summoner,tag=!cacard.Scarecrow] at @s run particle poof ~ ~ ~ 0.2 0.5 0.2 0.1 16 normal @a[tag=cacard.ingame]
 execute as @e[scores={cacard.summonleft=..0},tag=cacard.summoner] at @s run tp @s ~ -100 ~
 kill @e[scores={cacard.summonleft=..0},tag=cacard.summoner]
 
 #6.效果
-##6.1盾
-###6.1.1蓝方铁盾
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=1}] at @e[tag=cacard.blue5] run particle $(particle1)
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=4}] at @e[tag=cacard.blue5] run particle $(particle1)
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=5}] at @e[tag=cacard.blue5] run particle $(particle1)
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=7}] at @e[tag=cacard.blue5] run particle $(particle1)
-###6.1.2蓝方金盾
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=2}] at @e[tag=cacard.blue5] run particle $(particle2)
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=4}] at @e[tag=cacard.blue5] run particle $(particle2)
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=6}] at @e[tag=cacard.blue5] run particle $(particle2)
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=7}] at @e[tag=cacard.blue5] run particle $(particle2)
-###6.1.3蓝方钻盾
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=3}] at @e[tag=cacard.blue5] run particle $(particle3)
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=5}] at @e[tag=cacard.blue5] run particle $(particle3)
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=6}] at @e[tag=cacard.blue5] run particle $(particle3)
-$execute if entity @a[tag=cacard.blueTeam,scores={cacard.shieldtype=7}] at @e[tag=cacard.blue5] run particle $(particle3)
-###6.1.4红方铁盾
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=1}] at @e[tag=cacard.red5] run particle $(particle1)
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=4}] at @e[tag=cacard.red5] run particle $(particle1)
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=5}] at @e[tag=cacard.red5] run particle $(particle1)
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=7}] at @e[tag=cacard.red5] run particle $(particle1)
-###6.1.5红方金盾
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=2}] at @e[tag=cacard.red5] run particle $(particle2)
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=4}] at @e[tag=cacard.red5] run particle $(particle2)
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=6}] at @e[tag=cacard.red5] run particle $(particle2)
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=7}] at @e[tag=cacard.red5] run particle $(particle2)
-###6.1.6红方钻盾
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=3}] at @e[tag=cacard.red5] run particle $(particle3)
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=5}] at @e[tag=cacard.red5] run particle $(particle3)
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=6}] at @e[tag=cacard.red5] run particle $(particle3)
-$execute if entity @a[tag=cacard.redTeam,scores={cacard.shieldtype=7}] at @e[tag=cacard.red5] run particle $(particle3)
-##6.2饥饿
-execute if entity @a[tag=cacard.blueTeam,tag=cacard.hungry] at @e[tag=cacard.blue5] run particle dust{color:[0.35,0.2,0],scale:1} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]
-execute if entity @a[tag=cacard.redTeam,tag=cacard.hungry] at @e[tag=cacard.red5] run particle dust{color:[0.35,0.2,0],scale:1} ~ ~2 ~ 0.5 0.3 0.5 0 1 normal @a[tag=cacard.ingame]
+$execute if score #cacard.timeCheck cacard.time matches 10 run function cacardwar:main/particle {particle1:"$(particle1)",particle2:"$(particle2)",particle3:"$(particle3)"}
 
 #7.局外玩家模型
 ##7.1注视
 execute as @e[type=mannequin,tag=cacardwar,limit=1] at @s facing entity @a[distance=..6] feet run tp @s ~ ~ ~ ~ ~
 execute as @e[type=parrot,tag=cacardwar,limit=1] at @s facing entity @a[distance=..4] feet run tp @s ~ ~ ~ ~ ~
+
+#8.乌鸦的赐福
+#8.1物品转变
+execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run particle happy_villager ~ ~ ~ 0.2 0.8 0.2 0 8 normal @a[tag=cacard.ready]
+execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run give @s wheat[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §a§l新生的小麦"}],custom_data={cacardwar:["newly_wheat","card"]},custom_model_data={strings:["cacardwar:newly_wheat"]}] 1
+execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run clear @s wheat[custom_data~{"cacardwar":["wheat"]}] 1

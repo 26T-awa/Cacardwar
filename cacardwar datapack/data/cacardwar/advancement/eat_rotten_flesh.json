@@ -1,7 +1,7 @@
 {
   "parent": "cacardwar:regenerate_any",
   "criteria": {
-    "regenerate_golden_apple": {
+    "eat_rotten_flesh": {
       "trigger": "impossible"
     }
   },

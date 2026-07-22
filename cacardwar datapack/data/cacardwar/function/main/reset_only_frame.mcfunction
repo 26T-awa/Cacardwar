@@ -20,6 +20,11 @@ execute as @e[tag=cacard.center] at @s positioned ^3 ^1 ^-1 unless entity @e[typ
 execute as @e[tag=cacard.center] at @s positioned ^4 ^1 ^-1 unless entity @e[type=item_frame,distance=...5] run summon item_frame ~ ~ ~ {Facing:1b,Tags:["cacard.blue","cacard.blue6"]}
 execute as @e[tag=cacard.center] at @s positioned ^5 ^1 ^-1 unless entity @e[type=item_frame,distance=...5] run summon item_frame ~ ~ ~ {Facing:1b,Tags:["cacard.blue","cacard.blue9"]}
 
+execute as @e[tag=cacard.blue] run data modify entity @s ItemRotation set value 4b
+execute as @e[tag=cacard.blue0] run data modify entity @s ItemRotation set value 4b
+execute as @e[tag=cacard.red] run data modify entity @s ItemRotation set value 0b
+execute as @e[tag=cacard.red0] run data modify entity @s ItemRotation set value 0b
+
 function cacardwar:main/disable_slot
 
 title @a[tag=cacard.ingame] actionbar {text:"§e§l已重置物品展示框！"}

@@ -1,7 +1,7 @@
 {
   "parent": "cacardwar:craft_shield",
   "criteria": {
-    "craft_shield": {
+    "full_shield": {
       "trigger": "impossible"
     }
   },
