@@ -2,6 +2,7 @@ tellraw @s {text:"§a感谢参与测试的小伙伴（游戏ID，按字母排序
 tellraw @s {text:"§aAkarui111"}
 tellraw @s {text:"§aApocalyse25"}
 tellraw @s {text:"§aAx1Le_0021"}
+tellraw @s {text:"§aMintkm"}
 tellraw @s {text:"§aTianShaHAD"}
 tellraw @s {text:"§aYumWarrika"}
 tellraw @s {text:"§amuyuangu"}
