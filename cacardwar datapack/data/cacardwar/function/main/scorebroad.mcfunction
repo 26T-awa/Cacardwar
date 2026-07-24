@@ -74,3 +74,7 @@ bossbar set cacardwar:bluehealth style notched_20
 bossbar set cacardwar:redhealth style notched_20
 bossbar set cacardwar:bluehealth players @a[tag=cacard.ingame]
 bossbar set cacardwar:redhealth players @a[tag=cacard.ingame]
+
+#5.入场动画
+scoreboard objectives add cacard.newPlayer dummy
+scoreboard players add @a cacard.newPlayer 0

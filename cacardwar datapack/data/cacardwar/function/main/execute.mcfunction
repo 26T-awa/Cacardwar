@@ -133,3 +133,21 @@ execute as @e[type=parrot,tag=cacardwar,limit=1] at @s facing entity @a[distance
 execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run particle happy_villager ~ ~ ~ 0.2 0.8 0.2 0 8 normal @a[tag=cacard.ready]
 execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run give @s wheat[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §a§l新生的小麦"}],custom_data={cacardwar:["newly_wheat","card"]},custom_model_data={strings:["cacardwar:newly_wheat"]}] 1
 execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run clear @s wheat[custom_data~{"cacardwar":["wheat"]}] 1
+
+#9.入场动画
+scoreboard players add @a[tag=cacard.newPlayer,scores={cacard.newPlayer=0..600}] cacard.newPlayer 1
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=20}] at @s run function cacardwar:main/others/newplayer2
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=140}] at @s run function cacardwar:main/others/newplayer3
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=240}] at @s run function cacardwar:main/others/newplayer4
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=340}] at @s run function cacardwar:main/others/newplayer5
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=440}] at @s run function cacardwar:main/others/newplayer6
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=540}] at @s run function cacardwar:main/others/newplayer7
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=600}] at @s run function cacardwar:main/others/newplayer8
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=21}] at @s run playsound minecraft:item.armor.equip_elytra master @s
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=141}] at @s run playsound minecraft:item.armor.equip_elytra master @s
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=241}] at @s run playsound minecraft:item.armor.equip_elytra master @s
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=341}] at @s run playsound minecraft:item.armor.equip_elytra master @s
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=441}] at @s run playsound minecraft:item.armor.equip_elytra master @s
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=541}] at @s run playsound minecraft:item.armor.equip_elytra master @s
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=-1}] at @s run playsound minecraft:item.armor.equip_elytra master @s
+scoreboard players reset @a[scores={cacard.newPlayer=-1}] cacard.newPlayer
