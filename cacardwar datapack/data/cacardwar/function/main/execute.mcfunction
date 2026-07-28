@@ -31,7 +31,7 @@ execute if score #cacard.redHealth cacard.health > #cacard.k cacard.health run s
 execute store result bossbar cacardwar:redhealth value run scoreboard players get #cacard.redHealth cacard.health
 execute if score #cacard.redHealth cacard.health <= #cacard.j cacard.health run bossbar set cacardwar:bluehealth value 0
 
-#4.对局
+#4.标准对局
 ##4.1卡组信息
 execute if score #cacard.time cacard.time matches 1 run tag @a[scores={cacard.cardsetype=1}] add cacard.attack
 execute if score #cacard.time cacard.time matches 1 run tag @a[scores={cacard.cardsetype=2}] add cacard.average
@@ -67,8 +67,10 @@ execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.ra
 execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 0 run item replace entity @a[tag=cacard.blueTeam] hotbar.8 with lime_concrete[custom_data={cacardwar:["skip","non-card"]},enchantment_glint_override=true,custom_name={text:"§a按F（或切换至副手位）跳过你的回合"}] 1
 execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 0 run item replace entity @a[tag=cacard.redTeam] hotbar.4 with barrier[custom_data={cacardwar:["none","non-card"]},enchantment_glint_override=true,custom_name={text:"§c现在不是你的回合"}] 1
 ##4.6跳过回合
-execute as @a[nbt={equipment:{offhand:{id:"minecraft:lime_concrete",components:{"minecraft:custom_data":{cacardwar:["skip"]}}}}},tag=cacard.blueTeam] run function cacardwar:main/skip {team:blue,oppteam:red}
-execute as @a[nbt={equipment:{offhand:{id:"minecraft:lime_concrete",components:{"minecraft:custom_data":{cacardwar:["skip"]}}}}},tag=cacard.redTeam] run function cacardwar:main/skip {team:red,oppteam:blue}
+execute if items entity @a[tag=cacard.blueTeam] weapon.offhand lime_concrete[custom_data~{cacardwar:["skip"]}] run function cacardwar:main/skip {team:blue,oppteam:red}
+execute if items entity @a[tag=cacard.redTeam] weapon.offhand lime_concrete[custom_data~{cacardwar:["skip"]}] run function cacardwar:main/skip {team:red,oppteam:blue}
+#execute as @a[nbt={equipment:{offhand:{id:"minecraft:lime_concrete",components:{"minecraft:custom_data":{cacardwar:["skip"]}}}}},tag=cacard.blueTeam] run function cacardwar:main/skip {team:blue,oppteam:red}
+#execute as @a[nbt={equipment:{offhand:{id:"minecraft:lime_concrete",components:{"minecraft:custom_data":{cacardwar:["skip"]}}}}},tag=cacard.redTeam] run function cacardwar:main/skip {team:red,oppteam:blue}
 ##4.7物品保护
 execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 1 run execute as @e[tag=cacard.blue] run data modify entity @s Fixed set value true
 execute if score #cacard.time cacard.time matches 2 if score #cacard.i cacard.random matches 1 run execute as @e[tag=cacard.blue0] run data modify entity @s Fixed set value true
@@ -150,4 +152,30 @@ execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=341}] at @s run play
 execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=441}] at @s run playsound minecraft:item.armor.equip_elytra master @s
 execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=541}] at @s run playsound minecraft:item.armor.equip_elytra master @s
 execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=-1}] at @s run playsound minecraft:item.armor.equip_elytra master @s
-scoreboard players reset @a[scores={cacard.newPlayer=-1}] cacard.newPlayer
+scoreboard players reset @a[scores={cacard.newPlayer=..-1}] cacard.newPlayer
+
+#10.基础教程
+scoreboard players add @a[tag=cacard.bt,scores={cacard.basicTuition=0..600}] cacard.basicTuition 1
+execute as @a[tag=cacard.bt1,scores={cacard.basicTuition=20}] at @s run function cacardwar:basic_tuition/bt1_1
+execute as @a[tag=cacard.bt1,scores={cacard.basicTuition=100}] at @s run function cacardwar:basic_tuition/bt1_2
+execute as @a[tag=cacard.bt1,scores={cacard.basicTuition=180}] at @s run function cacardwar:basic_tuition/bt1_3
+execute as @a[tag=cacard.bt1,tag=cacard.ready,tag=cacard.redTeam] at @s run function cacardwar:basic_tuition/bt1_4
+
+execute as @a[tag=cacard.bt2,scores={cacard.basicTuition=40}] at @s run function cacardwar:basic_tuition/bt2_1
+execute as @a[tag=cacard.bt2,scores={cacard.basicTuition=120}] at @s run function cacardwar:basic_tuition/bt2_2
+execute as @a[tag=cacard.bt2,scores={cacard.basicTuition=200}] at @s run function cacardwar:basic_tuition/bt2_3
+execute as @a[tag=cacard.bt2,scores={cacard.basicTuition=600}] at @s run tellraw @s [{text:"                  "},{text:"§7§l[重 试]§r",click_event:{action:"run_command",command:"/function cacardwar:basic_tuition/bt2_retry"}}]
+
+execute as @a[tag=cacard.bt3,scores={cacard.basicTuition=40}] at @s run function cacardwar:basic_tuition/bt3_1
+execute as @a[tag=cacard.bt3,scores={cacard.basicTuition=120}] at @s run function cacardwar:basic_tuition/bt3_2
+execute as @a[tag=cacard.bt3,scores={cacard.basicTuition=200}] at @s run function cacardwar:basic_tuition/bt3_3
+execute as @a[tag=cacard.bt3,scores={cacard.basicTuition=260}] at @s run function cacardwar:basic_tuition/bt3_4
+execute as @a[tag=cacard.bt3,tag=cacard.ready,tag=cacard.redTeam,scores={cacard.basicTuition=261..601}] if score #cacard.redHealth cacard.health matches 16..20 at @s run function cacardwar:basic_tuition/bt3_5
+execute as @a[tag=cacard.bt3,scores={cacard.basicTuition=600}] if score #cacard.redHealth cacard.health matches 5..12 at @s run tellraw @s [{text:"                  "},{text:"§7§l[重 试]§r",click_event:{action:"run_command",command:"/function cacardwar:basic_tuition/bt3_retry"}}]
+execute as @a[tag=cacard.bt3,scores={cacard.basicTuition=600}] if score #cacard.redHealth cacard.health matches 13..15 at @s run tellraw @s [{text:"            "},{text:"§7§l[重 试]§r",click_event:{action:"run_command",command:"/function cacardwar:basic_tuition/bt3_retry"}},{text:"      "},{text:"§a§l[跳 过]§r",click_event:{action:"run_command",command:"/function cacardwar:basic_tuition/bt3_5"}}]
+
+execute as @a[tag=cacard.bt4,scores={cacard.basicTuition=40}] at @s run function cacardwar:basic_tuition/bt4_1
+execute as @a[tag=cacard.bt4,scores={cacard.basicTuition=120}] at @s run function cacardwar:basic_tuition/bt4_2
+execute as @a[tag=cacard.bt4,scores={cacard.basicTuition=200}] at @s run function cacardwar:basic_tuition/bt4_3
+execute as @a[tag=cacard.bt4,scores={cacard.basicTuition=250}] at @s run function cacardwar:basic_tuition/bt4_4
+scoreboard players reset @a[tag=!cacard.bt] cacard.basicTuition

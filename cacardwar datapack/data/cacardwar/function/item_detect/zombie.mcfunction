@@ -1,3 +1,3 @@
-execute if entity @e[tag=cacard.blue2,nbt={Item:{components:{"minecraft:custom_data":{"cacardwar":["head","head_zombie"]}}}}] run function cacardwar:operation/zombie {team:blue,oppteam:red,teamcolor:aqua,teamtext:"b蓝",zombiecolor:5636095,rotation:0}
+execute if items entity @e[tag=cacard.blue2,limit=1] contents *[custom_data~{cacardwar:["head","head_zombie"]}] run function cacardwar:operation/zombie {team:blue,oppteam:red,teamcolor:aqua,teamtext:"b蓝",zombiecolor:5636095,rotation:0}
 
-execute if entity @e[tag=cacard.red2,nbt={Item:{components:{"minecraft:custom_data":{"cacardwar":["head","head_zombie"]}}}}] run function cacardwar:operation/zombie {team:red,oppteam:blue,teamcolor:gold,teamtext:"6红",zombiecolor:16755200,rotation:180}
+execute if items entity @e[tag=cacard.red2,limit=1] contents *[custom_data~{cacardwar:["head","head_zombie"]}] run function cacardwar:operation/zombie {team:red,oppteam:blue,teamcolor:gold,teamtext:"6红",zombiecolor:16755200,rotation:180}

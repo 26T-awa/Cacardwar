@@ -14,7 +14,8 @@ tellraw @s {text:"§8- §7因技术原因，请勿丢弃、带出卡牌，避免
 tellraw @s {text:"§8- §f对局开始前，请清空物品栏以防止您原本的物品消失。§r"}
 tellraw @s {text:"§8- §7请确保游戏难度不为和平，否则部分召唤物将无法生成。§r"}
 tellraw @s {text:"§8- §f每次加载世界都会重置对局。§r"}
-tellraw @s {text:"§8- §7你可以通过/trigger cacard.showRate set 1（或0）来开启（或关闭）胜率天平。仅作为参考。§r",click_event:{action:"suggest_command",command:"/trigger cacard.showRate set 1"}}
+tellraw @s {text:"§8- §7一个世界只允许一个场地存在。§r"}
+tellraw @s {text:"§8- §f你可以通过§n/trigger cacard.showRate set 1§r§f（或0）来开启（或关闭）胜率天平。仅作为参考。§r",click_event:{action:"suggest_command",command:"/trigger cacard.showRate set 1"}}
 
 #tellraw @s {text:"§8- §f§r"}
 #tellraw @s {text:"§8- §7§r"}

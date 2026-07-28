@@ -64,7 +64,7 @@ bossbar add cacardwar:bluehealth ""
 bossbar add cacardwar:redhealth ""
 execute if entity @a[tag=cacard.blueTeam,tag=cacard.ingame] run bossbar set cacardwar:bluehealth name [{text:"§b蓝方生命值:"},{score:{name:"#cacard.blueHealth",objective:cacard.health},color:light_purple}]
 execute if entity @a[tag=cacard.redTeam,tag=cacard.ingame] run bossbar set cacardwar:redhealth name [{text:"§6红方生命值:"},{score:{name:"#cacard.redHealth",objective:cacard.health},color:light_purple}]
-execute unless entity @a[tag=cacard.blueTeam] run bossbar set cacardwar:bluehealth name [{text:"§e等待玩家…"}]
+execute unless score #cacard.time cacard.isongoing matches 3..4 unless entity @a[tag=cacard.blueTeam] run bossbar set cacardwar:bluehealth name [{text:"§e等待玩家…"}]
 execute unless entity @a[tag=cacard.redTeam] run bossbar set cacardwar:redhealth name [{text:"§e等待玩家…"}]
 bossbar set cacardwar:bluehealth max 20
 bossbar set cacardwar:redhealth max 20
@@ -78,3 +78,7 @@ bossbar set cacardwar:redhealth players @a[tag=cacard.ingame]
 #5.入场动画
 scoreboard objectives add cacard.newPlayer dummy
 scoreboard players add @a cacard.newPlayer 0
+
+#6.基础教程
+scoreboard objectives add cacard.basicTuition dummy
+scoreboard players add @a[tag=cacard.bt] cacard.basicTuition 0

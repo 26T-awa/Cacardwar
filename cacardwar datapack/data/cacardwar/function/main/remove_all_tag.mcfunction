@@ -16,3 +16,11 @@ tag @s remove cacard.blueTeam
 tag @s remove cacard.redTeam
 tag @s remove cacard.winner
 tag @s remove cacard.ready
+
+tag @s remove cacard.newPlayer
+tag @s remove cacard.bt
+tag @s remove cacard.bt1
+tag @s remove cacard.bt2
+tag @s remove cacard.bt3
+tag @s remove cacard.bt4
+tag @s remove cacard.bt100

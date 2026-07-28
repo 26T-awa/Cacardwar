@@ -1,0 +1,22 @@
+{
+  "parent": "cacardwar:craft_pickaxe_steal",
+  "criteria": {
+    "steal_many_diamonds": {
+      "trigger": "impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": "CCW:以某种合成方式获得4个钻石",
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "id": "diamond_pickaxe",
+      "components": {
+        "enchantment_glint_override": true
+      }
+    },
+    "show_toast": true,
+    "title": "时运Ⅲ"
+  }
+}

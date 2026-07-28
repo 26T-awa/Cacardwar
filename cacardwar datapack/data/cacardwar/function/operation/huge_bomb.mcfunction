@@ -1,4 +1,4 @@
-$execute if entity @a[tag=cacard.$(oppteam)Team,tag=!cacard.shield_fire] at @e[tag=cacard.$(oppteam)5] run particle damage_indicator ~ ~2 ~ 0.2 0.2 0.2 0.1 16 normal
+$execute if entity @a[tag=cacard.$(oppteam)Team,tag=!cacard.shield_fire] at @e[tag=cacard.$(oppteam)5] run particle damage_indicator ~ ~2 ~ 0.2 0.2 0.2 0.1 15 normal
 $execute if entity @a[tag=cacard.$(oppteam)Team,tag=cacard.shield_fire] at @e[tag=cacard.$(oppteam)5] run particle damage_indicator ~ ~2 ~ 0.2 0.2 0.2 0.1 2 normal
 $execute at @e[tag=cacard.$(oppteam)5] run playsound entity.generic.explode master @a[tag=cacard.ingame] ~ ~ ~ 2 1 1
 $execute if entity @a[tag=cacard.$(oppteam)Team,scores={cacard.shieldtype=1..7}] at @e[tag=cacard.$(oppteam)5] run playsound item.shield.break master @a[tag=cacard.ingame] ~ ~ ~ 2 1.2 1

@@ -7,7 +7,7 @@
   },
   "display": {
     "announce_to_chat": true,
-    "description": "CCW:合成一把镐，并成功偷取对方的一个物品",
+    "description": "CCW:合成一把镐，并成功偷取对方的物品",
     "frame": "task",
     "hidden": false,
     "icon": {

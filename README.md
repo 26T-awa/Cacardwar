@@ -1,18 +1,19 @@
 <!-- markdownlint-disable MD033 -->
+<!-- markdownlint-disable MD034 -->
 # 牌牌大作战数据包
 
 <center> By _26T </center>
 
 ## 简介
 
-**牌牌大作战**是一个MC Java原版数据包。在牌牌大作战，你可以使用 MC 基于原版物品的**卡牌**，利用原版以及新颖的**合成配方**，**进攻、防守、回复甚至召唤**，与好友一起进行激情而愉快的决斗，**取得成就、完成挑战**。这是一个小游戏数据包。
+**牌牌大作战**是一个MC Java原版数据包。在牌牌大作战，你可以使用基于MC原版物品的**卡牌**，利用原版以及新颖的**合成配方**，**进攻、防守、回复甚至召唤**，与好友一起进行激情而愉快的决斗，**取得成就、完成挑战**。这是一个小游戏数据包。
 
 > **Description** in English:  
 > **CacardWar** is a Minecraft Datapack that using **cards** based on original Minecraft items to fight with your friends through various **original or customed recipes, achieve amazing challenges and so on**. Treat it as a mini-game running on Minecraft Java Edition.
 
 ## 更新进度
 
-> pre v5.1 ~ v5.1正式版
+> pre v5.2 ~ v5.2正式版
 
 ### 2026-7-17 [33]
 
@@ -85,7 +86,7 @@
 > v1-v3.4 仅保证Java 1.21.7  
 > v4.1 适用Java 1.21.7和1.21.8  
 > v4.2, v4.3 适用Java 1.21.7、1.21.8、1.21.9和1.21.10  
-> v5.1 适用Java 1.21.11  
+> v5.1 适用Java 1.21.11、26.1、26.1.2、26.2  
 
 **请安装在合适的mc版本上！**
 

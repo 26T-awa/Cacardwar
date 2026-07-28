@@ -1,5 +1,5 @@
 tag @s add cacard.show7
-execute as @e[tag=cacard.center,limit=1] at @s run tp @a[tag=cacard.show7,limit=1,sort=nearest] ~16 ~4 ~ 90 0
+execute at @e[tag=cacard.center,limit=1] run tp @s ~16 ~4 ~ 90 0
 playsound minecraft:item.armor.equip_elytra master @s
 playsound minecraft:entity.player.levelup master @s
 tellraw @s {text:"\n6. 作者：_26T\n"}

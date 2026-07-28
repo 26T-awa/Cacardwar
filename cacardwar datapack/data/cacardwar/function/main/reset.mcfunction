@@ -25,9 +25,13 @@ scoreboard players set #cacard.time cacard.gameSeed 0
 scoreboard players set @a[tag=cacard.ready] cacard.cardcount 0
 scoreboard players set @a[tag=cacard.ready] cacard.gameSeed 0
 scoreboard players set @a[tag=cacard.ready] cacard.shieldtype 0
-execute as @a[tag=cacard.ready] run function cacardwar:main/remove_all_tag
+execute as @a run function cacardwar:main/remove_all_tag
 scoreboard players set @a[tag=cacard.ingame] cacard.point 0
+bossbar set cacardwar:bluehealth value 0
+bossbar set cacardwar:redhealth value 0
 bossbar remove cacardwar:bluehealth
 bossbar remove cacardwar:redhealth
 team empty CacardwarPlayers
 scoreboard objectives remove cacard.Info
+scoreboard objectives remove cacard.newPlayer
+scoreboard objectives remove cacard.basicTuition

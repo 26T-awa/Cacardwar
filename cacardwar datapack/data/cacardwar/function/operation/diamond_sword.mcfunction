@@ -1,4 +1,9 @@
-$execute if entity @a[tag=cacard.$(oppteam)Team,tag=!cacard.shield_sword] at @e[tag=cacard.$(oppteam)5] run particle damage_indicator ~ ~2 ~ 0.2 0.2 0.2 0.1 7 normal
+execute if score #cacard.time cacard.isongoing matches 3..4 run particle damage_indicator ~ ~2 ~ 0.2 0.2 0.2 0.1 6 normal
+execute if score #cacard.time cacard.isongoing matches 3..4 run scoreboard players remove #cacard.blueHealth cacard.health 6
+execute if score #cacard.time cacard.isongoing matches 3..4 run bossbar set cacardwar:bluehealth name [{text:"§b蓝方生命值:"},{score:{name:"#cacard.blueHealth",objective:cacard.health},color:light_purple}]
+execute if score #cacard.time cacard.isongoing matches 3..4 as @a[tag=cacard.bt2,limit=1] at @s run function cacardwar:basic_tuition/bt2_4
+
+$execute if entity @a[tag=cacard.$(oppteam)Team,tag=!cacard.shield_sword] at @e[tag=cacard.$(oppteam)5] run particle damage_indicator ~ ~2 ~ 0.2 0.2 0.2 0.1 6 normal
 $execute at @e[tag=cacard.$(oppteam)5] run playsound entity.player.attack.sweep master @a[tag=cacard.ingame] ~ ~ ~ 2 1 1
 $execute if entity @a[tag=cacard.$(oppteam)Team,scores={cacard.shieldtype=1}] at @e[tag=cacard.$(oppteam)5] run playsound item.shield.break master @a[tag=cacard.ingame] ~ ~ ~ 2 1 1
 $execute if entity @a[tag=cacard.$(oppteam)Team,scores={cacard.shieldtype=3..7}] at @e[tag=cacard.$(oppteam)5] run playsound item.shield.break master @a[tag=cacard.ingame] ~ ~ ~ 2 1 1

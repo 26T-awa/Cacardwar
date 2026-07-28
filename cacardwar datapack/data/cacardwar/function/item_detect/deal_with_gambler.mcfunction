@@ -1,3 +1,3 @@
-execute if entity @e[tag=cacard.blue2,nbt={Item:{components:{"minecraft:custom_data":{"cacardwar":["deal"]}}}}] run function cacardwar:operation/deal_with_gambler {team:blue,oppteam:red,teamcolor:aqua,teamtext:"b蓝"}
+execute if items entity @e[tag=cacard.blue2,limit=1] contents *[custom_data~{cacardwar:["deal"]}] run function cacardwar:operation/deal_with_gambler {team:blue,oppteam:red,teamcolor:aqua,teamtext:"b蓝"}
 
-execute if entity @e[tag=cacard.red2,nbt={Item:{components:{"minecraft:custom_data":{"cacardwar":["deal"]}}}}] run function cacardwar:operation/deal_with_gambler {team:red,oppteam:blue,teamcolor:gold,teamtext:"6红"}
+execute if items entity @e[tag=cacard.red2,limit=1] contents *[custom_data~{cacardwar:["deal"]}] run function cacardwar:operation/deal_with_gambler {team:red,oppteam:blue,teamcolor:gold,teamtext:"6红"}
