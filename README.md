@@ -1,3 +1,4 @@
+<!-- markdownlint-disable MD032 -->
 <!-- markdownlint-disable MD033 -->
 <!-- markdownlint-disable MD034 -->
 # 牌牌大作战数据包
@@ -15,54 +16,33 @@
 
 > pre v5.2 ~ v5.2正式版
 
-### 2026-7-17 [33]
+### 2026-7-30 [36]
 
-加入：
+加入：  
+- 基础教程。  
+- 矿物质、矿物质团及其合成配方。  
 
-- 超级僵尸及其合成配方。
+修改：  
+- 铁镐文本显示问题。  
+- 现在跳过回合时会清空地上的卡牌。  
+- 上下楼文本显示调整为本地化按键绑定。  
+- 物品查询-效果部分加入下划线。  
+- 部分道具文本显示内容贴合原版风格。  
+- 新增金苹果、金头颅的合成配方  
 
-### 2026-7-18 [34]
-
-修复：
-
-- 金苹果无法恢复被禁用的备用槽位。
-- 游戏结束后无法正常清除被禁用的槽位标签。
-- 无法召唤超级僵尸。
-
-场景细节：
-
-- 以后的更新日志将通过右键苍白橡木告示牌查看。
-
-### 2026-7-22 [35]
-
-加入：
-
-- 稻草人及其合成配方。
-- “乌鸦的祝福”效果。
-- 金头颅及其合成配方。
-- 新玩家入场动画。
-
-修改：
-
-- 商人合成配方
-- 各卡组物品概率
-  
-场景细节：
-
-- 标准/经典模式规则可视化。
-- 道具及合成配方将通过右键樱花木悬挂式告示牌查看。
-- 部分场景改动以适配本次变更。
+场景细节：  
+- 增加场地景观。  
 
 ## 安装说明
 
 ### 加载数据包
 
-1. 新建存档，找到世界文件夹，将**cacardwar datapack**放进存档的**datapacks**(.../saves/<存档名称>/datapacks/)文件夹里即可。
+- 新建存档，找到世界文件夹，将**cacardwar datapack**放进存档的**datapacks**(.../saves/<存档名称>/datapacks/)文件夹里即可。
    > 注：在不同的版本下"cacardwar datapack"可能是"cacardwar" 或 "cacardwar datapack vx.x"
 
-2. 新建存档界面，在“**更多**”里找到“**数据包**”，点击“打开包文件夹”将**cacardwar**放进即可。
+- 新建存档界面，在“**更多**”里找到“**数据包**”，点击“打开包文件夹”将**cacardwar**放进即可。
 
-3. 在已有的存档里找到世界文件夹，同1，后在游戏中输入`/datapack enable "file/cacardwar"`，最后输入`/reload`或重进游戏即可。
+- 在已有的存档里找到世界文件夹，同1，后在游戏中输入`/datapack enable "file/cacardwar"`，最后输入`/reload`或重进游戏即可。
 
 ### 构建场地
 
@@ -127,21 +107,6 @@ B 站 UP 易羽田 的 [如何在我的世界里成为牌佬？以及我开放�
 
 ## 以下内容供技术开发和参考
 
-物品模型列表
+全物品
 
-    /give @s apple[custom_model_data={strings:["cacardwar:apple"]}]
-
-cacardwar:apple  
-cacardwar:bundle  
-cacardwar:diamond  
-cacardwar:gold_ingot  
-cacardwar:gunpowder  
-cacardwar:iron_ingot  
-cacardwar:deal  
-cacardwar:log  
-cacardwar:plank  
-cacardwar:rotten  
-cacardwar:stick  
-cacardwar:wheat  
-cacardwar:head  
-cacardwar:head_zombie  
+[/function cacardwar:main/others/give_me_all_item](<cacardwar datapack/data/cacardwar/function/main/others/give_me_all_item.mcfunction>)
