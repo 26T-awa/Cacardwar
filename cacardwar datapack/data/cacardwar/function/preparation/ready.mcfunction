@@ -1,5 +1,6 @@
 tag @s add cacard.ready
 scoreboard players set @s cacard.point 50
+$scoreboard players set #cacard.$(team)Health cacard.health 20
 execute if entity @s[scores={cacard.cardsetype=0}] run tellraw @s {text:"§e你并没有选择卡组或之前选择过卡组，已默认选择§a均衡型§e卡组！"}
 execute if entity @s[scores={cacard.cardsetype=0}] run scoreboard players set @s cacard.cardsetype 2
 $tag @s add cacard.$(team)Team

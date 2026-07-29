@@ -8,4 +8,14 @@ tellraw @s {text:"§8-  §6■■■■ §c■■■■ §6■■■■ §r"}
 tellraw @s {text:"§8+  §7□□□□ §6■■■■ §7□□□□ §r"}
 tellraw @s {text:"§8-  §7□□□□ §6■■■■ §7□□□□ §r"}
 tellraw @s {text:"§8+  §7□□□□ §6■■■■ §7□□□□ §r"}
+tellraw @s {text:"           §f§l或"}
+tellraw @s {text:"§8+  §6■■■■ §7□□□□ §6■■■■ §r"}
+tellraw @s {text:"§8-  §6■■■■ §7□□□□ §6■■■■ §r"}
+tellraw @s {text:"§8+  §6■■■■ §7□□□□ §6■■■■ §r"}
+tellraw @s {text:"§8-  §7□□□□ §c■■■■ §7□□□□ §r"}
+tellraw @s {text:"§8+  §7□□□□ §c■■■■ §7□□□□ §r"}
+tellraw @s {text:"§8-  §7□□□□ §c■■■■ §7□□□□ §r"}
+tellraw @s {text:"§8+  §6■■■■ §7□□□□ §6■■■■ §r"}
+tellraw @s {text:"§8-  §6■■■■ §7□□□□ §6■■■■ §r"}
+tellraw @s {text:"§8+  §6■■■■ §7□□□□ §6■■■■ §r"}
 tellraw @s {text:"§6■§7:§6金锭§7, §c■§7:§c苹果§r"}

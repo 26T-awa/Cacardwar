@@ -106,10 +106,10 @@ execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard
 execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt3,limit=1] run scoreboard players display name cacard.info8 cacard.Info {text:""}
 
 #基础教程阶段4：过关
-execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt100,limit=1] run scoreboard players display name cacard.info2 cacard.Info {text:"对局模式 : §b§l基础教程"}
-execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt100,limit=1] run scoreboard players display name cacard.info3 cacard.Info {text:""}
-execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt100,limit=1] run scoreboard players display name cacard.info4 cacard.Info {text:"当前阶段 : §d§l对局结束"}
-execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt100,limit=1] run scoreboard players display name cacard.info5 cacard.Info {text:""}
-execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt100,limit=1] run scoreboard players display name cacard.info6 cacard.Info {text:"你已经通过了基础教程！"}
-execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt100,limit=1] run scoreboard players display name cacard.info7 cacard.Info {text:""}
-execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt100,limit=1] run scoreboard players display name cacard.info8 cacard.Info {text:""}
+execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info2 cacard.Info {text:"对局模式 : §b§l基础教程"}
+execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info3 cacard.Info {text:""}
+execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info4 cacard.Info {text:"当前阶段 : §7§l补充"}
+execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info5 cacard.Info {text:""}
+execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info6 cacard.Info {text:""}
+execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info7 cacard.Info {text:""}
+execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info8 cacard.Info {text:""}

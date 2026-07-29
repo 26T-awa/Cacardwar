@@ -1,6 +1,6 @@
 tag @s add cacard.show3
 execute at @e[tag=cacard.center,limit=1] run tp @s ~7 ~4 ~ 90 37
-playsound minecraft:item.armor.equip_elytra master @s
+playsound item.armor.equip_elytra master @s
 execute at @e[tag=cacard.red5,limit=1] run particle glow ~ ~2 ~ 0 1 0 0 5 normal @a[tag=cacard.show3] 
 execute at @e[tag=cacard.blue5,limit=1] run particle glow ~ ~2 ~ 0 1 0 0 5 normal @a[tag=cacard.show3] 
 execute at @e[tag=cacard.red5,limit=1] run particle end_rod ~ ~2 ~ 0 1 0 0 15 normal @a[tag=cacard.show3] 

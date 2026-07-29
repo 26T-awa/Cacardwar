@@ -1,4 +1,4 @@
-tellraw @s {text:"§8- §f现在：试着合成一把钻石剑以攻击对手。§r\n"}
+tellraw @s {text:"§8- §f现在：试着合成一把钻石剑以攻击对手。（稍后可重试）§r\n"}
 
 give @s diamond[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §b§l钻石"}],custom_data={cacardwar:["diamond","card"]}] 2
 loot give @s loot cacardwar:basic_tuition

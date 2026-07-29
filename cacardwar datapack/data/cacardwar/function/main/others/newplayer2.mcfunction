@@ -1,6 +1,6 @@
 tag @s add cacard.show2
 execute at @e[tag=cacard.center,limit=1] run tp @s ~23 ~14 ~ 90 47
-playsound minecraft:item.armor.equip_elytra master @s
+playsound item.armor.equip_elytra master @s
 title @s times 30 50 30
 title @s title {text:"§7- - = §b§l牌§6§l牌§r§a大作战§7 = - -"}
 title @s subtitle {text:"§a一个牌类小游戏数据包"}

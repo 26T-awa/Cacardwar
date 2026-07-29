@@ -19,16 +19,20 @@ scoreboard players operation @a[tag=cacard.redTeam] cacard.point += #cacard.redH
 execute if entity @e[tag=cacard.blue0,nbt=!{Item:{}}] run scoreboard players add @a[tag=cacard.blueTeam] cacard.point 1
 execute if entity @e[tag=cacard.red0,nbt=!{Item:{}}] run scoreboard players add @a[tag=cacard.redTeam] cacard.point 1
 
-
 clear @s *[custom_data={cacardwar:["skip","non-card"]}]
-$execute at @s run playsound item.armor.equip_elytra master @a[tag=cacard.$(team)Team] ~ ~ ~ 2 1 1
-$execute as @e[tag=cacard.$(oppteam)5] at @s run playsound block.note_block.harp master @a[tag=!cacard.$(team)Team] ~ ~ ~ 2 2 1
 item replace entity @s hotbar.4 with barrier[custom_data={cacardwar:["none","non-card"]},custom_name={text:"§c现在不是你的回合"},enchantment_glint_override=true] 1
+
+$execute as @a[tag=cacard.$(oppteam)Team] run function cacardwar:main/clear_all_item
 $item replace entity @a[tag=cacard.$(oppteam)Team] hotbar.8 with lime_concrete[custom_data={cacardwar:["skip","non-card"]},enchantment_glint_override=true,custom_name={text:"§a按F（或切换至副手位）跳过你的回合"}] 1
-$clear @a[tag=cacard.$(oppteam)Team] barrier[custom_data={cacardwar:["none","non-card"]}]
 $scoreboard players add @a[tag=cacard.$(oppteam)Team] cacard.cardcount 5
+$give @a[tag=cacard.$(oppteam)Team,scores={cacard.mineral_clump=1..}] resin_clump[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §e§l矿物质"}],custom_data={cacardwar:["mineral","card"]},custom_model_data={strings:["cacardwar:mineral"]}] 4
+$scoreboard players remove @a[tag=cacard.$(oppteam)Team,scores={cacard.mineral_clump=1..}] cacard.mineral_clump 1
+
 $execute as @e[tag=cacard.$(team)] run data modify entity @s Fixed set value true
 $execute as @e[tag=cacard.$(team)0] run data modify entity @s Fixed set value true
 $execute as @e[tag=cacard.$(oppteam),tag=!cacard.disabled] run data modify entity @s Fixed set value false
 $execute as @e[tag=cacard.$(oppteam)0,tag=!cacard.disabled] run data modify entity @s Fixed set value false
 $title @a[tag=cacard.$(oppteam)Team] actionbar {text:"§e现在是你的回合！"}
+
+playsound block.stone_button.click_off master @a[tag=cacard.ingame] ~ ~ ~ 1 1.2 1
+$execute at @e[tag=cacard.$(oppteam)5] run playsound block.note_block.harp master @a[tag=cacard.ingame] ~ ~ ~ 1 2 1

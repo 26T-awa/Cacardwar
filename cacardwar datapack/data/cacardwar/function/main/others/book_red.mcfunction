@@ -1,2 +1,2 @@
 $give @s written_book[written_book_content={author:"§k_26T",title:$(title),pages:[$(content),$(rule),$(cardset1),$(cardset2),$(cardset3),$(cardset4),{text:"§l准备§r\n\n§7  点击下面的选项准备，点击前请再次确认所选的卡组！\n\n\n\n\n\n\n\n        ",extra:[{text:"【§6红方§r准备】",hover_event:{action:"show_text",value:"点击准备，点击前请再次确认所选的卡组！"},click_event:{action:"run_command",command:"/function cacardwar:preparation/ready {team:red,opptext:\"b蓝\",text:\"6红\"}"}}]}]},custom_data={cacardwar:book}]
-#function cacardwar:book_red with storage cacardwar:preparation_book_text
+#function cacardwar:main/others/book_red with storage cacardwar:preparation_book_text

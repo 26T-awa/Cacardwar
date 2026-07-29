@@ -19,6 +19,7 @@ scoreboard objectives add cacard.shieldtype dummy
 scoreboard players add @a[tag=cacard.ingame] cacard.shieldtype 0
 ###~2.2.1
 scoreboard objectives add cacard.summonleft dummy
+scoreboard objectives add cacard.mineral_clump dummy
 scoreboard objectives add cacard.time dummy
 ###2.2.2对局状态0等待玩家；1开始对局；2对局结束
 scoreboard objectives add cacard.isongoing dummy

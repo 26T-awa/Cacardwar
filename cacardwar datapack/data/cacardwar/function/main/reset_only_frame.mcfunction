@@ -27,4 +27,4 @@ execute as @e[tag=cacard.red0] run data modify entity @s ItemRotation set value 
 
 function cacardwar:main/disable_slot
 
-title @a[tag=cacard.ingame] actionbar {text:"§e§l已重置物品展示框！"}
+title @a[tag=cacard.ingame] actionbar {text:"§e§l已恢复物品展示框！"}
