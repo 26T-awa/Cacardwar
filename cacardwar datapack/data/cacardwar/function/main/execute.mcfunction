@@ -138,13 +138,13 @@ execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s cont
 
 #9.入场动画
 scoreboard players add @a[tag=cacard.newPlayer,scores={cacard.newPlayer=0..600}] cacard.newPlayer 1
-execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=20}] at @s run function cacardwar:main/others/newplayer2
-execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=140}] at @s run function cacardwar:main/others/newplayer3
-execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=240}] at @s run function cacardwar:main/others/newplayer4
-execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=340}] at @s run function cacardwar:main/others/newplayer5
-execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=440}] at @s run function cacardwar:main/others/newplayer6
-execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=540}] at @s run function cacardwar:main/others/newplayer7
-execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=600}] at @s run function cacardwar:main/others/newplayer8
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=20}] at @s run function cacardwar:new_player/new_player2
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=140}] at @s run function cacardwar:new_player/new_player3
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=240}] at @s run function cacardwar:new_player/new_player4
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=340}] at @s run function cacardwar:new_player/new_player5
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=440}] at @s run function cacardwar:new_player/new_player6
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=540}] at @s run function cacardwar:new_player/new_player7
+execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=600}] at @s run function cacardwar:new_player/new_player8
 execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=21}] at @s run playsound item.armor.equip_elytra master @s
 execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=141}] at @s run playsound item.armor.equip_elytra master @s
 execute as @a[tag=cacard.newPlayer,scores={cacard.newPlayer=241}] at @s run playsound item.armor.equip_elytra master @s

@@ -44,5 +44,5 @@ $execute if entity @a[tag=cacard.$(team)Team,tag=cacard.enable_steal_diamond] if
 $execute if entity @a[tag=cacard.$(team)Team,tag=cacard.enable_steal_diamond] if entity @e[tag=cacard.$(oppteam)$(Slot),nbt=!{Item:{}}] at @e[tag=cacard.$(team)Team] run playsound entity.villager.no master @a[tag=cacard.ingame] ~ ~ ~ 2 1 1
 $execute if entity @a[tag=cacard.$(team)Team,tag=cacard.enable_steal_diamond] if entity @e[tag=cacard.$(oppteam)$(Slot),nbt=!{Item:{}}] run tellraw @a[tag=cacard.ingame] [{text:"\n §7[§b§l牌§6§l牌§r§a大作战§7]   §$(teamtext)方"},{selector:"@a[tag=cacard.$(team)Team,limit=1]",color:$(teamcolor),underlined:true},{text:"§3什么都没有偷到…"},{text:"   §7[",extra:[{score:{name:"#cacard.time",objective:"cacard.time"},hover_event:{action:"show_text",value:"时间戳"}},{text:"§7]"}]}]
 
-$data remove entity @e[tag=cacard.$(oppteam)$(Slot),limit=1] Item
-tag @a[tag=cacard.enable_steal_diamond] remove cacard.enable_steal_diamond
+$execute if entity @a[tag=cacard.$(team)Team,tag=cacard.enable_steal_diamond] run data remove entity @e[tag=cacard.$(oppteam)$(Slot),limit=1] Item
+$execute as @a[tag=cacard.$(team)Team,tag=cacard.enable_steal_diamond] run tag @s remove cacard.enable_steal_diamond
