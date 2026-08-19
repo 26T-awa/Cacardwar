@@ -5,4 +5,5 @@ tellraw @s {text:" §8- §f§n2026/7/17",click_event:{action:"run_command",comma
 tellraw @s {text:" §8- §f§n2026/7/18",click_event:{action:"run_command",command:"/function cacardwar:log/34"}}
 tellraw @s {text:" §8- §f§n2026/7/22",click_event:{action:"run_command",command:"/function cacardwar:log/35"}}
 tellraw @s {text:" §8- §f§n2026/7/30",click_event:{action:"run_command",command:"/function cacardwar:log/36"}}
+tellraw @s {text:" §8- §f§n2026/8/8",click_event:{action:"run_command",command:"/function cacardwar:log/37"}}
 

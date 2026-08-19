@@ -4,6 +4,7 @@ kill @e[tag=cacard.summoner]
 execute as @a[tag=cacard.ingame] run function cacardwar:main/clear_all_item
 
 function cacardwar:main/reset_only_frame
+function cacardwar:agent/state_reset
 
 tag @e[tag=cacard.disabled] remove cacard.disabled
 execute as @e[tag=cacard.blue] run data remove entity @s Item 

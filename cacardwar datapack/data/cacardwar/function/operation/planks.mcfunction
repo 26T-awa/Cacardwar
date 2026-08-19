@@ -1,4 +1,4 @@
-$give @a[tag=cacard.$(team)Team,limit=1] stick[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- "},{text:"§l木棍",color:"#774205",italic:false}],custom_data={cacardwar:["stick","card"]},custom_model_data={strings:["cacardwar:stick"]}] 2
+$give @a[tag=cacard.$(team)Team,limit=1] stick[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- "},{text:"§l木棍",color:"#774205",italic:false}],custom_data={cacardwar:["stick","card"],cacard.recipe1:true,cacard.recipe10:true},custom_model_data={strings:["cacardwar:stick"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]] 2
 
 $data remove entity @e[tag=cacard.$(team)2,limit=1] Item
 $data remove entity @e[tag=cacard.$(team)5,limit=1] Item

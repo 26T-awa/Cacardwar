@@ -9,4 +9,4 @@ tellraw @s {text:"§8+  §f■■■■ §f■■■■ §f■■■■ §r"}
 tellraw @s {text:"§8-  §f■■■■ §f■■■■ §f■■■■ §r"}
 tellraw @s {text:"§8+  §f■■■■ §f■■■■ §f■■■■ §r"}
 tellraw @s {text:"§8■§7:§8头颅§7, §f■§7:§f铁锭/金锭/钻石§r"}
-tellraw @s {text:"§f需要三种矿物，无序。相对位置正确即可。"}
+tellraw @s {text:"§f需要三种矿物，矿物位置无序。相对位置正确即可。"}

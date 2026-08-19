@@ -25,7 +25,14 @@
                                     "iron_ingot",
                                     "mineral",
                                     "card"
-                                ]
+                                ],
+                                "cacard.recipe1": true,
+                                "cacard.recipe3": true,
+                                "cacard.recipe4": true,
+                                "cacard.recipe9": true,
+                                "cacard.recipe10": true,
+                                "cacard.recipe12": true,
+                                "cacard.recipe15": true
                             }
                         },
                         {
@@ -45,6 +52,15 @@
                                     "text": "§a卡牌 §7-- §f§l铁锭"
                                 }
                             }
+                        },
+                        {
+                            "function": "minecraft:set_lore",
+                            "mode": "append",
+                            "lore": [
+                                {
+                                    "text": "§7§o手持并等待以展示参与的复杂配方。"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -68,7 +84,15 @@
                                     "gold_ingot",
                                     "mineral",
                                     "card"
-                                ]
+                                ],
+                                "cacard.recipe1": true,
+                                "cacard.recipe3": true,
+                                "cacard.recipe4": true,
+                                "cacard.recipe7": true,
+                                "cacard.recipe8": true,
+                                "cacard.recipe9": true,
+                                "cacard.recipe12": true,
+                                "cacard.recipe15": true
                             }
                         },
                         {
@@ -88,6 +112,15 @@
                                     "text": "§a卡牌 §7-- §6§l金锭"
                                 }
                             }
+                        },
+                        {
+                            "function": "minecraft:set_lore",
+                            "mode": "append",
+                            "lore": [
+                                {
+                                    "text": "§7§o手持并等待以展示参与的复杂配方。"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -110,7 +143,11 @@
                                 "cacardwar": [
                                     "gunpowder",
                                     "card"
-                                ]
+                                ],
+                                "cacard.recipe2": true,
+                                "cacard.recipe3": true,
+                                "cacard.recipe4": true,
+                                "cacard.recipe5": true
                             }
                         },
                         {
@@ -130,6 +167,15 @@
                                     "text": "§a卡牌 §7-- §e§l火药"
                                 }
                             }
+                        },
+                        {
+                            "function": "minecraft:set_lore",
+                            "mode": "append",
+                            "lore": [
+                                {
+                                    "text": "§7§o手持并等待以展示参与的复杂配方。"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -152,7 +198,8 @@
                                 "cacardwar": [
                                     "log",
                                     "card"
-                                ]
+                                ],
+                                "cacard.recipe5": true
                             }
                         },
                         {
@@ -179,6 +226,15 @@
                                     }
                                 ]
                             }
+                        },
+                        {
+                            "function": "minecraft:set_lore",
+                            "mode": "append",
+                            "lore": [
+                                {
+                                    "text": "§7§o手持并等待以展示参与的复杂配方。"
+                                }
+                            ]
                         }
                     ]
                 },
@@ -201,7 +257,8 @@
                                 "cacardwar": [
                                     "apple",
                                     "card"
-                                ]
+                                ],
+                                "cacard.recipe7": true
                             }
                         },
                         {
@@ -221,6 +278,15 @@
                                     "text": "§a卡牌 §7-- §c§l苹果"
                                 }
                             }
+                        },
+                        {
+                            "function": "minecraft:set_lore",
+                            "mode": "append",
+                            "lore": [
+                                {
+                                    "text": "§7§o手持并等待以展示参与的复杂配方。"
+                                }
+                            ]
                         }
                     ]
                 }

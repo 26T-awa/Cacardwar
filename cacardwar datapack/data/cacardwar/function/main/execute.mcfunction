@@ -133,7 +133,7 @@ execute as @e[type=parrot,tag=cacardwar,limit=1] at @s facing entity @a[distance
 #8.乌鸦的赐福
 #8.1物品转变
 execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run particle happy_villager ~ ~ ~ 0.2 0.8 0.2 0 8 normal @a[tag=cacard.ready]
-execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run give @s wheat[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §a§l新生的小麦"}],custom_data={cacardwar:["newly_wheat","card"]},custom_model_data={strings:["cacardwar:newly_wheat"]}] 1
+execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run give @s wheat[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §a§l新生的小麦"}],custom_data={cacardwar:["newly_wheat","card"],cacard.recipe6:true},custom_model_data={strings:["cacardwar:newly_wheat"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]] 1
 execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run clear @s wheat[custom_data~{"cacardwar":["wheat"]}] 1
 
 #9.入场动画

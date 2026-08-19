@@ -46,11 +46,17 @@ scoreboard players set #cacard.k cacard.time 60
 ##3.3生命值
 scoreboard players add #cacard.redHealth cacard.health 0
 scoreboard players add #cacard.blueHealth cacard.health 0
+scoreboard players set #cacard.j cacard.health 0
+scoreboard players set #cacard.k cacard.health 20
 ###3.3.1取半基准数
 scoreboard players set #cacard.i cacard.health 2
 ###~3.3.1
-scoreboard players set #cacard.j cacard.health 0
-scoreboard players set #cacard.k cacard.health 20
+##3.4智能体
+scoreboard players set #cacard.agentBig cacard.players 100000
+scoreboard players set #cacard.agentTwo cacard.players 2
+scoreboard players set #cacard.agentTotal cacard.players 0
+scoreboard players set #cacard.m_div4 cacard.players 10000
+scoreboard players set #cacard.m_div1 cacard.players 10
 
 #4.队伍和顶栏信息
 ##4.1队伍
