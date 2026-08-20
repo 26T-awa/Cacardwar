@@ -6,8 +6,10 @@ scoreboard players set #cacard.agentH cacard.players 0
 scoreboard players set #cacard.agent0 cacard.players 0
 scoreboard players set #cacard.agentS cacard.players 0
 
-# ===== 手牌 H（clear count=0 只统计不清除；按物品 ID） =====
-$execute store result score #cacard.agentH cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["$(type)"]}] 0
+# ===== 手牌 H =====
+# AI 训练模式（isongoing=5）：从计分板手牌读取；否则 clear count=0 只统计不清除
+$execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentH cacard.players = #cacard.aiHand_$(type) cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentH cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["$(type)"]}] 0
 
 # ===== 0 槽（0 或 1） =====
 $execute if items entity @e[tag=cacard.$(team)0] contents *[custom_data~{cacardwar:["$(type)"]}] run scoreboard players set #cacard.agent0 cacard.players 1

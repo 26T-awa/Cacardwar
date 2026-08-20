@@ -13,7 +13,7 @@ tellraw @s {text:"§8+ ",extra:[{text:"§d[数据包、资源包源码]§r",clic
 tellraw @s {text:"§8+ ",extra:[{text:"§b[数据包、资源包下载]§r",click_event:{action:"open_url",url:"https://www.mcmod.cn/download/21521.html"}}]}
 tellraw @s ""
 tellraw @s {text:"§8- §f如有疑问，请联系："}
-tellraw @s {text:"§8- §7 ·QQ:2031915710§r",click_event:{action:"copy_to_clipboard",value:"2031915710"},hover_event:{"action":"show_text",value:"点击复制到粘贴板"}}
-tellraw @s {text:"§8- §f ·§nBilibili§r§f:搜_26T",click_event:{action:"open_url",url:"https://space.bilibili.com/3537119607786331"},hover_event:{"action":"show_text",value:"点击打开链接"}}
+tellraw @s {text:"§8- §7 ·QQ:2031915710§r",click_event:{action:"copy_to_clipboard",value:"2031915710"},hover_event:{action:"show_text",value:"点击复制到粘贴板"}}
+tellraw @s {text:"§8- §f ·§nBilibili§r§f:搜_26T",click_event:{action:"open_url",url:"https://space.bilibili.com/3537119607786331"},hover_event:{action:"show_text",value:"点击打开链接"}}
 
 #tellraw @s {text:"§8- §f§r"}

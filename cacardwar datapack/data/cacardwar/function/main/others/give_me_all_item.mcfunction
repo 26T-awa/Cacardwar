@@ -12,11 +12,11 @@ give @s diamond[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §
 
 give @s gunpowder[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §e§l火药"}],custom_data={cacardwar:["gunpowder","card"],cacard.recipe2:true,cacard.recipe3:true,cacard.recipe4:true,cacard.recipe5:true},custom_model_data={strings:["cacardwar:gunpowder"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
 
-give @s stick[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- "},{"text":"§l木棍","color":"#774205","italic":false}],custom_data={cacardwar:["stick","card"],cacard.recipe1:true,cacard.recipe10:true},custom_model_data={strings:["cacardwar:stick"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
+give @s stick[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- "},{text:"§l木棍",color:"#774205","italic":false}],custom_data={cacardwar:["stick","card"],cacard.recipe1:true,cacard.recipe10:true},custom_model_data={strings:["cacardwar:stick"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
 
-give @s oak_log[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- "},{"text":"§l原木","color":"#8e7701","italic":false}],custom_data={cacardwar:["log","card"],cacard.recipe5:true},custom_model_data={strings:["cacardwar:log"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
+give @s oak_log[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- "},{text:"§l原木",color:"#8e7701","italic":false}],custom_data={cacardwar:["log","card"],cacard.recipe5:true},custom_model_data={strings:["cacardwar:log"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
 
-give @s oak_planks[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- "},{"text":"§l木板","color":"#c2a203","italic":false}],custom_data={cacardwar:["plank","card"],cacard.recipe3:true,cacard.recipe4:true,cacard.recipe9:true,cacard.recipe11:true},custom_model_data={strings:["cacardwar:plank"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
+give @s oak_planks[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- "},{text:"§l木板",color:"#c2a203","italic":false}],custom_data={cacardwar:["plank","card"],cacard.recipe3:true,cacard.recipe4:true,cacard.recipe9:true,cacard.recipe11:true},custom_model_data={strings:["cacardwar:plank"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
 
 give @s apple[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §c§l苹果"}],custom_data={cacardwar:["apple","card"],cacard.recipe7:true},custom_model_data={strings:["cacardwar:apple"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
 
@@ -36,4 +36,4 @@ give @s player_head[enchantment_glint_override=true,custom_name=[{text:"§a卡�
 
 give @s zombie_head[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §3§l僵尸头颅"}],custom_data={cacardwar:["head","head_zombie","card"],cacard.recipe14:true},custom_model_data={strings:["cacardwar:head_zombie"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
 
-give @s resin_clump[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §e§l矿物质"}],custom_data={cacardwar:["mineral","card"],cacard.recipe1:true,cacard.recipe3:true,cacard.recipe4:true,cacard.recipe12:true},custom_model_data={strings:["cacardwar:mineral"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
+give @s resin_clump[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §e§l矿物质"}],custom_data={cacardwar:["mineral","mineral_clump","card"],cacard.recipe1:true,cacard.recipe3:true,cacard.recipe4:true,cacard.recipe12:true},custom_model_data={strings:["cacardwar:mineral"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]

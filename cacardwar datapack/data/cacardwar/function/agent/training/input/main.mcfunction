@@ -1,0 +1,3 @@
+# 主菜单
+tellraw @a ["", {text:"======= 选择动作 =======",color:"gold"}]
+tellraw @a [{text:"[跳过回合] ",color:"green","click_event":{action:"run_command","command":"function cacardwar:agent/training/input/set_action {action:0}"}},{text:"[清空槽位] ",color:"yellow",click_event:{action:"run_command",command:"function cacardwar:agent/training/input/clear_slot"}},{text:"[放置卡牌] ",color:"aqua",click_event:{action:"run_command",command:"function cacardwar:agent/training/input/place_card"}}]

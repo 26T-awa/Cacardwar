@@ -11,39 +11,56 @@ data modify storage cacardwar:agent action_mask[0] set value 1.0
 
 # ===== 3. 手牌统计（17 种卡；clear count=0 只统计不清除） =====
 scoreboard players set #cacard.agentHand0 cacard.players 0
-$execute store result score #cacard.agentHand0 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["iron_ingot"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand0 cacard.players = #cacard.aiHand_iron_ingot cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand0 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["iron_ingot"]}] 0
 scoreboard players set #cacard.agentHand1 cacard.players 0
-$execute store result score #cacard.agentHand1 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["gold_ingot"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand1 cacard.players = #cacard.aiHand_gold_ingot cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand1 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["gold_ingot"]}] 0
 scoreboard players set #cacard.agentHand2 cacard.players 0
-$execute store result score #cacard.agentHand2 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["diamond"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand2 cacard.players = #cacard.aiHand_diamond cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand2 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["diamond"]}] 0
 scoreboard players set #cacard.agentHand3 cacard.players 0
-$execute store result score #cacard.agentHand3 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["gunpowder"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand3 cacard.players = #cacard.aiHand_gunpowder cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand3 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["gunpowder"]}] 0
 scoreboard players set #cacard.agentHand4 cacard.players 0
-$execute store result score #cacard.agentHand4 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["stick"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand4 cacard.players = #cacard.aiHand_stick cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand4 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["stick"]}] 0
 scoreboard players set #cacard.agentHand5 cacard.players 0
-$execute store result score #cacard.agentHand5 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["log"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand5 cacard.players = #cacard.aiHand_log cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand5 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["log"]}] 0
 scoreboard players set #cacard.agentHand6 cacard.players 0
-$execute store result score #cacard.agentHand6 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["plank"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand6 cacard.players = #cacard.aiHand_plank cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand6 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["plank"]}] 0
 scoreboard players set #cacard.agentHand7 cacard.players 0
-$execute store result score #cacard.agentHand7 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["apple"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand7 cacard.players = #cacard.aiHand_apple cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand7 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["apple"]}] 0
 scoreboard players set #cacard.agentHand8 cacard.players 0
-$execute store result score #cacard.agentHand8 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["wheat"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand8 cacard.players = #cacard.aiHand_wheat cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand8 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["wheat"]}] 0
 scoreboard players set #cacard.agentHand9 cacard.players 0
-$execute store result score #cacard.agentHand9 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["another_two"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand9 cacard.players = #cacard.aiHand_another_two cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand9 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["another_two"]}] 0
 scoreboard players set #cacard.agentHand10 cacard.players 0
-$execute store result score #cacard.agentHand10 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["deal"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand10 cacard.players = #cacard.aiHand_deal cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand10 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["deal"]}] 0
 scoreboard players set #cacard.agentHand11 cacard.players 0
-$execute store result score #cacard.agentHand11 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["newly_wheat"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand11 cacard.players = #cacard.aiHand_newly_wheat cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand11 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["newly_wheat"]}] 0
 scoreboard players set #cacard.agentHand12 cacard.players 0
-$execute store result score #cacard.agentHand12 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["newly_bread"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand12 cacard.players = #cacard.aiHand_newly_bread cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand12 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["newly_bread"]}] 0
 scoreboard players set #cacard.agentHand13 cacard.players 0
-$execute store result score #cacard.agentHand13 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["rotten"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand13 cacard.players = #cacard.aiHand_rotten cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand13 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["rotten"]}] 0
 scoreboard players set #cacard.agentHand14 cacard.players 0
-$execute store result score #cacard.agentHand14 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["head"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand14 cacard.players = #cacard.aiHand_head cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand14 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["head"]}] 0
 scoreboard players set #cacard.agentHand15 cacard.players 0
-$execute store result score #cacard.agentHand15 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["head_zombie"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand15 cacard.players = #cacard.aiHand_head_zombie cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand15 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["head_zombie"]}] 0
 scoreboard players set #cacard.agentHand16 cacard.players 0
-$execute store result score #cacard.agentHand16 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["mineral"]}] 0
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.agentHand16 cacard.players = #cacard.aiHand_mineral_clump cacard.players
+$execute unless score #cacard.time cacard.isongoing matches 5 store result score #cacard.agentHand16 cacard.players run clear @a[tag=cacard.$(team)Team,limit=1] *[custom_data~{cacardwar:["mineral_clump"]}] 0
 
 # ===== 4. 清空槽位动作（1~10）：槽有卡 且 未禁用 =====
 $execute if items entity @e[tag=cacard.$(team)0] contents *[custom_data~{cacardwar:["card"]}] unless entity @e[tag=cacard.$(team)0,tag=cacard.disabled] run data modify storage cacardwar:agent action_mask[1] set value 1b

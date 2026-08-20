@@ -57,6 +57,32 @@ scoreboard players set #cacard.agentTwo cacard.players 2
 scoreboard players set #cacard.agentTotal cacard.players 0
 scoreboard players set #cacard.m_div4 cacard.players 10000
 scoreboard players set #cacard.m_div1 cacard.players 10
+###~3.4
+##3.5AI训练模式
+scoreboard players set #cacard.aiTwenty cacard.players 20
+scoreboard players set #cacard.aiTwo cacard.players 2
+scoreboard players set #cacard.aiHundred cacard.players 100
+scoreboard players set #cacard.aiFifty cacard.players 50
+scoreboard players set #cacard.aiState cacard.players 0
+scoreboard players set #cacard.aiResolve cacard.players 0
+scoreboard players set #cacard.aiReward cacard.players 0
+scoreboard players set #cacard.aiDeck cacard.players 2
+scoreboard players set #cacard.aiRedDeck cacard.players 2
+scoreboard players set #cacard.aiDecode cacard.players 0
+scoreboard players set #cacard.aiCard cacard.players 0
+scoreboard players set #cacard.aiSlot cacard.players 0
+scoreboard players set #cacard.aiType cacard.players 0
+scoreboard players set #cacard.aiN cacard.players 0
+scoreboard players set #cacard.aiRem cacard.players 0
+scoreboard players set #cacard.aiDam cacard.players 0
+scoreboard players set #cacard.aiHeal cacard.players 0
+scoreboard players set #cacard.aiHeal2 cacard.players 0
+scoreboard players set #cacard.aiRedH0 cacard.players 20
+scoreboard players set #cacard.aiBlueH0 cacard.players 20
+scoreboard players set #cacard.aiAbsorb cacard.players 0
+scoreboard players set #cacard.aiDraw cacard.players 0
+scoreboard players set #cacard.aiHandTotal cacard.players 0
+###~3.5
 
 #4.队伍和顶栏信息
 ##4.1队伍

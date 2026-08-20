@@ -31,7 +31,7 @@ execute store result storage cacardwar:cardsetinfo sec int 1.0 run scoreboard pl
 scoreboard players display name cacard.info1 cacard.Info {text:"§7Cacard=================="}
 scoreboard players display name cacard.info9 cacard.Info {text:"§7=====================War"}
 
-#分数0空；1~2标准；3~4基础教程
+#分数0空；1~2标准；3~4基础教程；5AI训练模式
 #等待玩家
 execute if score #cacard.time cacard.isongoing matches 0 if score #cacard.time cacard.players matches 0..1 run scoreboard players display name cacard.info2 cacard.Info {text:"对局模式 : §a§l标准/经典"}
 execute if score #cacard.time cacard.isongoing matches 0 if score #cacard.time cacard.players matches 0..1 run scoreboard players display name cacard.info3 cacard.Info {text:"当前阶段 : §e§l等待玩家"}
@@ -113,3 +113,14 @@ execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard
 execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info6 cacard.Info {text:""}
 execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info7 cacard.Info {text:""}
 execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info8 cacard.Info {text:""}
+
+#AI训练
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info2 cacard.Info {text:"对局模式 : §b§lAI训练模式"}
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] if score #cacard.aiState cacard.players matches 1 run scoreboard players display name cacard.info3 cacard.Info {text:"当前阶段 : §a§l对局进行中"}
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] if score #cacard.aiState cacard.players matches 2 run scoreboard players display name cacard.info3 cacard.Info {text:"当前阶段 : §d§l对局结束·即将重开"}
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] unless score #cacard.aiState cacard.players matches 1..2 run scoreboard players display name cacard.info3 cacard.Info {text:"当前阶段 : §7§l等待开始"}
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info4 cacard.Info [{text:"手牌 : "},{score:{name:"#cacard.aiHandTotal",objective:"cacard.players"},color:"yellow"},{text:"§e 张"}] 
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info5 cacard.Info [{text:"§b蓝方血量: "},{score:{name:"#cacard.blueHealth",objective:"cacard.health"},color:"aqua"},{text:"§7 / 20"}] 
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info6 cacard.Info [{text:"§6红方血量: "},{score:{name:"#cacard.redHealth",objective:"cacard.health"},color:"gold"},{text:"§7 / 20"}] 
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info7 cacard.Info {text:"§7通过动作命令行动（RCON）"}
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info8 cacard.Info {text:""}
