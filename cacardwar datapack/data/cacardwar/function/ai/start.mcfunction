@@ -11,13 +11,9 @@ function cacardwar:ai/hand_reset
 execute store result score #cacard.aiRedDeck cacard.players run random value 1..4
 scoreboard players operation @a[tag=cacard.redTeam] cacard.cardsetype = #cacard.aiRedDeck cacard.players
 # ===== 蓝方卡组（人类在 info 书里选的 cardsetype）=====
-execute if score @a[tag=cacard.blueTeam,limit=1] cacard.cardsetype matches 1 run scoreboard players set #cacard.aiDeck cacard.players 1
-execute if score @a[tag=cacard.blueTeam,limit=1] cacard.cardsetype matches 2 run scoreboard players set #cacard.aiDeck cacard.players 2
-execute if score @a[tag=cacard.blueTeam,limit=1] cacard.cardsetype matches 3 run scoreboard players set #cacard.aiDeck cacard.players 3
-execute if score @a[tag=cacard.blueTeam,limit=1] cacard.cardsetype matches 4 run scoreboard players set #cacard.aiDeck cacard.players 4
 execute if score @a[tag=cacard.blueTeam,limit=1] cacard.cardsetype matches ..0 run scoreboard players set #cacard.aiDeck cacard.players 2
 # ===== 蓝方先手，发初始 4 张 =====
-scoreboard players set #cacard.aiDraw cacard.players 4
+scoreboard players set @a[tag=cacard.blueTeam,limit=1] cacard.cardcount 4
 function cacardwar:ai/draw
 # ===== 提示 =====
 title @a[tag=cacard.ingame] title {text:"§7- - -§b§lAI训练对局开始§r§7- - -"}

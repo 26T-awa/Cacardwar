@@ -19,10 +19,10 @@ scoreboard players set @s cacard.shieldtype 0
 scoreboard players set @s cacard.cardcount 0
 
 # ===== 红方（其它在场玩家 = AFK 静止对手）=====
-tag @a[tag=cacard.ingame,tag=!cacard.blueTeam] add cacard.redTeam
-tag @a[tag=cacard.ingame,tag=!cacard.blueTeam] add cacard.ready
-scoreboard players set @a[tag=cacard.redTeam] cacard.shieldtype 0
-scoreboard players set @a[tag=cacard.redTeam] cacard.cardcount 0
+tag @a[tag=cacard.ingame,tag=!cacard.blueTeam,limit=1] add cacard.redTeam
+tag @a[tag=cacard.ingame,tag=!cacard.blueTeam,limit=1] add cacard.ready
+scoreboard players set @a[tag=cacard.redTeam,limit=1] cacard.shieldtype 0
+scoreboard players set @a[tag=cacard.redTeam,limit=1] cacard.cardcount 0
 
 # ===== 双方满血 =====
 scoreboard players set #cacard.blueHealth cacard.health 20
@@ -30,7 +30,6 @@ scoreboard players set #cacard.redHealth cacard.health 20
 
 # ===== 确保潜影盒存在并清空 =====
 execute unless block -5 -59 -77 minecraft:shulker_box run setblock -5 -59 -77 minecraft:shulker_box
-function cacardwar:ai/clear_shulker
 
 # ===== 清场并开始第一局 =====
 function cacardwar:ai/reset_arena

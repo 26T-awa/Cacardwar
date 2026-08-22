@@ -1,5 +1,4 @@
 # AI 训练模式 - 潜影盒计数 -> 手牌计分板（container.* 通配；0/1=是否存在）
-# 注意：execute if items 只返回 0/1（是否存在），不是精确张数
 execute store result score #cacard.aiHand_iron_ingot cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["iron_ingot"]}]
 execute store result score #cacard.aiHand_gold_ingot cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["gold_ingot"]}]
 execute store result score #cacard.aiHand_diamond cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["diamond"]}]
@@ -14,6 +13,8 @@ execute store result score #cacard.aiHand_deal cacard.players run execute if ite
 execute store result score #cacard.aiHand_newly_wheat cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["newly_wheat"]}]
 execute store result score #cacard.aiHand_newly_bread cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["newly_bread"]}]
 execute store result score #cacard.aiHand_rotten cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["rotten"]}]
-execute store result score #cacard.aiHand_head cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["head"]}]
+execute store result score #cacard.aiHand_head cacard.players run execute if items block -5 -59 -77 container.* player_head[custom_data~{cacardwar:["head"]}]
 execute store result score #cacard.aiHand_head_zombie cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["head_zombie"]}]
 execute store result score #cacard.aiHand_mineral_clump cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["mineral_clump"]}]
+
+function cacardwar:ai/clear_shulker
