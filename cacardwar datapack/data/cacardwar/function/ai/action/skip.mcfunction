@@ -2,4 +2,5 @@
 scoreboard players set #cacard.aiDraw cacard.players 5
 function cacardwar:ai/draw
 # 跳过无需合成结算：立即捕获 next_state 并写样本
-function cacardwar:ai/finalize
+
+schedule function cacardwar:ai/finalize 2t

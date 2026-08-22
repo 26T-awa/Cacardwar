@@ -16,3 +16,5 @@ scoreboard players set #cacard.aiHand_head cacard.players 0
 scoreboard players set #cacard.aiHand_head_zombie cacard.players 0
 scoreboard players set #cacard.aiHand_mineral_clump cacard.players 0
 scoreboard players set #cacard.aiHandTotal cacard.players 0
+
+function cacardwar:ai/clear_shulker
