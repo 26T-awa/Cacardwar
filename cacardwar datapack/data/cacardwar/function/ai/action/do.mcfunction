@@ -14,7 +14,7 @@ scoreboard players operation #cacard.aiBlueH0 cacard.players = #cacard.blueHealt
 function cacardwar:agent/feature_vector/feature_vector {team:blue, oppteam:red}
 $function cacardwar:agent/training/record_action {team:blue, action:$(action)}
 # ===== 解码并分发 =====
-scoreboard players set #cacard.aiDecode cacard.players $(action)
+$scoreboard players set #cacard.aiDecode cacard.players $(action)
 execute if score #cacard.aiDecode cacard.players matches 0 run function cacardwar:ai/action/skip
 execute if score #cacard.aiDecode cacard.players matches 1..10 run function cacardwar:ai/action/clear
 execute if score #cacard.aiDecode cacard.players matches 11..350 run function cacardwar:ai/action/place

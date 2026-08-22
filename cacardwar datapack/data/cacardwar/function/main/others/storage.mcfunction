@@ -14,11 +14,11 @@ data modify storage cacardwar:cardsetinfo winner set value ""
 data modify storage cacardwar:cardsetinfo sec set value 0
 data modify storage cacardwar:cardsetinfo min set value 0
 
-data modify storage cacardwar:version-particle version_number set value "§5pre v6.1"
-data modify storage cacardwar:version-particle seed set value 0
-data modify storage cacardwar:version-particle particle1 set value "dust{color:[1.0,1.0,1.0],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 4 normal @a[tag=cacard.ingame]"
-data modify storage cacardwar:version-particle particle2 set value "dust{color:[0.9,0.5,0.0],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 4 normal @a[tag=cacard.ingame]"
-data modify storage cacardwar:version-particle particle3 set value "dust{color:[0.0,0.8,0.9],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 4 normal @a[tag=cacard.ingame]"
-execute store result storage cacardwar:version-particle seed long 1 run seed
+data modify storage cacardwar:main_storage version_number set value "§5pre v6.1"
+data modify storage cacardwar:main_storage seed set value 0
+data modify storage cacardwar:main_storage particle1 set value "dust{color:[1.0,1.0,1.0],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 4 normal @a[tag=cacard.ingame]"
+data modify storage cacardwar:main_storage particle2 set value "dust{color:[0.9,0.5,0.0],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 4 normal @a[tag=cacard.ingame]"
+data modify storage cacardwar:main_storage particle3 set value "dust{color:[0.0,0.8,0.9],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 4 normal @a[tag=cacard.ingame]"
+execute store result storage cacardwar:main_storage seed long 1 run seed
 
 function cacardwar:agent/state_reset

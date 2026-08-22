@@ -14,6 +14,6 @@ execute store result score #cacard.aiHand_deal cacard.players run execute if ite
 execute store result score #cacard.aiHand_newly_wheat cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["newly_wheat"]}]
 execute store result score #cacard.aiHand_newly_bread cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["newly_bread"]}]
 execute store result score #cacard.aiHand_rotten cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["rotten"]}]
-execute store result score #cacard.aiHand_head cacard.players run execute if items block -5 -59 -77 container.* player_head[custom_data~{cacardwar:["head"]}]
-execute store result score #cacard.aiHand_head_zombie cacard.players run execute if items block -5 -59 -77 container.* zombie_head[custom_data~{cacardwar:["head_zombie"]}]
+execute store result score #cacard.aiHand_head cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["head"]}]
+execute store result score #cacard.aiHand_head_zombie cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["head_zombie"]}]
 execute store result score #cacard.aiHand_mineral_clump cacard.players run execute if items block -5 -59 -77 container.* *[custom_data~{cacardwar:["mineral_clump"]}]
