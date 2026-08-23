@@ -24,7 +24,8 @@
                                 "cacardwar": [
                                     "iron_ingot",
                                     "mineral",
-                                    "card"
+                                    "card",
+                                    "card1"
                                 ],
                                 "cacard.recipe1": true,
                                 "cacard.recipe3": true,
@@ -83,7 +84,8 @@
                                 "cacardwar": [
                                     "gold_ingot",
                                     "mineral",
-                                    "card"
+                                    "card",
+                                    "card2"
                                 ],
                                 "cacard.recipe1": true,
                                 "cacard.recipe3": true,
@@ -143,7 +145,8 @@
                                 "cacardwar": [
                                     "diamond",
                                     "mineral",
-                                    "card"
+                                    "card",
+                                    "card3"
                                 ],
                                 "cacard.recipe1": true,
                                 "cacard.recipe3": true,
@@ -200,7 +203,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "gunpowder",
-                                    "card"
+                                    "card",
+                                    "card4"
                                 ],
                                 "cacard.recipe2": true,
                                 "cacard.recipe3": true,
@@ -255,7 +259,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "stick",
-                                    "card"
+                                    "card",
+                                    "card5"
                                 ],
                                 "cacard.recipe1": true,
                                 "cacard.recipe10": true
@@ -315,7 +320,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "log",
-                                    "card"
+                                    "card",
+                                    "card6"
                                 ],
                                 "cacard.recipe5": true
                             }
@@ -374,7 +380,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "apple",
-                                    "card"
+                                    "card",
+                                    "card8"
                                 ],
                                 "cacard.recipe7": true
                             }
@@ -426,7 +433,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "wheat",
-                                    "card"
+                                    "card",
+                                    "card9"
                                 ],
                                 "cacard.recipe6": true,
                                 "cacard.recipe16": true
@@ -479,7 +487,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "rotten",
-                                    "card"
+                                    "card",
+                                    "card14"
                                 ],
                                 "cacard.recipe13": true
                             }
@@ -531,7 +540,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "another_two",
-                                    "card"
+                                    "card",
+                                    "card10"
                                 ]
                             }
                         },
@@ -582,7 +592,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "deal",
-                                    "card"
+                                    "card",
+                                    "card11"
                                 ],
                                 "cacard.recipe14": true
                             }
@@ -634,7 +645,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "head",
-                                    "card"
+                                    "card",
+                                    "card15"
                                 ],
                                 "cacard.recipe8": true,
                                 "cacard.recipe13": true,

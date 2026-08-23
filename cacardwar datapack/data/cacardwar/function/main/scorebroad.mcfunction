@@ -25,7 +25,6 @@ scoreboard objectives add cacard.time dummy
 scoreboard objectives add cacard.isongoing dummy
 ###~2.2.2
 scoreboard objectives add cacard.players dummy
-execute store result score #cacard.time cacard.players run execute if entity @a[tag=cacard.ready]
 scoreboard players add #cacard.time cacard.time 0
 scoreboard objectives add cacard.cardsetype dummy
 scoreboard players add @a cacard.cardsetype 0

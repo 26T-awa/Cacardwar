@@ -4,5 +4,6 @@ $execute if score #cacard.loop cacard.time matches $(max).. run return run funct
 
 $$(command)
 execute store result storage cacardwar:loop current int 1 run scoreboard players add #cacard.loop cacard.time 1
+execute store result storage cacardwar:loop curbias int 1 run scoreboard players add #cacard.loop cacard.players 1
 
 $execute if score #cacard.loop cacard.time matches $(min)..$(max) run return run function cacardwar:main/others/loop_any with storage cacardwar:loop

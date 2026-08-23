@@ -6,5 +6,5 @@
 $function cacardwar:agent/feature_vector/feature_vector {team:$(team),oppteam:$(oppteam)}
 
 # ===== 2. 显示（每行一个：序号 + label + 值） =====
-function cacardwar:main/others/loop_entry {min:0,max:42,command:"function cacardwar:agent/feature_vector/feature_vector_show_ with storage cacardwar:loop"}
+function cacardwar:main/others/loop_entry {min:0,max:42,bias:0,command:"function cacardwar:agent/feature_vector/feature_vector_show_ with storage cacardwar:loop"}
 

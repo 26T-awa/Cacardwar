@@ -16,10 +16,15 @@ execute at @e[tag=cacard.center] positioned ~4.5 ~3 ~ as @a[distance=..16,tag=ca
 scoreboard players operation #cacard.timeCheck cacard.time = #cacard.time cacard.time
 scoreboard players operation #cacard.timeCheck cacard.time %= #cacard.j cacard.time
 execute if score #cacard.timeCheck cacard.time matches 0 run function cacardwar:main/info with storage cacardwar:cardsetinfo
-##2.2中断
-execute if score #cacard.time cacard.isongoing matches 1 if score #cacard.time cacard.players matches 2 run scoreboard players add #cacard.time cacard.time 1
+##2.2游戏刻步进条件
+execute store result score #cacard.time cacard.players run execute if entity @a[tag=cacard.ready]
+execute if score #cacard.time cacard.isongoing matches 0 unless score #cacard.time cacard.players matches 2 run scoreboard players set #cacard.time cacard.time 0
+###2.2.1经典对局
 execute if score #cacard.time cacard.isongoing matches 0 if score #cacard.time cacard.players matches 2 run scoreboard players set #cacard.time cacard.isongoing 1
-execute if score #cacard.time cacard.isongoing matches 0 if score #cacard.time cacard.players matches 0..1 run scoreboard players set #cacard.time cacard.time 0
+execute if score #cacard.time cacard.isongoing matches 1 if score #cacard.time cacard.players matches 2 run scoreboard players add #cacard.time cacard.time 1
+###2.2.2AI训练模式
+execute if score #cacard.time cacard.isongoing matches 0 if entity @a[tag=cacard.inAImode,tag=cacard.ready,tag=cacard.blueTeam,limit=1] run scoreboard players set #cacard.time cacard.isongoing 5
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.inAImode,limit=1] run scoreboard players add #cacard.time cacard.time 1
 
 #3.更新顶栏血量
 ##3.1蓝方
@@ -34,7 +39,7 @@ execute if score #cacard.redHealth cacard.health <= #cacard.j cacard.health run 
 #4.对局模式
 $execute if score #cacard.time cacard.isongoing matches 1..2 run function cacardwar:main/gamemode/classic {seed:$(seed)}
 execute if score #cacard.time cacard.isongoing matches 3..4 run function cacardwar:main/gamemode/basic_tuition
-execute if score #cacard.time cacard.isongoing matches 5 run function cacardwar:ai/tick
+execute if score #cacard.time cacard.isongoing matches 5 run function cacardwar:main/gamemode/ai
 
 #5.召唤物生成
 ##5.1召唤物初始生命值
@@ -63,7 +68,7 @@ execute as @e[type=parrot,tag=cacardwar,limit=1] at @s facing entity @a[distance
 #8.乌鸦的赐福
 #8.1物品转变
 execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run particle happy_villager ~ ~ ~ 0.2 0.8 0.2 0 8 normal @a[tag=cacard.ready]
-execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run give @s wheat[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §a§l新生的小麦"}],custom_data={cacardwar:["newly_wheat","card"],cacard.recipe6:true},custom_model_data={strings:["cacardwar:newly_wheat"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]] 1
+execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run give @s wheat[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §a§l新生的小麦"}],custom_data={cacardwar:["newly_wheat","card","card12"],cacard.recipe6:true},custom_model_data={strings:["cacardwar:newly_wheat"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]] 1
 execute as @a[tag=cacard.ready,tag=cacard.bless_of_crow] if items entity @s container.* wheat[custom_data~{"cacardwar":["wheat"]}] run clear @s wheat[custom_data~{"cacardwar":["wheat"]}] 1
 
 #9.入场动画

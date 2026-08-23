@@ -24,7 +24,8 @@
                                 "cacardwar": [
                                     "iron_ingot",
                                     "mineral",
-                                    "card"
+                                    "card",
+                                    "card1"
                                 ],
                                 "cacard.recipe1": true,
                                 "cacard.recipe3": true,
@@ -83,7 +84,8 @@
                                 "cacardwar": [
                                     "gold_ingot",
                                     "mineral",
-                                    "card"
+                                    "card",
+                                    "card2"
                                 ],
                                 "cacard.recipe1": true,
                                 "cacard.recipe3": true,
@@ -142,7 +144,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "gunpowder",
-                                    "card"
+                                    "card",
+                                    "card4"
                                 ],
                                 "cacard.recipe2": true,
                                 "cacard.recipe3": true,
@@ -197,7 +200,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "log",
-                                    "card"
+                                    "card",
+                                    "card6"
                                 ],
                                 "cacard.recipe5": true
                             }
@@ -256,7 +260,8 @@
                             "tag": {
                                 "cacardwar": [
                                     "apple",
-                                    "card"
+                                    "card",
+                                    "card8"
                                 ],
                                 "cacard.recipe7": true
                             }
