@@ -11,10 +11,12 @@ give @s paper[enchantment_glint_override=true,custom_name={text:"§7操作 - §b
 give @s lime_concrete[enchantment_glint_override=true,custom_name={text:"§7操作 - §a跳过回合"},custom_data={cacardwar:["ai_act","ai_act_skip","non-card"]},custom_model_data={strings:["cacardwar:ai_act_skip"]},lore=[{text:"§a按"},{keybind:"key.swapOffhand",color:"green",italic:false},{text:"§a执行操作 §7- §a跳过回合，并记录一个完整的训练样本"}]]
 
 #give @s lime_concrete[enchantment_glint_override=true,custom_name={text:"§a槽位0~9"},custom_data={cacardwar:["ai_act","slot0~9","non-card"]},custom_model_data={strings:["cacardwar:ai_act_ai_act_slot0~9"]},lore=[{text:"§a按"},{keybind:"key.swapOffhand",color:"green",italic:false},{text:"§a执行操作 §7- §a选择槽位0~9"}]]
-function cacardwar:main/others/loop_entry {min:0,max:10,bias:0,command:'give @s lime_concrete[enchantment_glint_override=true,custom_name={text:"§a槽位$(current)"},custom_data={cacardwar:["ai_act","slot$(current)","non-card"]},custom_model_data={strings:["cacardwar:ai_act_slot$(current)"]},lore=[{text:"§a按"},{keybind:"key.swapOffhand",color:"green",italic:false},{text:"§a执行操作 §7- §a选择槽位$(current)"}]]'}
+function cacardwar:main/others/loop_entry {min:0,max:10,bias:0,command:'function cacardwar:main/others/loop/func1 with storage cacardwar:loop'}
 
 #give @s red_concrete[enchantment_glint_override=true,custom_name={text:"§c§m槽位0~9"},custom_data={cacardwar:["ai_act","disabled_slot","non-card"]},custom_model_data={strings:["cacardwar:ai_act_dis_slot"]},lore=[{text:"§c无法选择此槽位！"}]]
-function cacardwar:main/others/loop_entry {min:0,max:10,bias:0,command:'give @s red_concrete[enchantment_glint_override=true,custom_name={text:"§c§m槽位$(current)"},custom_data={cacardwar:["ai_act","disabled_slot","non-card"]},custom_model_data={strings:["cacardwar:ai_act_dis_slot"]},lore=[{text:"§c无法选择此槽位！"}]]'}
+function cacardwar:main/others/loop_entry {min:0,max:10,bias:0,command:'function cacardwar:main/others/loop/func2 with storage cacardwar:loop'}
+
+give @s yellow_concrete[enchantment_glint_override=true,custom_name={text:"§e将卡牌移动到副手进行操作"},custom_data={cacardwar:["ai_act","card_place_info","non-card"]},custom_model_data={strings:["cacardwar:ai_act_card_place_info"]},lore=[{text:"§e将卡牌移动到副手进行操作"}]]
 
 #卡牌
 give @s iron_ingot[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §f§l铁锭"}],custom_data={cacardwar:["iron_ingot","mineral","card","card1"],cacard.recipe1:true,cacard.recipe3:true,cacard.recipe4:true,cacard.recipe9:true,cacard.recipe10:true,cacard.recipe12:true,cacard.recipe15:true},custom_model_data={strings:["cacardwar:iron_ingot"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]

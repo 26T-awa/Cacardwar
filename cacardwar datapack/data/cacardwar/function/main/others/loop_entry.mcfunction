@@ -1,5 +1,5 @@
 # 任意单层循环入口/function cacardwar:main/others/loop_entry {min:,max:,bias:,command:''}
-# command可直接调用$(current), $(curbias)
+# command不可直接调用$(current), $(curbias)
 # 传入 min, max, bias, command，值域为[min,max)
 $data modify storage cacardwar:loop min set value $(min)
 $data modify storage cacardwar:loop max set value $(max)

@@ -18,7 +18,7 @@ loot give @a[tag=cacard.inAImode,tag=cacard.attack,scores={cacard.cardcount=1..}
 loot give @a[tag=cacard.inAImode,tag=cacard.average,scores={cacard.cardcount=1..}] loot cacardwar:average
 loot give @a[tag=cacard.inAImode,tag=cacard.resist,scores={cacard.cardcount=1..}] loot cacardwar:resist
 loot give @a[tag=cacard.inAImode,tag=cacard.summon,scores={cacard.cardcount=1..}] loot cacardwar:summon
-execute as @a[scores={cacard.cardcount=1..},tag=cacard.inAImode,limit=1] run function cacardwar:main/others/loop_entry {min:1,max:18,bias:0,command:'$execute store result score #cacard.ai_card$(current) cacard.cardcount run execute if items entity @a[tag=cacard.inAImode,limit=1] container.* *[custom_data~{cacardwar:["card$(current)"]}]'}
+execute if score #cacard.time cacard.time matches 7 run function cacardwar:main/others/loop_entry {min:1,max:18,bias:0,command:'function cacardwar:main/gamemode/loop/func1 with storage cacardwar:loop'}
 execute as @a[scores={cacard.cardcount=1..}] at @s run playsound item.armor.equip_elytra master @s ^ ^ ^ 1.3 1
 scoreboard players remove @a[scores={cacard.cardcount=1..}] cacard.cardcount 1
 ##4.5对局信息

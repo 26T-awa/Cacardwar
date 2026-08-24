@@ -2,7 +2,7 @@
 # 特征 = (手牌H + 0槽 + 1~9槽S*0.5) / 总卡牌数Total
 # 用整数放大技巧实现浮点：num = ((H+0)*BIG + S*BIG/2) / Total，再乘以 0.00001 得到 0~1
 
-$function cacardwar:agent/feature_vector/feature_vector_card {team:$(team),type:$(type)}
+function cacardwar:agent/feature_vector/feature_vector_card
 
 # T1 = (H+0) * BIG
 scoreboard players operation #cacard.agentT1 cacard.players = #cacard.agentH cacard.players

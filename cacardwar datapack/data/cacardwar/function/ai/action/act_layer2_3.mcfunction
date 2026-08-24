@@ -1,8 +1,7 @@
-#清空-槽位选择
+#跳过-记录数据
 clear @a[tag=cacard.inAImode,limit=1] *[custom_data~{cacardwar:["ai_act"]}]
 
-#execute if data entity @e[tag=cacard.blue0~9,limit=1] Item run item replace entity @a[tag=cacard.inAImode,limit=1] inventory.0~9 with lime_concrete[enchantment_glint_override=true,custom_name={text:"§a槽位0~9"},custom_data={cacardwar:["ai_act","slot0~9","non-card"]},custom_model_data={strings:["cacardwar:ai_act_slot0~9"]},lore=[]]
-function cacardwar:main/others/loop_entry {min:0,max:10,bias:0,command:'execute if data entity @e[tag=cacard.blue$(current),limit=1] Item run item replace entity @a[tag=cacard.inAImode,limit=1] inventory.$(current) with lime_concrete[enchantment_glint_override=true,custom_name={text:"§a槽位0"},custom_data={cacardwar:["ai_act","slot$(current)","non-card"]},custom_model_data={strings:["cacardwar:ai_act_slot$(current)"]},lore=[]]'}
-
-#execute unless data entity @e[tag=cacard.blue0~9,limit=1] Item run item replace entity @a[tag=cacard.inAImode,limit=1] inventory.0~9 with red_concrete[enchantment_glint_override=true,custom_name={text:"§c§m槽位0~9"},custom_data={cacardwar:["ai_act","disabled_slot","non-card"]},custom_model_data={strings:["cacardwar:ai_act_dis_slot"]},lore=[]]
-function cacardwar:main/others/loop_entry {min:0,max:10,bias:0,command:'execute unless data entity @e[tag=cacard.blue$(current),limit=1] Item run item replace entity @a[tag=cacard.inAImode,limit=1] inventory.$(current) with red_concrete[enchantment_glint_override=true,custom_name={text:"§c§m槽位$(current)"},custom_data={cacardwar:["ai_act","disabled_slot","non-card"]},custom_model_data={strings:["cacardwar:ai_act_dis_slot"]},lore=[]]'}
+#构建行动前特征向量
+function cacardwar:ai/constructor/cst_before
+#构建行动码、奖励
+function

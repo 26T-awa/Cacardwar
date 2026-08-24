@@ -1,0 +1,11 @@
+#function cacardwar:ai/constructor/loop/func4 with storage cacardwar:loop
+$execute if items entity @e[tag=cacard.blue0] contents *[custom_data~{cacardwar:["card$(current)"]}] run data modify storage cacardwar:ai pending_sample.slot[0][0] set value $(current)
+$execute if items entity @e[tag=cacard.blue1] contents *[custom_data~{cacardwar:["card$(current)"]}] run data modify storage cacardwar:ai pending_sample.slot[0][1] set value $(current)
+$execute if items entity @e[tag=cacard.blue2] contents *[custom_data~{cacardwar:["card$(current)"]}] run data modify storage cacardwar:ai pending_sample.slot[0][2] set value $(current)
+$execute if items entity @e[tag=cacard.blue3] contents *[custom_data~{cacardwar:["card$(current)"]}] run data modify storage cacardwar:ai pending_sample.slot[0][3] set value $(current)
+$execute if items entity @e[tag=cacard.blue4] contents *[custom_data~{cacardwar:["card$(current)"]}] run data modify storage cacardwar:ai pending_sample.slot[0][4] set value $(current)
+$execute if items entity @e[tag=cacard.blue5] contents *[custom_data~{cacardwar:["card$(current)"]}] run data modify storage cacardwar:ai pending_sample.slot[0][5] set value $(current)
+$execute if items entity @e[tag=cacard.blue6] contents *[custom_data~{cacardwar:["card$(current)"]}] run data modify storage cacardwar:ai pending_sample.slot[0][6] set value $(current)
+$execute if items entity @e[tag=cacard.blue7] contents *[custom_data~{cacardwar:["card$(current)"]}] run data modify storage cacardwar:ai pending_sample.slot[0][7] set value $(current)
+$execute if items entity @e[tag=cacard.blue8] contents *[custom_data~{cacardwar:["card$(current)"]}] run data modify storage cacardwar:ai pending_sample.slot[0][8] set value $(current)
+$execute if items entity @e[tag=cacard.blue9] contents *[custom_data~{cacardwar:["card$(current)"]}] run data modify storage cacardwar:ai pending_sample.slot[0][9] set value $(current)
