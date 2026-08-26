@@ -1,4 +1,9 @@
 #LEFT:2
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players set #cacard.ai_reward_arg2 cacard.point 0
+execute if score #cacard.time cacard.isongoing matches 5 as @e[tag=cacard.blue] if items entity @s contents * run scoreboard players add #cacard.ai_reward_arg2 cacard.point 1
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players remove #cacard.ai_reward_arg2 cacard.point 2
+execute if score #cacard.time cacard.isongoing matches 5 run function cacardwar:ai/calculation/rule1 {arg1:2}
+
 $execute at @e[tag=cacard.$(team)5] run playsound block.grass.place master @a[tag=cacard.ingame] ~ ~ ~ 2 0.7 1
 $execute as @e[tag=cacard.$(team),tag=!cacard.disabled] run data remove entity @s Item
 
@@ -12,3 +17,5 @@ $execute as @e[tag=cacard.$(team)Plot1] at @s positioned ~ ~.2 ~ unless entity @
 
 $execute as @e[tag=cacard.$(team)Plot1] at @s positioned ~ ~.2 ~ if entity @e[distance=...2] as @e[tag=cacard.$(team)Plot2] at @s positioned ~ ~.2 ~ if entity @e[distance=...2] as @e[tag=cacard.$(team)Plot3] at @s positioned ~ ~.2 ~ if entity @e[distance=...2] run function cacardwar:main/others/advancements {team:$(team),advancementype:summon_full}
 $function cacardwar:main/others/advancements {team:$(team),advancementype:summon_any}
+
+execute if score #cacard.time cacard.isongoing matches 5 run schedule function cacardwar:ai/constructor/cst_after 10t

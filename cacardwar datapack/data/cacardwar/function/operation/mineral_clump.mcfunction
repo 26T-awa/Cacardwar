@@ -1,4 +1,3 @@
-
 $execute at @e[tag=cacard.$(team)5] run playsound block.anvil.use master @a[tag=cacard.ingame] ~ ~ ~ 0.5 0.9 0.5
 
 $execute as @e[tag=cacard.$(team),tag=!cacard.disabled] run data remove entity @s Item

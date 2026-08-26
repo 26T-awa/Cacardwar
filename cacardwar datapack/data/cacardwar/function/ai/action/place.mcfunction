@@ -3,13 +3,13 @@
 scoreboard players operation #cacard.aiN cacard.players = #cacard.aiDecode cacard.players
 scoreboard players remove #cacard.aiN cacard.players 11
 scoreboard players operation #cacard.aiCard cacard.players = #cacard.aiN cacard.players
-scoreboard players operation #cacard.aiCard cacard.players /= #cacard.aiTwenty cacard.players
+scoreboard players operation #cacard.aiCard cacard.players /= #20 cacard.players
 scoreboard players operation #cacard.aiRem cacard.players = #cacard.aiN cacard.players
-scoreboard players operation #cacard.aiRem cacard.players %= #cacard.aiTwenty cacard.players
+scoreboard players operation #cacard.aiRem cacard.players %= #20 cacard.players
 scoreboard players operation #cacard.aiSlot cacard.players = #cacard.aiRem cacard.players
-scoreboard players operation #cacard.aiSlot cacard.players /= #cacard.aiTwo cacard.players
+scoreboard players operation #cacard.aiSlot cacard.players /= #2 cacard.players
 scoreboard players operation #cacard.aiType cacard.players = #cacard.aiRem cacard.players
-scoreboard players operation #cacard.aiType cacard.players %= #cacard.aiTwo cacard.players
+scoreboard players operation #cacard.aiType cacard.players %= #2 cacard.players
 # ===== 写入宏参数 storage =====
 data modify storage cacardwar:ai args set value {slot:0,type:0}
 execute store result storage cacardwar:ai args.slot int 1 run scoreboard players get #cacard.aiSlot cacard.players

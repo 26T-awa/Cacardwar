@@ -1,3 +1,8 @@
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players set #cacard.ai_reward_arg2 cacard.point 0
+execute if score #cacard.time cacard.isongoing matches 5 as @e[tag=cacard.blue] if items entity @s contents * run scoreboard players add #cacard.ai_reward_arg2 cacard.point 1
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players remove #cacard.ai_reward_arg2 cacard.point 5
+execute if score #cacard.time cacard.isongoing matches 5 run function cacardwar:ai/calculation/rule1 {arg1:5}
+
 $title @a[tag=cacard.$(team)Team] title {atlas:"items",sprite:"item/iron_pickaxe"}
 $title @a[tag=cacard.$(team)Team] subtitle {text:"请在聊天框中选择对方的一个格子"}
 $clear @a[tag=cacard.$(team)Team] *[custom_data={cacardwar:["skip","non-card"]}]

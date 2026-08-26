@@ -49,10 +49,6 @@ scoreboard players add @e[type=husk,tag=cacard.tosummon,tag=cacard.SuperZombie] 
 scoreboard players add @e[type=armor_stand,tag=cacard.tosummon,tag=cacard.Scarecrow] cacard.summonleft 2
 ##5.2召唤物生成与清除
 tag @e[tag=cacard.tosummon] remove cacard.tosummon
-###5.2.1稻草人自然消失
-execute as @e[scores={cacard.summonleft=..0},tag=cacard.summoner,tag=cacard.blueScarecrow] at @s run function cacardwar:operation/bless_of_crow {team:blue,oppteam:red,teamcolor:aqua,teamtext:"b蓝"}
-execute as @e[scores={cacard.summonleft=..0},tag=cacard.summoner,tag=cacard.redScarecrow] at @s run function cacardwar:operation/bless_of_crow {team:red,oppteam:blue,teamcolor:gold,teamtext:"6红"}
-###~5.2.1
 execute as @e[scores={cacard.summonleft=..0},tag=cacard.summoner,tag=!cacard.Scarecrow] at @s run particle poof ~ ~ ~ 0.2 0.5 0.2 0.1 16 normal @a[tag=cacard.ingame]
 execute as @e[scores={cacard.summonleft=..0},tag=cacard.summoner] at @s run tp @s ~ -100 ~
 kill @e[scores={cacard.summonleft=..0},tag=cacard.summoner]

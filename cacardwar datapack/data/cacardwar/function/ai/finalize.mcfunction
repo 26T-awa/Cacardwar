@@ -12,10 +12,10 @@ scoreboard players operation #cacard.aiHeal cacard.players = #cacard.blueHealth 
 scoreboard players operation #cacard.aiHeal cacard.players -= #cacard.aiBlueH0 cacard.players
 # reward = 伤害*100
 scoreboard players operation #cacard.aiReward cacard.players = #cacard.aiDam cacard.players
-scoreboard players operation #cacard.aiReward cacard.players *= #cacard.aiHundred cacard.players
+scoreboard players operation #cacard.aiReward cacard.players *= #100 cacard.players
 # reward += 治疗*50
 scoreboard players operation #cacard.aiHeal2 cacard.players = #cacard.aiHeal cacard.players
-scoreboard players operation #cacard.aiHeal2 cacard.players *= #cacard.aiFifty cacard.players
+scoreboard players operation #cacard.aiHeal2 cacard.players *= #50 cacard.players
 scoreboard players operation #cacard.aiReward cacard.players += #cacard.aiHeal2 cacard.players
 # reward -= 1（步进惩罚）
 scoreboard players remove #cacard.aiReward cacard.players 1

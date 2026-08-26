@@ -58,11 +58,16 @@ scoreboard players set #cacard.m_div4 cacard.players 10000
 scoreboard players set #cacard.m_div1 cacard.players 10
 ###~3.4
 ##3.5AI训练模式
-# 不变常量：每刻 set 无副作用（保持固定值）
-scoreboard players set #cacard.aiTwenty cacard.players 20
-scoreboard players set #cacard.aiTwo cacard.players 2
-scoreboard players set #cacard.aiHundred cacard.players 100
-scoreboard players set #cacard.aiFifty cacard.players 50
+# 不变常量
+scoreboard players set #-1 cacard.point -1
+scoreboard players set #2 cacard.point 2
+scoreboard players set #10 cacard.point 10
+scoreboard players set #20 cacard.point 20
+scoreboard players set #50 cacard.point 50
+scoreboard players set #100 cacard.point 100
+scoreboard players set #8000 cacard.point 8000
+scoreboard players set #10000 cacard.point 10000
+
 # 变量：add 0 仅声明不重置（避免每刻被清零/递增）
 scoreboard players add #cacard.aiState cacard.players 0
 scoreboard players add #cacard.aiResolve cacard.players 0
