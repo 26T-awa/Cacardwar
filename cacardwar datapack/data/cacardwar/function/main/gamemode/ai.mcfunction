@@ -26,8 +26,11 @@ execute if score #cacard.time cacard.time matches 10 run function cacardwar:ai/a
 execute if items entity @a[tag=cacard.inAImode,limit=1] weapon.offhand *[custom_data~{cacardwar:["ai_act_clear_slot"]}] as @a[tag=cacard.inAImode,limit=1] run function cacardwar:ai/action/act_layer2_1
 execute if items entity @a[tag=cacard.inAImode,limit=1] weapon.offhand *[custom_data~{cacardwar:["ai_act_place"]}] as @a[tag=cacard.inAImode,limit=1] run function cacardwar:ai/action/act_layer2_2
 execute if items entity @a[tag=cacard.inAImode,limit=1] weapon.offhand *[custom_data~{cacardwar:["ai_act_skip"]}] as @a[tag=cacard.inAImode,limit=1] run function cacardwar:ai/action/act_layer2_3
-
-##4.7物品保护
+##4.6清空槽位选择触发
+execute if items entity @a[tag=cacard.inAImode,limit=1,tag=cacard.ai_clean] weapon.offhand *[custom_data~{cacardwar:["slot"]}] as @a[tag=cacard.inAImode,limit=1] run function cacardwar:ai/action/act_layer3_1
+##4.7卡牌选择后槽位选择
+execute if items entity @a[tag=cacard.inAImode,limit=1,tag=cacard.ai_place] weapon.offhand *[custom_data~{cacardwar:["card"]}] as @a[tag=cacard.inAImode,limit=1] run function cacardwar:ai/action/act_layer3_2
+##4.8物品保护
 execute as @e[tag=cacard.blue] run data modify entity @s Fixed set value true
 execute as @e[tag=cacard.blue0] run data modify entity @s Fixed set value true
 execute as @e[tag=cacard.red] run data modify entity @s Fixed set value true

@@ -1,0 +1,2 @@
+#function cacardwar:ai/action/loop/func4 with storage cacardwar:loop
+$execute if items entity @s weapon.offhand *[custom_data~{cacardwar:["slot$(current)"]}] run scoreboard players operation #cacard.ai_place_slotID cacard.point = #cacard.loop cacard.time

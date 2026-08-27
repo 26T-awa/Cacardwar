@@ -1,4 +1,4 @@
-$execute if entity @a[tag=cacard.$(team)Team,tag=cacard.enable_disable_slot] run item replace entity @a[tag=cacard.$(team)Team] hotbar.8 with lime_concrete[custom_data={cacardwar:["skip","non-card"]},enchantment_glint_override=true,custom_name={text:"§a按F（或切换至副手位）跳过你的回合"}] 1
+$execute if entity @a[tag=cacard.$(team)Team,tag=cacard.enable_disable_slot] run item replace entity @a[tag=cacard.$(team)Team,tag=!cacard.inAImode] hotbar.8 with lime_concrete[custom_data={cacardwar:["skip","non-card"]},enchantment_glint_override=true,custom_name={text:"§a按F（或切换至副手位）跳过你的回合"}] 1
 
 $execute if entity @a[tag=cacard.$(team)Team,tag=cacard.enable_disable_slot] run tag @a[tag=cacard.$(oppteam)Team] add cacard.disabledSolt$(Slot)
 $execute if entity @a[tag=cacard.$(team)Team,tag=cacard.enable_disable_slot] run function cacardwar:main/disable_slot

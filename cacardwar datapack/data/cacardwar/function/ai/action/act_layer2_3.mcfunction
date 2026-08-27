@@ -5,4 +5,5 @@ clear @a[tag=cacard.inAImode,limit=1] *[custom_data~{cacardwar:["ai_act"]}]
 function cacardwar:ai/constructor/cst_before
 #构建行动码、奖励，这里是跳过的特殊情况
 data modify storage cacardwar:ai pending_sample.action set value 0
-function cacardwar:ai/action/skip
+
+schedule function cacardwar:ai/action/skip 20t

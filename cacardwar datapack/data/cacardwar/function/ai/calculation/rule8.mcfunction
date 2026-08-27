@@ -6,3 +6,5 @@ scoreboard players set #cacard.ai_reward_power cacard.point 10000
 
 execute store result score #cacard.ai_reward_R8 cacard.point run scoreboard players operation #cacard.ai_reward_base cacard.point *= #cacard.ai_reward_power cacard.point
 execute store result storage cacardwar:ai pending_sample.reward[8] double 0.00000001 run scoreboard players get #cacard.ai_reward_R8 cacard.point
+
+scoreboard players reset #cacard.ai_reward_arg5 cacard.players

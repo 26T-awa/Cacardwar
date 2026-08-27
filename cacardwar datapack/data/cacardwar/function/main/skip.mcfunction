@@ -6,10 +6,9 @@ $scoreboard players remove @e[tag=cacard.$(oppteam)Zombie] cacard.summonleft 1
 $scoreboard players remove @e[tag=cacard.$(oppteam)Trader] cacard.summonleft 1
 $scoreboard players remove @e[tag=cacard.$(oppteam)SuperZombie] cacard.summonleft 1
 $scoreboard players remove @e[tag=cacard.$(oppteam)Scarecrow] cacard.summonleft 1
-###5.2.1稻草人自然消失
+#稻草人自然消失
 execute as @e[scores={cacard.summonleft=..0},tag=cacard.summoner,tag=cacard.blueScarecrow] at @s run function cacardwar:operation/bless_of_crow {team:blue,oppteam:red,teamcolor:aqua,teamtext:"b蓝"}
 execute as @e[scores={cacard.summonleft=..0},tag=cacard.summoner,tag=cacard.redScarecrow] at @s run function cacardwar:operation/bless_of_crow {team:red,oppteam:blue,teamcolor:gold,teamtext:"6红"}
-###~5.2.1
 
 $execute if score #cacard.$(team)Health cacard.health > #cacard.$(oppteam)Health cacard.health run scoreboard players add @a[tag=cacard.$(team)Team] cacard.point 7
 $execute if score #cacard.$(team)Health cacard.health < #cacard.$(oppteam)Health cacard.health run scoreboard players add @a[tag=cacard.$(oppteam)Team] cacard.point 7

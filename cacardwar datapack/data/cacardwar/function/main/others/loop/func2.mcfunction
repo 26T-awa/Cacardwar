@@ -1,2 +1,0 @@
-#function cacardwar:main/others/loop/func2 with storage cacardwar:loop
-$give @s red_concrete[enchantment_glint_override=true,custom_name={text:"§c§m槽位$(current)"},custom_data={cacardwar:["ai_act","disabled_slot","non-card"]},custom_model_data={strings:["cacardwar:ai_act_dis_slot"]},lore=[{text:"§c无法选择此槽位！"}]]

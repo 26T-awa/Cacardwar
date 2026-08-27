@@ -1,0 +1,3 @@
+#function cacardwar:ai/action/loop/func3 with storage cacardwar:loop
+$execute if items entity @s weapon.offhand *[custom_data~{cacardwar:["card$(current)"]}] run scoreboard players operation #cacard.ai_place_cardID cacard.point = #cacard.loop cacard.time
+$execute if score #cacard.ai_place_cardID cacard.point matches 1..17 if score #cacard.ai_place_cardID cacard.point = #cacard.loop cacard.time run clear @a[tag=cacard.inAImode,limit=1] *[custom_data~{cacardwar:["card$(current)"]}] 1
