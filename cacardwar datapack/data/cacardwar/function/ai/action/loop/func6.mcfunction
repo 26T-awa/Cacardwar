@@ -1,0 +1,2 @@
+#function cacardwar:ai/action/loop/func6 with storage cacardwar:loop
+$execute unless data entity @e[tag=cacard.blue$(current),limit=1] Item run item replace entity @a[tag=cacard.inAImode,limit=1] container.$(curbias) with lime_concrete[enchantment_glint_override=true,custom_name={text:"§a槽位$(current)"},custom_data={cacardwar:["ai_act","slot$(current)","slot","non-card"]},custom_model_data={strings:["cacardwar:ai_act_slot$(current)"]},lore=[[{text:"§a按"},{keybind:"key.swapOffhand",color:"green",italic:false},{text:"§a执行操作 §7- §a选择槽位$(current)"}]]]

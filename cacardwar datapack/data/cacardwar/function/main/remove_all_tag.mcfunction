@@ -24,3 +24,7 @@ tag @s remove cacard.bt2
 tag @s remove cacard.bt3
 tag @s remove cacard.bt4
 tag @s remove cacard.bt100
+
+tag @s remove cacard.ai_clean
+tag @s remove cacard.ai_place
+tag @s remove cacard.ai_placed_card

@@ -1,5 +1,7 @@
 #R7获得饥饿效果
 # reward = -0.2 × (1 - 获得途径修正)
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule7"}
+
 scoreboard players set #cacard.ai_reward_R7 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point -2000
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

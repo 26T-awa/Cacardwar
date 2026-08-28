@@ -1,5 +1,7 @@
 #R8获得乌鸦的赐福效果
 # reward = 0.1
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule8"}
+
 scoreboard players set #cacard.ai_reward_R8 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point 1000
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

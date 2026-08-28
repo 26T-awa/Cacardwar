@@ -115,12 +115,9 @@ execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard
 execute if score #cacard.time cacard.isongoing matches 3 if entity @a[tag=cacard.bt4,limit=1] run scoreboard players display name cacard.info8 cacard.Info {text:""}
 
 #AI训练
-execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info2 cacard.Info {text:"对局模式 : §b§lAI训练模式"}
-execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] if score #cacard.aiState cacard.players matches 1 run scoreboard players display name cacard.info3 cacard.Info {text:"当前阶段 : §a§l对局进行中"}
-execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] if score #cacard.aiState cacard.players matches 2 run scoreboard players display name cacard.info3 cacard.Info {text:"当前阶段 : §d§l对局结束·即将重开"}
-execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] unless score #cacard.aiState cacard.players matches 1..2 run scoreboard players display name cacard.info3 cacard.Info {text:"当前阶段 : §7§l等待开始"}
-execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info4 cacard.Info [{text:"手牌 : "},{score:{name:"#cacard.aiHandTotal",objective:"cacard.players"},color:"yellow"},{text:"§e 张"}] 
-execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info5 cacard.Info [{text:"§b蓝方血量: "},{score:{name:"#cacard.blueHealth",objective:"cacard.health"},color:"aqua"},{text:"§7 / 20"}] 
-execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info6 cacard.Info [{text:"§6红方血量: "},{score:{name:"#cacard.redHealth",objective:"cacard.health"},color:"gold"},{text:"§7 / 20"}] 
-execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info7 cacard.Info {text:"§7通过动作命令行动（RCON）"}
-execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.ai,limit=1] run scoreboard players display name cacard.info8 cacard.Info {text:""}
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.inAImode,limit=1] run scoreboard players display name cacard.info2 cacard.Info {text:"对局模式 : §5§lAI训练模式"}
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.inAImode,limit=1] run scoreboard players display name cacard.info3 cacard.Info {text:"§7§o操作记录"}
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.inAImode,limit=1] run scoreboard players display name cacard.info4 cacard.Info [{storage:"cacardwar:ai",nbt:"Info1[0]",color:dark_gray},":",{storage:"cacardwar:ai",nbt:"Info2[0]",color:dark_gray}]
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.inAImode,limit=1] run scoreboard players display name cacard.info5 cacard.Info [{storage:"cacardwar:ai",nbt:"Info1[1]",color:dark_gray},":",{storage:"cacardwar:ai",nbt:"Info2[1]",color:dark_gray}]
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.inAImode,limit=1] run scoreboard players display name cacard.info6 cacard.Info [{storage:"cacardwar:ai",nbt:"Info1[2]",color:dark_gray},":",{storage:"cacardwar:ai",nbt:"Info2[2]",color:dark_gray}]
+execute if score #cacard.time cacard.isongoing matches 5 if entity @a[tag=cacard.inAImode,limit=1] run scoreboard players display name cacard.info7 cacard.Info [{storage:"cacardwar:ai",nbt:"Info1[3]",color:dark_gray},":",{storage:"cacardwar:ai",nbt:"Info2[3]",color:dark_gray}]

@@ -1,5 +1,7 @@
 #R5合成金头颅
 # reward = 0.05 
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule5"}
+
 scoreboard players set #cacard.ai_reward_R5 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point 500
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

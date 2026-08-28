@@ -1,5 +1,7 @@
 #R12清空有卡牌的卡槽
 # reward = -0.3 
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule12"}
+
 scoreboard players set #cacard.ai_reward_R12 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point -3000
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

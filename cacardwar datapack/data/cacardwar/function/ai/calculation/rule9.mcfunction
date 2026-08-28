@@ -1,5 +1,7 @@
 #R9造成攻击
 # reward = 0.1 × (1 + 伤害 × 0.5 + 斩杀线10修正 + 斩杀线5修正) 
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule9"}
+
 scoreboard players set #cacard.ai_reward_R9 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point 1000
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

@@ -1,5 +1,7 @@
 #R1有效合成/使用
 # reward = 0.3 × (1 + 消耗卡牌数 × 0.01 - 无关槽位卡牌数 × 0.02) 
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule1"}
+
 scoreboard players set #cacard.ai_reward_R1 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point 3000
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

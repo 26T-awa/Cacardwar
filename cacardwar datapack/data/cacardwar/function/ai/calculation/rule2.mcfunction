@@ -1,5 +1,7 @@
 #R2合成护盾
 # reward = 0.08 × (1 + 原护盾重复修正)
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule2"}
+
 scoreboard players set #cacard.ai_reward_R2 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point 800
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

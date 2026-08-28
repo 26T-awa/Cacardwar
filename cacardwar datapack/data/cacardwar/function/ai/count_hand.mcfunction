@@ -1,1 +1,0 @@
-$execute store result score #cacard.ai_card$(current) cacard.cardcount run execute if items entity @a[tag=cacard.inAImode,limit=1] container.* *[custom_data~{cacardwar:["card$(current)"]}]

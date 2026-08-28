@@ -3,6 +3,7 @@ execute as @e[tag=cacard.summoner] at @s run tp @s ~ -100 ~
 kill @e[tag=cacard.summoner]
 execute as @a[tag=cacard.ingame] run function cacardwar:main/clear_all_item
 
+data modify block -5 -59 -77 Items set value []
 function cacardwar:main/reset_only_frame
 function cacardwar:agent/state_reset
 

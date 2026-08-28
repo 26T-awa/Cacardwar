@@ -42,3 +42,5 @@ data modify storage cacardwar:main_storage item_predicates append value 'enchant
 data modify storage cacardwar:main_storage item_predicates append value 'enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §3§l僵尸头颅"}],custom_data={cacardwar:["head","head_zombie","card","card16"],cacard.recipe14:true},custom_model_data={strings:["cacardwar:head_zombie"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]'
 data modify storage cacardwar:main_storage item_predicates append value 'enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §e§l矿物质"}],custom_data={cacardwar:["mineral_clump","mineral","card","card17"],cacard.recipe1:true,cacard.recipe3:true,cacard.recipe4:true,cacard.recipe12:true},custom_model_data={strings:["cacardwar:mineral"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]'
 
+data modify storage cacardwar:ai Info1 set value ["","","",""]
+data modify storage cacardwar:ai Info2 set value ["","","",""]

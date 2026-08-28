@@ -1,5 +1,7 @@
 #R14本回合失败
 # reward = -1.0 × (1 + 对手生命值4修正 + 对手生命值10修正 + 对手生命值20修正)  
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule14"}
+
 scoreboard players set #cacard.ai_reward_R14 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point -10000
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

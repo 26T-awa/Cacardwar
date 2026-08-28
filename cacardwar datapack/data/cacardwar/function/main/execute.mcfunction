@@ -15,7 +15,7 @@ execute at @e[tag=cacard.center] positioned ~4.5 ~3 ~ as @a[distance=..16,tag=ca
 ##2.1每秒更新旁栏
 scoreboard players operation #cacard.timeCheck cacard.time = #cacard.time cacard.time
 scoreboard players operation #cacard.timeCheck cacard.time %= #cacard.j cacard.time
-execute if score #cacard.timeCheck cacard.time matches 0 run function cacardwar:main/info with storage cacardwar:cardsetinfo
+execute if score #cacard.timeCheck cacard.time matches 0 run function cacardwar:main/info
 ##2.2游戏刻步进条件
 execute store result score #cacard.time cacard.players run execute if entity @a[tag=cacard.ready]
 execute if score #cacard.time cacard.isongoing matches 0 unless score #cacard.time cacard.players matches 2 run scoreboard players set #cacard.time cacard.time 0

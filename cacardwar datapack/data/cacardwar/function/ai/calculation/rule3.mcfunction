@@ -1,5 +1,7 @@
 #R3召唤召唤物
 # reward = 0.2 × (1 + 僵尸加成 + 商人加成 + 超级僵尸加成 + 稻草人加成 + 溢出补偿修正)
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule3"}
+
 scoreboard players set #cacard.ai_reward_R3 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point 2000
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

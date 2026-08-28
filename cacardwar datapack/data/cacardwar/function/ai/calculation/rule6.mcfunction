@@ -1,5 +1,7 @@
 #R6合成镐
 # reward = 0.04 × (1 + 钻石镐修正 + 偷取加成修正)
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule6"}
+
 scoreboard players set #cacard.ai_reward_R6 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point 400
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

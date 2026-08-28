@@ -1,5 +1,7 @@
 #R10回复生命值
 # reward = 0.1 × (1 + 回复量 × 0.5 + 生命值12修正 + 生命值16修正) 
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule10"}
+
 scoreboard players set #cacard.ai_reward_R10 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point 1000
 scoreboard players set #cacard.ai_reward_power cacard.point 10000

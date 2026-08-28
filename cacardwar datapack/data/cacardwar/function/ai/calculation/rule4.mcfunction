@@ -1,5 +1,7 @@
 #R4合成金苹果
 # reward = 0.3 × (1 + 血量溢出修正 + 饥饿抵消修正 + 恢复被禁用的槽位修正) 
+tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule4"}
+
 scoreboard players set #cacard.ai_reward_R4 cacard.point 0
 scoreboard players set #cacard.ai_reward_base cacard.point 3000
 scoreboard players set #cacard.ai_reward_power cacard.point 10000
