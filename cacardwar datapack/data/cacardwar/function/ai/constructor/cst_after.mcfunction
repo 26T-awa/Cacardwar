@@ -25,4 +25,6 @@ data modify storage cacardwar:ai pending_sample.after append from storage cacard
 data modify storage cacardwar:ai pending_sample.after append from storage cacardwar:ai pending_sample.slot
 data modify storage cacardwar:ai pending_sample.after append from storage cacardwar:ai pending_sample.slot_state
 
+data modify storage cacardwar:ai latest_sample set from storage cacardwar:ai pending_sample
+
 function cacardwar:ai/constructor/info_refresh

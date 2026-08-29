@@ -1,5 +1,6 @@
 #R13行动导致胜利
 # reward = 2.0 × (1 + 生命值10修正 + 生命值16修正 + 生命值20修正) 
+data modify storage cacardwar:ai pending_sample.done set value 1b
 tellraw @a[tag=cacard.inAImode,limit=1] {text:"§a§o调用Rule13"}
 
 scoreboard players set #cacard.ai_reward_R13 cacard.point 0

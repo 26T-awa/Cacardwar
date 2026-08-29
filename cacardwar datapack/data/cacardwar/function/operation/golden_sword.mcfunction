@@ -17,7 +17,8 @@ $function cacardwar:main/others/advancements {team:$(team),advancementype:craft_
 
 $execute if entity @a[tag=cacard.$(oppteam)Team,scores={cacard.shieldtype=0}] run scoreboard players remove #cacard.$(oppteam)Health cacard.health 4
 $execute if entity @a[tag=cacard.$(oppteam)Team,scores={cacard.shieldtype=2}] run scoreboard players remove #cacard.$(oppteam)Health cacard.health 4
-execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players remove #cacard.$(oppteam)Health cacard.health 4
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players remove #cacard.redHealth cacard.health 4
+execute if score #cacard.time cacard.isongoing matches 5 if score #cacard.redHealth cacard.health matches 10.. run function cacardwar:ai/calculation/rule9 {arg1:4,arg2:0,arg3:0}
 execute if score #cacard.time cacard.isongoing matches 5 if score #cacard.redHealth cacard.health matches 5..9 run function cacardwar:ai/calculation/rule9 {arg1:4,arg2:1,arg3:0}
 execute if score #cacard.time cacard.isongoing matches 5 if score #cacard.redHealth cacard.health matches ..4 run function cacardwar:ai/calculation/rule9 {arg1:4,arg2:1,arg3:1}
 

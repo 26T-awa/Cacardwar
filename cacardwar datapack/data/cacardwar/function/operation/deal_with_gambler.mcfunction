@@ -15,6 +15,7 @@ $execute as @a[tag=cacard.$(team)Team] run function cacardwar:main/clear_item
 $scoreboard players add @a[tag=cacard.$(team)Team] cacard.point 3
 $scoreboard players operation #cacard.$(oppteam)Health cacard.health /= #cacard.i cacard.health
 execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.ai_reward_arg1 cacard.point = #cacard.redHealth cacard.health
+execute if score #cacard.time cacard.isongoing matches 5 if score #cacard.redHealth cacard.health matches 10.. run function cacardwar:ai/calculation/rule9_ {arg2:0,arg3:0}
 execute if score #cacard.time cacard.isongoing matches 5 if score #cacard.redHealth cacard.health matches 5..9 run function cacardwar:ai/calculation/rule9_ {arg2:1,arg3:0}
 execute if score #cacard.time cacard.isongoing matches 5 if score #cacard.redHealth cacard.health matches ..4 run function cacardwar:ai/calculation/rule9_ {arg2:1,arg3:1}
 

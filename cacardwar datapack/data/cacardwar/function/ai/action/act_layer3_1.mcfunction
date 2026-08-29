@@ -8,8 +8,9 @@ tellraw @a[tag=cacard.inAImode,limit=1] [{text:"§o选择槽位ID:"},{score:{obj
 function cacardwar:ai/calculation/rule12
 #计算action
 scoreboard players set #cacard.ai_clean cacard.point 1
-execute store result storage cacardwar:ai pending_sample.action int 1 run scoreboard players operation #cacard.ai_clean cacard.point += #cacard.ai_clean_slotID cacard.point
+execute store result storage cacardwar:ai pending_sample.action short 1 run scoreboard players operation #cacard.ai_clean cacard.point += #cacard.ai_clean_slotID cacard.point
 tellraw @a[tag=cacard.inAImode,limit=1] [{text:"§oaction计算结果:"},{score:{objective:cacard.point,name:"#cacard.ai_clean"}}]
+item replace entity @s weapon.offhand with air
 #下一轮
 schedule function cacardwar:ai/constructor/cst_after 10t
 schedule function cacardwar:ai/action/act_layer1 12t

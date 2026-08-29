@@ -10,7 +10,7 @@ scoreboard players set #cacard.ai_place cacard.point 11
 scoreboard players remove #cacard.ai_place_cardID cacard.point 1
 scoreboard players operation #cacard.ai_place_cardID cacard.point *= #10 cacard.point
 execute store result score #cacard.ai_place cacard.players run scoreboard players operation #cacard.ai_place_cardID cacard.point += #cacard.ai_place_slotID cacard.point
-execute store result storage cacardwar:ai pending_sample.action int 1 run scoreboard players operation #cacard.ai_place cacard.point += #cacard.ai_place cacard.players
+execute store result storage cacardwar:ai pending_sample.action short 1 run scoreboard players operation #cacard.ai_place cacard.point += #cacard.ai_place cacard.players
 tellraw @a[tag=cacard.inAImode,limit=1] [{text:"§oaction计算结果:"},{score:{objective:cacard.point,name:"#cacard.ai_place"}}]
 #下一轮
 schedule function cacardwar:ai/constructor/cst_after 10t
