@@ -1,17 +1,16 @@
-scoreboard players operation #cacard.m_Sum1 cacard.players /= #cacard.m_div1 cacard.players
-scoreboard players operation #cacard.m_Sum2 cacard.players /= #cacard.m_div1 cacard.players
-scoreboard players operation #cacard.m_Sum3 cacard.players /= #cacard.m_div1 cacard.players
-scoreboard players operation #cacard.m_Sum cacard.players += #cacard.m_Sum1 cacard.players
-scoreboard players operation #cacard.m_Sum cacard.players += #cacard.m_Sum2 cacard.players
-execute store result storage cacardwar:agent sum double 0.001 run scoreboard players operation #cacard.m_Sum cacard.players += #cacard.m_Sum3 cacard.players
+#scoreboard players operation #cacard.m_sum2 cacard.point /= #10 cacard.point
+#scoreboard players operation #cacard.m_sum3 cacard.point /= #10 cacard.point
+$execute store result storage cacardwar:ai matrix.o[$(loop_j)] double 0.0001 run scoreboard players get #cacard.m_sum cacard.point
 
-#tellraw @a ["WRITING!   loop_j=",{storage:"cacardwar:agent",nbt:"loop_j"},"with Sum=",{storage:"cacardwar:agent",nbt:"sum"}]
+#scoreboard players operation #cacard.m_sum cacard.point += #cacard.m_sum1 cacard.point
+#scoreboard players operation #cacard.m_sum cacard.point += #cacard.m_sum2 cacard.point
+#execute store result storage cacardwar:ai sum double 0.001 run scoreboard players operation #cacard.m_sum cacard.point += #cacard.m_sum3 cacard.point
 
-$data modify storage cacardwar:agent layer2[$(loop_j)] set from storage cacardwar:agent sum
-$execute store result score #cacard.m_Sum cacard.point run data get storage cacardwar:agent action_mask[$(loop_j)] 1
-$execute if score #cacard.m_Sum cacard.point matches 0 run data modify storage cacardwar:agent layer2[$(loop_j)] set value -999999999d
+#tellraw @a ["WRITING!   loop_j=",{storage:"cacardwar:ai",nbt:"loop_j"},"with Sum=",{storage:"cacardwar:ai",nbt:"sum"}]
 
-scoreboard players set #cacard.m_Sum1 cacard.players 0
-scoreboard players set #cacard.m_Sum2 cacard.players 0
-scoreboard players set #cacard.m_Sum3 cacard.players 0
-scoreboard players set #cacard.m_Sum cacard.players 0
+#$data modify storage cacardwar:ai output[$(loop_j)] set from storage cacardwar:ai sum
+
+#scoreboard players set #cacard.m_sum1 cacard.point 0
+#scoreboard players set #cacard.m_sum2 cacard.point 0
+#scoreboard players set #cacard.m_sum3 cacard.point 0
+scoreboard players set #cacard.m_sum cacard.point 0

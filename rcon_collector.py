@@ -3,7 +3,7 @@
 """
 RCON 数据采集器（适配 pending_sample 单样本结构）
 从 Minecraft 的 storage cacardwar:ai pending_sample 轮询单条经验，
-转换为标准 {state, action, reward, next_state, done} 格式，
+转换为标准格式，
 追加写入本地 experience.jsonl（每行一条 JSON）。
 
 依赖：
@@ -180,7 +180,7 @@ def parse_latest_sample(resp):
     """
     从 /data get 的返回文本中解析 latest_sample（单个 Compound）。
     只提取必要字段：reward[0], before, after, action, done。
-    返回精简后的字典，且所有浮点数四舍五入到 4 位小数。
+    返回精简后的字典，键顺序为 action, reward, done, before, after。
     """
     if not resp:
         return None
@@ -214,13 +214,13 @@ def parse_latest_sample(resp):
         log("[warn] reward 字段不是数组或为空，设为 0.0")
         total_reward = 0.0
 
-    # 构建精简样本（尚未四舍五入）
+    # 构建精简样本，键顺序：action, reward, done, before, after
     sample = {
-        "state": data["before"],
         "action": int(data["action"]),
         "reward": total_reward,
-        "next_state": data["after"],
         "done": bool(data.get("done", 0)),
+        "before": data["before"],
+        "after": data["after"],
     }
 
     # 对浮点数进行四舍五入（保留 4 位小数）

@@ -26,7 +26,7 @@ tellraw @s {text:"§8- §7§n五谷丰登§r",click_event:{action:"run_command",
 tellraw @s {text:"§8- §f§n赌徒的交易§r",click_event:{action:"run_command",command:"/function cacardwar:recipe/instant_using/deal_with_gambler"}}
 tellraw @s {text:"§f§l效果§r"}
 tellraw @s {text:"§8- §f§n饥饿§n§r",click_event:{action:"run_command",command:"/function cacardwar:recipe/effect/hungry"}}
-tellraw @s {text:"§8- §7§n乌鸦的祝福§n§r",click_event:{action:"run_command",command:"/function cacardwar:recipe/effect/bless_of_crow"}}
+tellraw @s {text:"§8- §7§n乌鸦的赐福§n§r",click_event:{action:"run_command",command:"/function cacardwar:recipe/effect/bless_of_crow"}}
 
 #tellraw @s {text:"§8- §f§n§r",click_event:{action:"run_command",command:"/function cacardwar:recipe/complex_crafting/"}}
 #tellraw @s {text:"§8- §f§n§r",click_event:{action:"run_command",command:"/function cacardwar:recipe/instant_using/"}}

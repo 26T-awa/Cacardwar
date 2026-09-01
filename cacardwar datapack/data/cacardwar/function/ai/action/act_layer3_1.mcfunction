@@ -5,7 +5,7 @@ scoreboard players set #cacard.ai_clean_slotID cacard.point -1
 function cacardwar:main/others/loop_entry {min:0,max:10,bias:0,command:'function cacardwar:ai/action/loop/func5 with storage cacardwar:loop'}
 tellraw @a[tag=cacard.inAImode,limit=1] [{text:"§o选择槽位ID:"},{score:{objective:cacard.point,name:"#cacard.ai_clean_slotID"}}]
 #触发规则Rule12
-function cacardwar:ai/calculation/rule12
+execute unless score #cacard.ai_clean_slotID cacard.point matches 0 run function cacardwar:ai/calculation/rule12
 #计算action
 scoreboard players set #cacard.ai_clean cacard.point 1
 execute store result storage cacardwar:ai pending_sample.action short 1 run scoreboard players operation #cacard.ai_clean cacard.point += #cacard.ai_clean_slotID cacard.point

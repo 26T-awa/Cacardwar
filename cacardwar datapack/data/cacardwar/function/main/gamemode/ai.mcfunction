@@ -43,3 +43,5 @@ execute as @e[tag=cacard.blue] run data modify entity @s Fixed set value true
 execute as @e[tag=cacard.blue0] run data modify entity @s Fixed set value true
 execute as @e[tag=cacard.red] run data modify entity @s Fixed set value true
 execute as @e[tag=cacard.red0] run data modify entity @s Fixed set value true
+##4.8胜负判断
+execute if score #cacard.redHealth cacard.health matches ..0 run function cacardwar:ai/calculation/rule13 {arg1:0,arg2:0,arg3:0}

@@ -3,12 +3,7 @@ $execute as @e[tag=cacard.$(team)Zombie] at @s run particle block{block_state:re
 $execute as @e[tag=cacard.$(team)Zombie] at @s run playsound entity.zombie.break_wooden_door master @a[tag=cacard.ingame] ~ ~ ~ 1.2 1 1
 $execute as @e[tag=cacard.$(team)Zombie] at @s run playsound entity.zombie.ambient master @a[tag=cacard.ingame] ~ ~ ~ 1 1.3 1
 $execute as @e[tag=cacard.$(team)Zombie] unless entity @e[tag=cacard.$(oppteam)Scarecrow] run scoreboard players remove #cacard.$(oppteam)Health cacard.health 4
-execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players set #cacard.ai_reward_arg1 cacard.point 4
-execute if score #cacard.time cacard.isongoing matches 5 run execute store result score #cacard.ai_reward_arg1 cacard.players run execute if entity @e[tag=cacard.blueSuperZombie]
-execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.ai_reward_arg1 cacard.point *= #cacard.ai_reward_arg1 cacard.players
-execute if score #cacard.time cacard.isongoing matches 5 unless score #cacard.ai_reward_arg1 cacard.players matches 0 unless entity @e[tag=cacard.redScarecrow] if score #cacard.redHealth cacard.health matches 10.. run function cacardwar:ai/calculation/rule9_ {arg2:0,arg3:0}
-execute if score #cacard.time cacard.isongoing matches 5 unless score #cacard.ai_reward_arg1 cacard.players matches 0 unless entity @e[tag=cacard.redScarecrow] if score #cacard.redHealth cacard.health matches 5..9 run function cacardwar:ai/calculation/rule9_ {arg2:1,arg3:0}
-execute if score #cacard.time cacard.isongoing matches 5 unless score #cacard.ai_reward_arg1 cacard.players matches 0 unless entity @e[tag=cacard.redScarecrow] if score #cacard.redHealth cacard.health matches ..4 run function cacardwar:ai/calculation/rule9_ {arg2:1,arg3:1}
+execute if score #cacard.time cacard.isongoing matches 5 unless entity @e[tag=cacard.redScarecrow] store result score #cacard.ai_reward_arg1 cacard.players if entity @e[tag=cacard.blueZombie]
 $execute as @e[tag=cacard.$(team)Zombie] if entity @e[tag=cacard.$(oppteam)Scarecrow] run playsound minecraft:block.grass.break master @a[tag=cacard.ingame] ~ ~ ~ 0.9 0.7 0.8
 $execute as @e[tag=cacard.$(team)Zombie] if entity @e[tag=cacard.$(oppteam)Scarecrow] run kill @e[tag=cacard.$(oppteam)Scarecrow,limit=1]
 
@@ -24,14 +19,21 @@ $execute as @e[tag=cacard.$(team)SuperZombie] at @s run playsound entity.zombie.
 $execute as @e[tag=cacard.$(team)SuperZombie] at @s run playsound entity.entity.donkey.death master @a[tag=cacard.ingame] ~ ~ ~ 0.2 0.3
 $execute as @e[tag=cacard.$(team)SuperZombie] at @s run playsound entity.zombie.ambient master @a[tag=cacard.ingame] ~ ~ ~ 1 1.3 1
 $execute as @e[tag=cacard.$(team)SuperZombie] unless entity @e[tag=cacard.$(oppteam)Scarecrow] run scoreboard players remove #cacard.$(oppteam)Health cacard.health 5
-execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players set #cacard.ai_reward_arg1 cacard.point 5
-execute if score #cacard.time cacard.isongoing matches 5 run execute store result score #cacard.ai_reward_arg1 cacard.players run execute if entity @e[tag=cacard.blueSuperZombie]
-execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.ai_reward_arg1 cacard.point *= #cacard.ai_reward_arg1 cacard.players
-execute if score #cacard.time cacard.isongoing matches 5 unless score #cacard.ai_reward_arg1 cacard.players matches 0 unless entity @e[tag=cacard.redScarecrow] if score #cacard.redHealth cacard.health matches 10.. run function cacardwar:ai/calculation/rule9_ {arg2:0,arg3:0}
-execute if score #cacard.time cacard.isongoing matches 5 unless score #cacard.ai_reward_arg1 cacard.players matches 0 unless entity @e[tag=cacard.redScarecrow] if score #cacard.redHealth cacard.health matches 5..9 run function cacardwar:ai/calculation/rule9_ {arg2:1,arg3:0}
-execute if score #cacard.time cacard.isongoing matches 5 unless score #cacard.ai_reward_arg1 cacard.players matches 0 unless entity @e[tag=cacard.redScarecrow] if score #cacard.redHealth cacard.health matches ..4 run function cacardwar:ai/calculation/rule9_ {arg2:1,arg3:1}
+execute if score #cacard.time cacard.isongoing matches 5 unless entity @e[tag=cacard.redScarecrow] store result score #cacard.ai_reward_arg2 cacard.players if entity @e[tag=cacard.blueSuperZombie]
 $execute as @e[tag=cacard.$(team)SuperZombie] if entity @e[tag=cacard.$(oppteam)Scarecrow] run playsound minecraft:block.grass.break master @a[tag=cacard.ingame] ~ ~ ~ 0.9 0.7 0.8
-$execute as @e[tag=cacard.$(team)SuperZombie] if entity @e[tag=cacard.$(oppteam)Scarecrow] run kill @e[tag=cacard.$(oppteam)Scarecrow,limit=1,sort=nearest]
+$execute as @e[tag=cacard.$(team)SuperZombie] if entity @e[tag=cacard.$(oppteam)Scarecrow] run kill @e[tag=cacard.$(oppteam)Scarecrow,limit=1]
 
+#ai训练模式计算
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players set #cacard.ai_reward_arg1 cacard.point 4
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.ai_reward_arg1 cacard.point *= #cacard.ai_reward_arg1 cacard.players
 
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players set #cacard.ai_reward_arg2 cacard.point 5
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.ai_reward_arg2 cacard.point *= #cacard.ai_reward_arg2 cacard.players
+
+execute if score #cacard.time cacard.isongoing matches 5 run scoreboard players operation #cacard.ai_reward_arg1 cacard.point += #cacard.ai_reward_arg2 cacard.point
+
+execute if score #cacard.time cacard.isongoing matches 5 unless score #cacard.ai_reward_arg1 cacard.point matches 0 if score #cacard.redHealth cacard.health matches 10.. run function cacardwar:ai/calculation/rule9_ {arg2:0,arg3:0}
+execute if score #cacard.time cacard.isongoing matches 5 unless score #cacard.ai_reward_arg1 cacard.point matches 0 if score #cacard.redHealth cacard.health matches 5..9 run function cacardwar:ai/calculation/rule9_ {arg2:1,arg3:0}
+execute if score #cacard.time cacard.isongoing matches 5 unless score #cacard.ai_reward_arg1 cacard.point matches 0 if score #cacard.redHealth cacard.health matches ..4 run function cacardwar:ai/calculation/rule9_ {arg2:1,arg3:1}
 scoreboard players reset #cacard.ai_reward_arg1 cacard.players
+scoreboard players reset #cacard.ai_reward_arg2 cacard.players

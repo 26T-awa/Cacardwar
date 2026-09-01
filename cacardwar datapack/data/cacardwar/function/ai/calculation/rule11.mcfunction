@@ -8,7 +8,7 @@ scoreboard players set #cacard.ai_reward_power cacard.point 10000
 
 #*0.5
 execute if score #cacard.ai_reward_arg1 cacard.point matches 1..3 run scoreboard players operation #cacard.ai_reward_arg1 cacard.point *= #10000 cacard.point
-execute if score #cacard.ai_reward_arg1 cacard.point matches 4.. run scoreboard players operation #cacard.ai_reward_arg1 cacard.point *= #8000 cacard.point
+execute if score #cacard.ai_reward_arg1 cacard.point matches 4..2368 run scoreboard players operation #cacard.ai_reward_arg1 cacard.point *= #8000 cacard.point
 
 scoreboard players operation #cacard.ai_reward_power cacard.point += #cacard.ai_reward_arg1 cacard.point
 

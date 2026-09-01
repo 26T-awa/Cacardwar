@@ -1,3 +1,4 @@
+#function cacardwar:main/reset with storage cacardwar:preparation_book_text
 title @a[tag=cacard.ingame] reset
 execute as @e[tag=cacard.summoner] at @s run tp @s ~ -100 ~
 kill @e[tag=cacard.summoner]
