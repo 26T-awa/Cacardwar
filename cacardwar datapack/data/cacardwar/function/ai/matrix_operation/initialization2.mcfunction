@@ -1,5 +1,6 @@
 #function cacardwar:ai/matrix_operation/initialization2 {X:x}
 #X表示A(1xX) + B(1xX) = C(1xX)
+#最终将在cacardwar:ai matrix.o找到矩阵(1xX)
 
 $scoreboard players set #cacard.m_i cacard.players $(X)
 scoreboard players set #cacard.m_i cacard.point 0

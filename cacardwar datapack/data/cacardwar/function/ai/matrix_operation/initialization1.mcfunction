@@ -1,6 +1,6 @@
 #function cacardwar:ai/matrix_operation/initialization1 {X:x,Y:y}
 #X,Y表示A(1xX) x B(XxY) = C(1xY)
-#最终将在cacardwar:ai output找到矩阵(1xY)
+#最终将在cacardwar:ai matrix.o找到矩阵(1xY)
 
 #计算1. 特征向量O(1x81) x model.weights1(81x64) = A(1x64)
 #计算2. A(1x64) + model.biases1(1x64) = B(1x64)
@@ -34,9 +34,6 @@ data modify storage cacardwar:ai sum set value 0d
 scoreboard players set #cacard.m_value1 cacard.point 0
 scoreboard players set #cacard.m_value2 cacard.point 0
 scoreboard players set #cacard.m_output cacard.point 0
-#scoreboard players set #cacard.m_sum1 cacard.point 0
-#scoreboard players set #cacard.m_sum2 cacard.point 0
-#scoreboard players set #cacard.m_sum3 cacard.point 0
 scoreboard players set #cacard.m_sum cacard.point 0
 
 # 进入循环：计算一个j∈Y的元素

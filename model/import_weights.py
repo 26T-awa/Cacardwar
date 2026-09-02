@@ -1,22 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-通过 RCON 将训练好的权重矩阵导入 Minecraft storage。
-适用于导入 DQN 训练生成的 fc1_weight.json, fc1_bias.json 等文件。
+生成 mcfunction 文件，用于在 Minecraft 游戏内导入训练好的权重矩阵。
+运行后会在指定路径生成 import_weights.mcfunction，将其放入数据包 functions 文件夹，
+然后在游戏内执行 /function <命名空间>:import_weights 即可。
 """
 
 import json
-import time
-from mcrcon import MCRcon
+import os
 
 # ================== 配置区 ==================
-RCON_CONFIG = {
-    'host': '127.0.0.1',
-    'port': 25575,
-    'password': '12345'  # 请替换为你的实际密码
-}
-
-# 定义导入映射：JSON文件名 -> storage中的目标路径
+# 输入文件路径（相对于脚本运行目录）
 FILES_TO_IMPORT = [
     ('model/fc1_weight.json', 'cacardwar:ai model.weights1'),  # 81x64
     ('model/fc1_bias.json', 'cacardwar:ai model.biases1'),     # 64
@@ -24,70 +18,67 @@ FILES_TO_IMPORT = [
     ('model/fc2_bias.json', 'cacardwar:ai model.biases2'),     # 181
 ]
 
-# 每条命令之间的延迟（秒），防止命令积压
-COMMAND_DELAY = 0.05
+OUTPUT_FILE = 'cacardwar datapack/data/cacardwar/function/ai/game/import_weights.mcfunction'   # 生成的 mcfunction 文件名
 # ===========================================
 
+def generate_mcfunction():
+    # 确保输出目录存在
+    output_dir = os.path.dirname(OUTPUT_FILE)
+    if output_dir:
+        os.makedirs(output_dir, exist_ok=True)
 
-def import_matrix(mcr, file_path, storage_path):
-    """导入一个矩阵（列表的列表）到指定的 storage 路径。"""
-    print(f"正在导入: {file_path} -> storage {storage_path}")
+    lines = []
+    # 添加注释
+    lines.append('# 自动生成的权重导入函数')
+    lines.append('# 执行前请确保已加载对应数据包')
+    lines.append('')
 
-    try:
-        with open(file_path, 'r', encoding='utf-8') as f:
-            matrix = json.load(f)
-    except FileNotFoundError:
-        print(f"  [错误] 文件 {file_path} 未找到，跳过。")
-        return
-    except json.JSONDecodeError as e:
-        print(f"  [错误] 文件 {file_path} 解析失败: {e}，跳过。")
-        return
+    for file_path, storage_path in FILES_TO_IMPORT:
+        # 检查文件是否存在
+        if not os.path.exists(file_path):
+            print(f"[警告] 文件 {file_path} 不存在，跳过。")
+            continue
 
-    # 1. 初始化目标为一个空列表
-    init_cmd = f"data modify storage {storage_path} set value []"
-    mcr.command(init_cmd)
-    time.sleep(COMMAND_DELAY)
+        try:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+        except json.JSONDecodeError as e:
+            print(f"[错误] 文件 {file_path} 解析失败: {e}，跳过。")
+            continue
 
-    # 2. 逐行追加数据
-    # 对于一维向量（如 bias），它本身就是一个列表，需要作为一整行追加
-    if matrix and isinstance(matrix[0], (int, float)):
-        # 处理一维向量
-        row_json = json.dumps(matrix)
-        append_cmd = f"data modify storage {storage_path} append value {row_json}"
-        mcr.command(append_cmd)
-        mcr.command(f"tellraw @a \"完成向{storage_path}加载{file_path}.\"")
-        print(f"  已导入 1 行 (向量)")
-    else:
-        # 处理二维矩阵
-        for i, row in enumerate(matrix):
-            row_json = json.dumps(row)
-            append_cmd = f"data modify storage {storage_path} append value {row_json}"
-            mcr.command(append_cmd)
-            # 每10行打印一次进度，避免刷屏
-            if (i + 1) % 10 == 0:
-                print(f"  已导入 {i+1} 行...")
-            time.sleep(COMMAND_DELAY)
-        mcr.command(f"tellraw @a \"完成向{storage_path}加载{file_path}.\"")
-        print(f"  矩阵导入完成，共 {len(matrix)} 行。")
+        if not data:
+            print(f"[警告] 文件 {file_path} 为空，跳过。")
+            continue
 
+        # 重置目标为空列表
+        lines.append(f'# 重置 {storage_path}')
+        lines.append(f'data modify storage {storage_path} set value []')
 
-def main():
-    print("开始导入权重...")
-    try:
-        with MCRcon(RCON_CONFIG['host'], RCON_CONFIG['password'], port=RCON_CONFIG['port']) as mcr:
-            print(f"成功连接到 RCON 服务器 ({RCON_CONFIG['host']}:{RCON_CONFIG['port']})")
-            for file_name, storage_path in FILES_TO_IMPORT:
-                import_matrix(mcr, file_name, storage_path)
-                print("---")
-        print("所有权重导入完成！")
-    except ConnectionRefusedError:
-        print("[错误] 无法连接到 RCON 服务器，请确保：")
-        print("  1. 游戏服务器正在运行。")
-        print("  2. server.properties 中已开启 RCON (enable-rcon=true)。")
-        print("  3. 脚本中的 host, port, password 配置正确。")
-    except Exception as e:
-        print(f"[错误] 发生未知异常: {e}")
+        # 判断是一维向量还是二维矩阵
+        if isinstance(data[0], (int, float)):
+            # 一维向量：整体追加
+            row_json = json.dumps(data)
+            lines.append(f'data modify storage {storage_path} append value {row_json}')
+            print(f"[信息] {file_path} -> 一维向量，1 行")
+        else:
+            # 二维矩阵：逐行追加
+            for i, row in enumerate(data):
+                row_json = json.dumps(row)
+                lines.append(f'data modify storage {storage_path} append value {row_json}')
+                # 每 10 行添加注释方便查看进度
+                if (i + 1) % 10 == 0:
+                    lines.append(f'# 已导入 {i+1} 行')
+            print(f"[信息] {file_path} -> 二维矩阵，{len(data)} 行")
 
+        lines.append('')  # 空行分隔
 
-if __name__ == "__main__":
-    main()
+    # 写入文件
+    with open(OUTPUT_FILE, 'w', encoding='utf-8') as f:
+        f.write('\n'.join(lines))
+
+    print(f"\n成功生成 {OUTPUT_FILE}，共 {len(lines)} 行命令。")
+    print("请将此文件放入数据包的 functions 文件夹（例如 data/cacardwar/functions/），")
+    print("然后在游戏内执行 /function cacardwar:import_weights （如果命名空间不同请自行调整）。")
+
+if __name__ == '__main__':
+    generate_mcfunction()
