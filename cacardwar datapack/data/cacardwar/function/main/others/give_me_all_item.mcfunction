@@ -19,6 +19,8 @@ give @s yellow_concrete[enchantment_glint_override=true,custom_name={text:"§e�
 
 give @s yellow_concrete[enchantment_glint_override=true,custom_name={text:"§e<INFO>"},custom_data={cacardwar:["ai_act","card_place_info","non-card"]},custom_model_data={strings:["cacardwar:ai_act_card_place_info"]},lore=[]] 3
 
+give @s purple_concrete[enchantment_glint_override=true,custom_name={text:"§5自动AI操作"},custom_data={cacardwar:["ai_auto","non-card"]},custom_model_data={strings:["cacardwar:ai_auto"]},lore=[]]
+
 #卡牌
 give @s iron_ingot[enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §f§l铁锭"}],custom_data={cacardwar:["iron_ingot","mineral","card","card1"],cacard.recipe1:true,cacard.recipe3:true,cacard.recipe4:true,cacard.recipe9:true,cacard.recipe10:true,cacard.recipe12:true,cacard.recipe15:true},custom_model_data={strings:["cacardwar:iron_ingot"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]]
 

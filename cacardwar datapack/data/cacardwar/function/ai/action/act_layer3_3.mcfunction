@@ -1,7 +1,10 @@
 #放置-记录卡槽
 scoreboard players display name cacard.info8 cacard.Info {text:"§7Recorded and §eRecording..."}
+execute if entity @a[tag=cacard.inAImode.auto] run scoreboard players operation #cacard.ai_action_mask cacard.up = #cacard.ai_action_mask cacard.down
+execute if entity @a[tag=cacard.inAImode.auto] run scoreboard players remove #cacard.ai_action_mask cacard.up 1
 
 scoreboard players set #cacard.ai_place_slotID cacard.point -1
+execute if entity @a[tag=cacard.inAImode.auto] store result score #cacard.ai_place_slotID cacard.point run scoreboard players operation #cacard.ai_action_mask cacard.up %= #10 cacard.point
 function cacardwar:main/others/loop_entry {min:0,max:10,bias:0,command:'function cacardwar:ai/action/loop/func4 with storage cacardwar:loop'}
 tellraw @a[tag=cacard.inAImode,limit=1] [{text:"§o选择槽位:"},{score:{objective:cacard.point,name:"#cacard.ai_place_slotID"}}]
 clear @s *[custom_data~{cacardwar:["slot"]}]

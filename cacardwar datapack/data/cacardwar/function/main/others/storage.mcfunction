@@ -21,7 +21,11 @@ data modify storage cacardwar:main_storage particle2 set value "dust{color:[0.9,
 data modify storage cacardwar:main_storage particle3 set value "dust{color:[0.0,0.8,0.9],scale:1.2} ~ ~2 ~ 0.5 0.3 0.5 0 4 normal @a[tag=cacard.ingame]"
 execute store result storage cacardwar:main_storage seed long 1 run seed
 
-function cacardwar:agent/state_reset
+data modify storage cacardwar:ai matrix.l set value []
+function cacardwar:main/others/loop_entry {min:0,max:181,bias:0,command:'data modify storage cacardwar:ai matrix.l append value [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]'}
+data modify storage cacardwar:ai matrix.r set from storage cacardwar:ai matrix.l
+data modify storage cacardwar:ai matrix.o set from storage cacardwar:ai matrix.l
+data modify storage cacardwar:ai action.key set value -1
 
 data modify storage cacardwar:main_storage item_predicates set value []
 data modify storage cacardwar:main_storage item_predicates append value 'enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §f§l铁锭"}],custom_data={cacardwar:["iron_ingot","mineral","card","card1"],cacard.recipe1:true,cacard.recipe3:true,cacard.recipe4:true,cacard.recipe9:true,cacard.recipe10:true,cacard.recipe12:true,cacard.recipe15:true},custom_model_data={strings:["cacardwar:iron_ingot"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]'

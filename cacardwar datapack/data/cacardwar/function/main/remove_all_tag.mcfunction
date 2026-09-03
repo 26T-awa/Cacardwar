@@ -28,3 +28,4 @@ tag @s remove cacard.bt100
 tag @s remove cacard.ai_clean
 tag @s remove cacard.ai_place
 tag @s remove cacard.ai_placed_card
+tag @s remove cacard.inAImode.auto

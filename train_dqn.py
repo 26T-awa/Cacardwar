@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 python train_dqn.py --data experience.jsonl --epochs 100 --batch-size 16 --lr 1e-3
+python train_dqn.py --epochs 50 --batch-size 16 --lr 5e-4 --target-update 500
 DQN 训练脚本（适配新数据格式）
 - 输入维度：81（展平后的 before/after）
 - 隐藏层：64
