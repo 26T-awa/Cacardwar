@@ -111,15 +111,14 @@ def load_experience(path):
                 )
                 continue
 
-            samples.append(
-                {
-                    "state": state_flat,
-                    "action": action,
-                    "reward": float(entry["reward"]),
-                    "next_state": next_state_flat,
-                    "done": bool(entry.get("done", False)),
-                }
-            )
+            samples.append({
+                "state": state_flat,
+                "action": action,
+                "reward": float(entry["reward"]),
+                "next_state": next_state_flat,
+                "done": bool(entry.get("done", False)),
+                "source": entry.get("source", "ai")  # 默认为 ai，防止旧数据无此字段
+            })
 
     if not samples:
         print("[!] 没有有效样本，无法训练")
@@ -146,8 +145,12 @@ def build_tensors(samples, device):
     dones = torch.tensor(
         [1.0 if s["done"] else 0.0 for s in samples], dtype=torch.float32, device=device
     )
-    return states, actions, rewards, next_states, dones
-
+    weights = torch.tensor(
+        [2.0 if s.get("source") == "human" else 1.0 for s in samples],
+        dtype=torch.float32,
+        device=device
+    )
+    return states, actions, rewards, next_states, dones, weights
 
 # ---------- 导出工具 ----------
 def export_json(path, arr):
@@ -187,8 +190,7 @@ def main():
     # 加载数据
     samples = load_experience(args.data)
     n = len(samples)
-    states, actions, rewards, next_states, dones = build_tensors(samples, device)
-
+    states, actions, rewards, next_states, dones, weights = build_tensors(samples, device)
     # 批大小不能超过样本数
     bs = min(args.batch_size, n)
     steps_per_epoch = max(1, (n + bs - 1) // bs)
@@ -213,6 +215,7 @@ def main():
             r = rewards[idx]
             ns = next_states[idx]
             d = dones[idx]
+            w = weights[idx]
 
             q = online(s).gather(1, a.unsqueeze(1)).squeeze(1)
             with torch.no_grad():
@@ -220,8 +223,9 @@ def main():
                 target_q = r + args.gamma * max_next_q * (1.0 - d)
 
             loss = criterion(q, target_q)
+            weighted_loss = (loss * w).mean()
             optimizer.zero_grad()
-            loss.backward()
+            weighted_loss.backward()
             optimizer.step()
             epoch_loss += loss.item()
 

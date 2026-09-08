@@ -26,6 +26,7 @@ function cacardwar:main/others/loop_entry {min:0,max:181,bias:0,command:'data mo
 data modify storage cacardwar:ai matrix.r set from storage cacardwar:ai matrix.l
 data modify storage cacardwar:ai matrix.o set from storage cacardwar:ai matrix.l
 data modify storage cacardwar:ai action.key set value -1
+data remove storage cacardwar:ai latest_sample
 
 data modify storage cacardwar:main_storage item_predicates set value []
 data modify storage cacardwar:main_storage item_predicates append value 'enchantment_glint_override=true,custom_name=[{text:"§a卡牌 §7-- §f§l铁锭"}],custom_data={cacardwar:["iron_ingot","mineral","card","card1"],cacard.recipe1:true,cacard.recipe3:true,cacard.recipe4:true,cacard.recipe9:true,cacard.recipe10:true,cacard.recipe12:true,cacard.recipe15:true},custom_model_data={strings:["cacardwar:iron_ingot"]},lore=[{text:"§7§o手持并等待以展示参与的复杂配方。"}]'

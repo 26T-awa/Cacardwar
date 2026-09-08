@@ -49,3 +49,5 @@ execute if score #cacard.time cacard.time matches 20.. if score #cacard.redHealt
 ##9自动采集数据准许
 execute as @a[tag=cacard.inAImode,limit=1,tag=!cacard.inAImode.auto] if items entity @s weapon.offhand *[custom_data~{cacardwar:["ai_auto","non-card"]}] run tag @s add cacard.inAImode.auto
 execute as @a[tag=cacard.inAImode,limit=1,tag=cacard.inAImode.auto] unless items entity @s weapon.offhand *[custom_data~{cacardwar:["ai_auto","non-card"]}] run tag @s remove cacard.inAImode.auto
+execute if entity @a[tag=cacard.inAImode.auto] run data modify storage cacardwar:ai pending_sample.source set value "ai"
+execute unless entity @a[tag=cacard.inAImode.auto] run data modify storage cacardwar:ai pending_sample.source set value "human"

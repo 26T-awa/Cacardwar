@@ -1,16 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-RCON 数据采集器（适配 pending_sample 单样本结构）
-从 Minecraft 的 storage cacardwar:ai pending_sample 轮询单条经验，
-转换为标准格式，
-追加写入本地 experience.jsonl（每行一条 JSON）。
-
-依赖：
-  pip install mcrcon
-
-用法：
-  python rcon_collector.py --password 12345
+RCON 数据采集器（按 source 字段分文件存储）
+- 读取 storage cacardwar:ai latest_sample
+- 根据 source 字段（"human" 或 "ai"）写入不同的 JSONL 文件
+- 默认文件：experience_ai.jsonl 和 experience_human.jsonl
 """
 
 import argparse
@@ -30,9 +24,8 @@ except ImportError:
 
 STORAGE_CMD_GET = "/data get storage cacardwar:ai latest_sample"
 STORAGE_CMD_CLEAR = "/data remove storage cacardwar:ai latest_sample"
-DEFAULT_OUTPUT = os.path.join(
-    os.path.dirname(os.path.abspath(__file__)), "experience.jsonl"
-)
+DEFAULT_OUTPUT_AI = "experience_ai.jsonl"
+DEFAULT_OUTPUT_HUMAN = "experience_human.jsonl"
 
 
 def log(msg):
@@ -179,8 +172,8 @@ def _parse_snbt(s):
 def parse_latest_sample(resp):
     """
     从 /data get 的返回文本中解析 latest_sample（单个 Compound）。
-    只提取必要字段：reward[0], before, after, action, done。
-    返回精简后的字典，键顺序为 action, reward, done, before, after。
+    提取必要字段：action, reward, done, before, after, source。
+    返回精简后的字典。
     """
     if not resp:
         return None
@@ -200,6 +193,7 @@ def parse_latest_sample(resp):
         log(f"[warn] 期望 Compound，实际得到 {type(data).__name__}")
         return None
 
+    # 必要字段：before, after, action, reward, done
     required = {"before", "after", "action", "reward", "done"}
     existing = set(data.keys())
     missing = required - existing
@@ -214,16 +208,21 @@ def parse_latest_sample(resp):
         log("[warn] reward 字段不是数组或为空，设为 0.0")
         total_reward = 0.0
 
-    # 构建精简样本，键顺序：action, reward, done, before, after
+    # 提取 source 字段，默认为 "ai"
+    source = data.get("source", "ai")
+    if source not in ("ai", "human"):
+        log(f"[warn] source 字段值 '{source}' 不合法，设为 'ai'")
+        source = "ai"
+
     sample = {
         "action": int(data["action"]),
         "reward": total_reward,
         "done": bool(data.get("done", 0)),
         "before": data["before"],
         "after": data["after"],
+        "source": source,  # 新增 source 字段
     }
 
-    # 对浮点数进行四舍五入（保留 4 位小数）
     return round_floats(sample, ndigits=4)
 
 
@@ -320,18 +319,16 @@ def load_seen(output):
 
 
 def main():
-
     ap = argparse.ArgumentParser(
-        description="从 Minecraft RCON 采集 pending_sample 到 experience.jsonl"
+        description="从 Minecraft RCON 采集样本，按 source 分文件存储"
     )
     ap.add_argument("--host", default="127.0.0.1", help="RCON 主机")
     ap.add_argument("--port", type=int, default=25575, help="RCON 端口（默认 25575）")
     ap.add_argument("--password", required=True, help="RCON 密码")
     ap.add_argument("--interval", type=float, default=1.0, help="轮询间隔秒（默认 1）")
+    ap.add_argument("--output-ai", default=DEFAULT_OUTPUT_AI, help="AI 样本输出文件")
     ap.add_argument(
-        "--output",
-        default=DEFAULT_OUTPUT,
-        help=f"输出 jsonl 路径（默认 {DEFAULT_OUTPUT}）",
+        "--output-human", default=DEFAULT_OUTPUT_HUMAN, help="人工样本输出文件"
     )
     ap.add_argument(
         "--no-clear", action="store_true", help="读取后不清空游戏内存 storage"
@@ -341,12 +338,16 @@ def main():
     )
     args = ap.parse_args()
 
-    out_dir = os.path.dirname(os.path.abspath(args.output))
-    if out_dir:
-        os.makedirs(out_dir, exist_ok=True)
+    # 创建输出目录
+    for out in [args.output_ai, args.output_human]:
+        d = os.path.dirname(out)
+        if d:
+            os.makedirs(d, exist_ok=True)
 
-    seen = load_seen(args.output)
-    log(f"断点续传：已加载 {len(seen)} 条已有样本（用于去重）")
+    # 加载已有指纹（分别加载）
+    seen_ai = load_seen(args.output_ai)
+    seen_human = load_seen(args.output_human)
+    log(f"断点续传：已加载 {len(seen_ai)} 条 AI 样本，{len(seen_human)} 条人工样本")
 
     while True:
         try:
@@ -355,23 +356,33 @@ def main():
                 mcr.connect()
                 log(f"已连接 RCON {args.host}:{args.port}")
                 while True:
-                    # 在主循环中：
                     resp = mcr.command(STORAGE_CMD_GET)
                     sample = parse_latest_sample(resp)
                     if sample is None:
                         log("[warn] 无法解析 latest_sample（可能 storage 为空）")
                     else:
+                        # 根据 source 选择输出文件
+                        source = sample.get("source", "ai")
+                        if source == "human":
+                            out_file = args.output_human
+                            seen_set = seen_human
+                        else:
+                            out_file = args.output_ai
+                            seen_set = seen_ai
+
                         fp = fingerprint(sample)
-                        if fp in seen:
+                        if fp in seen_set:
                             log("样本已存在（重复），跳过")
                         else:
-                            with open(args.output, "a", encoding="utf-8") as f:
+                            with open(out_file, "a", encoding="utf-8") as f:
                                 f.write(json.dumps(sample, ensure_ascii=False) + "\n")
-                            seen.add(fp)
-                            log(f"新增 1 条样本 -> {args.output}")
+                            seen_set.add(fp)
+                            log(f"新增 1 条 {source} 样本 -> {out_file}")
+
                         if not args.no_clear:
                             mcr.command(STORAGE_CMD_CLEAR)
                             log("已清空游戏内存 storage cacardwar:ai latest_sample")
+
                     time.sleep(args.interval)
             finally:
                 try:
